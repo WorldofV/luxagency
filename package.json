@@ -6,21 +6,28 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "scrape:3m": "ts-node --compiler-options '{\"module\":\"CommonJS\"}' scripts/scrape-3mmodels.ts",
+    "store:convert": "node scripts/convert-json-to-store.js"
   },
   "dependencies": {
+    "cheerio": "^1.1.2",
     "next": "16.0.6",
+    "node-fetch": "^3.3.2",
     "react": "19.2.0",
     "react-dom": "19.2.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@types/cheerio": "^1",
     "@types/node": "^20",
+    "@types/node-fetch": "^2",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.0.6",
     "tailwindcss": "^4",
+    "ts-node": "^10.9.2",
     "typescript": "^5"
   }
 }
