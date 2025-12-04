@@ -95,6 +95,9 @@ export default function AdminPage() {
   const [creating, setCreating] = useState(false);
   const [activeTab, setActiveTab] = useState<"models" | "submissions" | "stats">("models");
   const [search, setSearch] = useState("");
+  const divisionFilterOptions = ["All", ...divisionOptions];
+  const [divisionFilter, setDivisionFilter] = useState<string>("All");
+  const [selectedModelId, setSelectedModelId] = useState<string | null>(null);
   const [form, setForm] = useState({
     name: "",
     division: "Women",
@@ -229,6 +232,43 @@ export default function AdminPage() {
     const timer = setTimeout(() => setConfirmationVisible(false), 2000);
     return () => clearTimeout(timer);
   }, [confirmationVisible]);
+
+  const filteredModels = useMemo(() => {
+    const query = search.trim().toLowerCase();
+    return models
+      .filter((model) => {
+        if (!query) return true;
+        return (
+          model.name.toLowerCase().includes(query) ||
+          (model.city?.toLowerCase().includes(query) ?? false)
+        );
+      })
+      .filter((model) => {
+        if (divisionFilter === "All") return true;
+        return model.division.toLowerCase() === divisionFilter.toLowerCase();
+      });
+  }, [models, search, divisionFilter]);
+
+  useEffect(() => {
+    if (!filteredModels.length) {
+      setSelectedModelId(null);
+      return;
+    }
+    if (!selectedModelId || !filteredModels.some((model) => model.id === selectedModelId)) {
+      setSelectedModelId(filteredModels[0].id);
+    }
+  }, [filteredModels, selectedModelId]);
+
+  const selectedModel = selectedModelId
+    ? models.find((model) => model.id === selectedModelId) ?? null
+    : null;
+  const editorRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (selectedModelId && editorRef.current) {
+      editorRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [selectedModelId]);
 
   const handleCreate = async (event: FormEvent) => {
     event.preventDefault();
@@ -406,20 +446,79 @@ export default function AdminPage() {
           {loading ? (
             <p className="text-sm text-[var(--muted)]">Loading…</p>
           ) : (
-            <div className="space-y-6">
-            {models
-                .filter((model) => {
-                  if (!search.trim()) return true;
-                  const query = search.toLowerCase();
-                  return (
-                    model.name.toLowerCase().includes(query) ||
-                    (model.city?.toLowerCase().includes(query) ?? false)
-                  );
-                })
-                .map((model) => (
+            <div className="space-y-8">
+              <div className="flex flex-wrap gap-2">
+                {divisionFilterOptions.map((option) => (
+                  <button
+                    key={option}
+                    type="button"
+                    onClick={() => setDivisionFilter(option)}
+                    className={`rounded-full border px-4 py-1 text-[10px] uppercase tracking-[0.4em] transition ${
+                      divisionFilter === option
+                        ? "border-black text-black"
+                        : "border-[var(--border-color)] text-[var(--muted)] hover:border-black/60"
+                    }`}
+                  >
+                    {option}
+                  </button>
+                ))}
+              </div>
+
+              {filteredModels.length ? (
+                <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
+                  {filteredModels.map((model) => {
+                    const isSelected = selectedModelId === model.id;
+                    const heroImage = model.images[0];
+                    return (
+                      <button
+                        type="button"
+                        key={model.id}
+                        onClick={() => setSelectedModelId(model.id)}
+                        className={`rounded-[18px] border ${
+                          isSelected ? "border-black" : "border-[var(--border-color)]"
+                        } bg-white/80 p-2 text-left shadow-sm transition hover:-translate-y-1`}
+                      >
+                        <div className="aspect-[2/3] overflow-hidden rounded-2xl bg-[var(--background)]">
+                          {heroImage ? (
+                            <img
+                              src={heroImage.url}
+                              alt={model.name}
+                              className="h-full w-full object-cover"
+                            />
+                          ) : (
+                            <div className="flex h-full w-full items-center justify-center text-[10px] uppercase tracking-[0.4em] text-[var(--muted)]">
+                              No image
+                            </div>
+                          )}
+                        </div>
+                        <div className="mt-2">
+                          <p className="text-[13px] font-semibold tracking-[0.06em] text-[var(--foreground)]">
+                            {model.name}
+                          </p>
+                          {model.city ? (
+                            <p className="text-[10px] uppercase tracking-[0.3em] text-[var(--muted)]">
+                              {model.city}
+                            </p>
+                          ) : null}
+                        </div>
+                        <span className="mt-1 inline-block text-[9px] uppercase tracking-[0.4em] text-[var(--muted)]">
+                          {model.division}
+                        </span>
+                      </button>
+                    );
+                  })}
+                </div>
+              ) : (
+                <p className="rounded-[16px] border border-[var(--border-color)] bg-white/70 p-4 text-sm text-[var(--muted)]">
+                  No models match this search or division.
+                </p>
+              )}
+
+              {selectedModel ? (
+                <div ref={editorRef}>
                   <ModelCard
-                    key={model.id}
-                    model={model}
+                    key={selectedModel.id}
+                    model={selectedModel}
                     onChange={refreshModels}
                     onShowConfirmation={(message = "Book sequence updated successfully.", action = "Order saved") => {
                       setConfirmationMessage(message);
@@ -435,11 +534,9 @@ export default function AdminPage() {
                       })
                     }
                   />
-                ))}
-              {models.length === 0 ? (
-                <p className="rounded-[16px] border border-[var(--border-color)] bg-white/70 p-4 text-sm text-[var(--muted)]">
-                  No models yet—use the form above to add your first entry.
-                </p>
+                </div>
+              ) : filteredModels.length ? (
+                <p className="text-sm text-[var(--muted)]">Select a model card to manage details.</p>
               ) : null}
             </div>
           )}
@@ -747,7 +844,8 @@ function ModelCard({ model, onChange, onShowConfirmation, onShowDeleteConfirmati
   const [localModel, setLocalModel] = useState(model);
   const [orders, setOrders] = useState<Record<string, number>>({});
   const [draggingId, setDraggingId] = useState<string | null>(null);
-  const [dirty, setDirty] = useState(false);
+  const [infoDirty, setInfoDirty] = useState(false);
+  const [bookDirty, setBookDirty] = useState(false);
   const shortHeightModel = shouldFlagShortTalent(localModel.division, localModel.height);
   const shortHeightModelLabel = shortHeightLabel(localModel.division);
   const modelAge = localModel.birthday
@@ -766,6 +864,8 @@ function ModelCard({ model, onChange, onShowConfirmation, onShowDeleteConfirmati
       initialOrders[image.id] = image.order;
     });
     setOrders(initialOrders);
+    setInfoDirty(false);
+    setBookDirty(false);
   }, [model]);
 
   const sortedImages = useMemo(
@@ -778,7 +878,7 @@ function ModelCard({ model, onChange, onShowConfirmation, onShowDeleteConfirmati
     value: string | undefined
   ) => {
     setLocalModel((prev) => ({ ...prev, [field]: value }));
-    setDirty(true);
+    setInfoDirty(true);
   };
 
   const saveModel = async () => {
@@ -811,7 +911,7 @@ function ModelCard({ model, onChange, onShowConfirmation, onShowDeleteConfirmati
       alert("Unable to update model");
       return;
     }
-    setDirty(false);
+    setInfoDirty(false);
     await onChange();
     onShowConfirmation("Model info saved", "Fields updated");
   };
@@ -853,6 +953,7 @@ function ModelCard({ model, onChange, onShowConfirmation, onShowDeleteConfirmati
       }),
     });
     setPending(false);
+    setBookDirty(false);
     await onChange();
   };
 
@@ -897,7 +998,7 @@ function ModelCard({ model, onChange, onShowConfirmation, onShowDeleteConfirmati
         order: newOrders[image.id],
       }));
       setOrders((prevOrders) => ({ ...prevOrders, ...newOrders }));
-      setDirty(true);
+      setBookDirty(true);
       return { ...prev, images: updatedImages };
     });
     setDraggingId(null);
@@ -933,17 +1034,6 @@ function ModelCard({ model, onChange, onShowConfirmation, onShowDeleteConfirmati
         </div>
         <div className="flex flex-wrap gap-2">
           <button
-            onClick={saveModel}
-            disabled={pending}
-            className={`rounded-full px-4 py-1 text-xs uppercase tracking-[0.4em] disabled:opacity-60 ${
-              dirty
-                ? "border-green-600 text-green-700"
-                : "border-black text-black"
-            }`}
-          >
-            Save info
-          </button>
-          <button
             onClick={deleteModel}
             disabled={pending}
             className="rounded-full border border-red-500 px-4 py-1 text-xs uppercase tracking-[0.4em] text-red-600 disabled:opacity-60"
@@ -953,7 +1043,25 @@ function ModelCard({ model, onChange, onShowConfirmation, onShowDeleteConfirmati
         </div>
       </div>
 
-      <div className="mt-4 grid gap-4 sm:grid-cols-2">
+      <section className="mt-4 space-y-4 rounded-[24px] border border-[var(--border-color)] bg-white/80 p-4">
+        <div className="flex flex-col gap-1 border-b border-[var(--border-color)] pb-3 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <p className="text-xs uppercase tracking-[0.4em] text-[var(--muted)]">Profile information</p>
+            <p className="text-sm text-[var(--muted)]">Update contact details, measurements, and private notes.</p>
+          </div>
+          <button
+            type="button"
+            onClick={saveModel}
+            disabled={!infoDirty || pending}
+            className={`rounded-full border px-4 py-1 text-xs uppercase tracking-[0.4em] disabled:opacity-60 ${
+              infoDirty ? "border-green-600 text-green-700" : "border-black text-black"
+            }`}
+          >
+            Save info
+          </button>
+        </div>
+
+        <div className="grid gap-4 sm:grid-cols-2">
         <label className="text-xs uppercase tracking-[0.4em] text-[var(--muted)]">
           City
           <input
@@ -1154,6 +1262,41 @@ function ModelCard({ model, onChange, onShowConfirmation, onShowDeleteConfirmati
         </label>
       </div>
 
+        {(localModel.email || formattedPhone || localModel.whatsapp || localModel.birthday) ? (
+          <div className="rounded-[20px] border border-[var(--border-color)] bg-white/70 px-4 py-3 text-xs uppercase tracking-[0.4em] text-[var(--muted)]">
+            <p className="text-[10px] uppercase tracking-[0.5em] text-[var(--muted)]">
+              Private contact
+            </p>
+            <dl className="mt-3 space-y-1 text-[var(--foreground)]">
+              {localModel.email ? (
+                <div className="flex items-baseline justify-between gap-4">
+                  <dt className="text-[var(--muted)]">Email</dt>
+                  <dd className="text-right text-[11px] normal-case">{localModel.email}</dd>
+                </div>
+              ) : null}
+              {formattedPhone ? (
+                <div className="flex items-baseline justify-between gap-4">
+                  <dt className="text-[var(--muted)]">Phone</dt>
+                  <dd className="text-right text-[11px] normal-case">{formattedPhone}</dd>
+                </div>
+              ) : null}
+              {localModel.whatsapp ? (
+                <div className="flex items-baseline justify-between gap-4">
+                  <dt className="text-[var(--muted)]">WhatsApp</dt>
+                  <dd className="text-right text-[11px] normal-case">{localModel.whatsapp}</dd>
+                </div>
+              ) : null}
+              {localModel.birthday ? (
+                <div className="flex items-baseline justify-between gap-4">
+                  <dt className="text-[var(--muted)]">Birthday</dt>
+                  <dd className="text-right text-[11px] normal-case">{localModel.birthday}</dd>
+                </div>
+              ) : null}
+            </dl>
+          </div>
+        ) : null}
+      </section>
+
       <div className="mt-6 border-t border-[var(--border-color)] pt-4">
         <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
           <div>
@@ -1222,12 +1365,11 @@ function ModelCard({ model, onChange, onShowConfirmation, onShowDeleteConfirmati
             <button
               onClick={async () => {
                 await saveOrder();
-                setDirty(false);
                 onShowConfirmation("Model info saved", "Fields updated");
               }}
               disabled={pending}
               className={`rounded-full border px-4 py-1 text-xs uppercase tracking-[0.4em] disabled:opacity-60 ${
-                dirty ? "border-green-600 text-green-700" : "border-black"
+                bookDirty ? "border-green-600 text-green-700" : "border-black"
               }`}
             >
               Save order
@@ -1235,39 +1377,6 @@ function ModelCard({ model, onChange, onShowConfirmation, onShowDeleteConfirmati
           </div>
         )}
       </div>
-      {(localModel.email || formattedPhone || localModel.whatsapp || localModel.birthday) ? (
-        <div className="mt-6 rounded-[20px] border border-[var(--border-color)] bg-white/70 px-4 py-3 text-xs uppercase tracking-[0.4em] text-[var(--muted)]">
-          <p className="text-[10px] uppercase tracking-[0.5em] text-[var(--muted)]">
-            Private contact
-          </p>
-          <dl className="mt-3 space-y-1 text-[var(--foreground)]">
-            {localModel.email ? (
-              <div className="flex items-baseline justify-between gap-4">
-                <dt className="text-[var(--muted)]">Email</dt>
-                <dd className="text-right text-[11px] normal-case">{localModel.email}</dd>
-              </div>
-            ) : null}
-            {formattedPhone ? (
-              <div className="flex items-baseline justify-between gap-4">
-                <dt className="text-[var(--muted)]">Phone</dt>
-                <dd className="text-right text-[11px] normal-case">{formattedPhone}</dd>
-              </div>
-            ) : null}
-            {localModel.whatsapp ? (
-              <div className="flex items-baseline justify-between gap-4">
-                <dt className="text-[var(--muted)]">WhatsApp</dt>
-                <dd className="text-right text-[11px] normal-case">{localModel.whatsapp}</dd>
-              </div>
-            ) : null}
-            {localModel.birthday ? (
-              <div className="flex items-baseline justify-between gap-4">
-                <dt className="text-[var(--muted)]">Birthday</dt>
-                <dd className="text-right text-[11px] normal-case">{localModel.birthday}</dd>
-              </div>
-            ) : null}
-          </dl>
-        </div>
-      ) : null}
     </div>
   );
 }

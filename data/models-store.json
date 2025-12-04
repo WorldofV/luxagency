@@ -6560,7 +6560,7 @@
       "eyes": "Hazel",
       "hair": "Light Brown",
       "createdAt": "2025-12-03T12:56:42.079Z",
-      "updatedAt": "2025-12-03T12:56:42.079Z",
+      "updatedAt": "2025-12-04T12:55:06.293Z",
       "images": [
         {
           "id": "21ee9d88-efaa-435d-8a1b-9c481ffffdf1",
@@ -6844,7 +6844,8 @@
           "order": 460,
           "createdAt": "2025-12-03T12:56:42.079Z"
         }
-      ]
+      ],
+      "citizenship": "Italian"
     },
     {
       "id": "63210973-0fb2-4ae2-8ea2-5c8072a9be03",
@@ -17068,6 +17069,293 @@
       "createdAt": "2025-12-03T19:49:28.066Z",
       "updatedAt": "2025-12-03T19:49:28.066Z",
       "images": []
+    },
+    {
+      "id": "186977a8-41fb-441d-a0bb-73d195a5a9e1",
+      "slug": "pietro-b",
+      "name": "Pietro B",
+      "division": "Men",
+      "email": "pietrob@gmail.cpm",
+      "phonePrefix": "+31",
+      "phone": "563456435634",
+      "birthday": "2009-09-09",
+      "height": "169cm - 5' 6.5''",
+      "bust": "57 cm / 22''",
+      "waist": "56 cm / 22''",
+      "hips": "60 cm / 23''",
+      "shoes": "43.5 - 10.5",
+      "eyes": "Hazel",
+      "hair": "Dark Brown",
+      "createdAt": "2025-12-04T13:27:32.828Z",
+      "updatedAt": "2025-12-04T13:27:32.918Z",
+      "images": [
+        {
+          "id": "ed782d20-ee0b-446e-95ba-68354809e5a2",
+          "url": "/uploads/1764852835508-906bf2c4-dc5e-4413-b2c1-00935f8ff5ef.jpg",
+          "order": 10,
+          "createdAt": "2025-12-04T13:27:32.842Z"
+        },
+        {
+          "id": "f8b9e9c8-bbd3-41d2-903a-a10334732d72",
+          "url": "/uploads/1764852835509-6a889471-b1f8-4584-8b85-d98f04006a78.jpg",
+          "order": 20,
+          "createdAt": "2025-12-04T13:27:32.855Z"
+        },
+        {
+          "id": "39c26643-a41f-44d3-85d5-780259115371",
+          "url": "/uploads/1764852835510-4fbc1559-bf00-4c33-9fe5-5c3aefae3f19.jpg",
+          "order": 30,
+          "createdAt": "2025-12-04T13:27:32.866Z"
+        },
+        {
+          "id": "6a3e81ec-29f2-4ac5-9f54-c8d474bdf35f",
+          "url": "/uploads/1764852835510-f0ce1206-48ad-4771-a03c-36e322daf951.jpg",
+          "order": 40,
+          "createdAt": "2025-12-04T13:27:32.872Z"
+        },
+        {
+          "id": "2b7e9559-9ff1-4e49-af41-0742b3c582e1",
+          "url": "/uploads/1764852835511-c8cf604a-700f-48e6-a7e4-1e9efb711754.jpg",
+          "order": 50,
+          "createdAt": "2025-12-04T13:27:32.881Z"
+        },
+        {
+          "id": "d69fd68c-fa05-41d6-a375-da6000700faf",
+          "url": "/uploads/1764852835511-4bb49662-a3a8-49dc-8840-be91149db732.jpg",
+          "order": 60,
+          "createdAt": "2025-12-04T13:27:32.887Z"
+        },
+        {
+          "id": "dfb61e9a-7013-4c29-88dd-f9a56031c00f",
+          "url": "/uploads/1764852835512-e0b79e89-7f94-428b-aa24-1d4bd31e3ce9.jpg",
+          "order": 70,
+          "createdAt": "2025-12-04T13:27:32.895Z"
+        },
+        {
+          "id": "30b3562e-67eb-41fc-977e-32359c601184",
+          "url": "/uploads/1764852835512-cc4605c0-4520-4486-b103-2dae0d7800be.jpg",
+          "order": 80,
+          "createdAt": "2025-12-04T13:27:32.901Z"
+        },
+        {
+          "id": "7bbb9c28-dfca-4966-b2e8-5f9aa764a5ed",
+          "url": "/uploads/1764852835513-f8b06945-845c-4179-aaa5-d99275983c64.jpg",
+          "order": 90,
+          "createdAt": "2025-12-04T13:27:32.912Z"
+        },
+        {
+          "id": "1658cb95-ed8f-481e-85f8-70834ba55be6",
+          "url": "/uploads/1764852835513-428e6ed0-4de6-44a1-8624-57f4c0008ced.jpg",
+          "order": 100,
+          "createdAt": "2025-12-04T13:27:32.918Z"
+        }
+      ]
+    },
+    {
+      "id": "b5cf3870-3830-4246-9bf8-1b6cb9c08ebc",
+      "slug": "irsida-aliu",
+      "name": "Irsida Aliu",
+      "division": "Men",
+      "city": "Milan",
+      "email": "irsidaaliu@gmail.com",
+      "birthday": "2025-12-01",
+      "height": "168cm - 5' 6''",
+      "bust": "56 cm / 22''",
+      "waist": "55 cm / 21''",
+      "hips": "57 cm / 22''",
+      "shoes": "43 - 9",
+      "eyes": "Green",
+      "hair": "Dark Brown",
+      "createdAt": "2025-12-04T13:31:09.418Z",
+      "updatedAt": "2025-12-04T13:31:09.684Z",
+      "images": [
+        {
+          "id": "086f89a0-44ac-4714-8a01-edf40ac962e0",
+          "url": "/uploads/1764774140332-241ae2a0-e73b-47ee-99db-e8db4b56055d.jpg",
+          "order": 10,
+          "createdAt": "2025-12-04T13:31:09.427Z"
+        },
+        {
+          "id": "c1813b79-d989-4dfa-8b8e-0f8eca9a33cb",
+          "url": "/uploads/1764774140336-24d05c90-8aac-4d2f-83d6-021ece92d21f.jpg",
+          "order": 20,
+          "createdAt": "2025-12-04T13:31:09.447Z"
+        },
+        {
+          "id": "4792b835-9417-4616-bb00-5e0c6c7058b8",
+          "url": "/uploads/1764774140337-560d781d-00bc-47c4-9c3d-f2df7d4054b7.jpg",
+          "order": 30,
+          "createdAt": "2025-12-04T13:31:09.459Z"
+        },
+        {
+          "id": "9f1f77d1-1508-492e-a2c6-298889912e3c",
+          "url": "/uploads/1764774140338-2080d370-f801-4e97-8718-f8e4c4fae4cc.jpg",
+          "order": 40,
+          "createdAt": "2025-12-04T13:31:09.474Z"
+        },
+        {
+          "id": "b1155f92-2ee2-4891-a89d-d713530aace7",
+          "url": "/uploads/1764774140339-510ee23f-2d69-4db1-8421-cdd44a890bd5.jpg",
+          "order": 50,
+          "createdAt": "2025-12-04T13:31:09.480Z"
+        },
+        {
+          "id": "ec2fa7c2-91e5-4c5c-90db-c07df0c48c3a",
+          "url": "/uploads/1764774140341-23b493c8-3fe6-428a-87a5-5f24c9cf510e.jpg",
+          "order": 60,
+          "createdAt": "2025-12-04T13:31:09.488Z"
+        },
+        {
+          "id": "a5a1c533-cae8-4774-a0b5-9ed138f6cdcf",
+          "url": "/uploads/1764774140341-e938b3b8-b846-487c-89b1-d52033719bb6.jpg",
+          "order": 70,
+          "createdAt": "2025-12-04T13:31:09.499Z"
+        },
+        {
+          "id": "ba1f0901-8d60-4a1f-881c-458db853635d",
+          "url": "/uploads/1764774140342-5c5955f0-67dd-4c91-9c43-cd704b73444e.jpg",
+          "order": 80,
+          "createdAt": "2025-12-04T13:31:09.505Z"
+        },
+        {
+          "id": "31e3e728-9638-42fd-a473-e0df9f91635c",
+          "url": "/uploads/1764774140347-1ecf524e-e18c-44c8-b17c-2937fe4e17f3.jpg",
+          "order": 90,
+          "createdAt": "2025-12-04T13:31:09.514Z"
+        },
+        {
+          "id": "478bd90a-086c-4d43-aee6-9fc2fecffb24",
+          "url": "/uploads/1764774140348-0fc68b85-95e8-4a1a-b416-da4eb366467a.jpg",
+          "order": 100,
+          "createdAt": "2025-12-04T13:31:09.520Z"
+        },
+        {
+          "id": "c232ea27-f9df-4a36-ac83-273bba027cd6",
+          "url": "/uploads/1764774140348-01320c5e-7656-4f9f-a698-ea9b3dfc5e87.jpg",
+          "order": 110,
+          "createdAt": "2025-12-04T13:31:09.527Z"
+        },
+        {
+          "id": "608d533d-225b-4d59-9d67-651d7d11da56",
+          "url": "/uploads/1764774140349-b9da9889-a494-45b5-bea4-27ee61681553.jpg",
+          "order": 120,
+          "createdAt": "2025-12-04T13:31:09.537Z"
+        },
+        {
+          "id": "e74ff25d-6a30-4813-b8f3-d5692ada2961",
+          "url": "/uploads/1764774140350-16e527a7-0dcd-42d2-ade8-dd39b72bcef0.jpg",
+          "order": 130,
+          "createdAt": "2025-12-04T13:31:09.546Z"
+        },
+        {
+          "id": "9a4d8cce-2f7e-47a7-a490-3d2de5d7beb1",
+          "url": "/uploads/1764774140351-234561dd-119d-4afb-8f77-0a9c80b1a6d2.jpg",
+          "order": 140,
+          "createdAt": "2025-12-04T13:31:09.552Z"
+        },
+        {
+          "id": "8820de30-227f-4237-ac70-d63274ba1e7c",
+          "url": "/uploads/1764774140351-2a6f2040-c70c-4975-9fc1-81f633565d61.jpg",
+          "order": 150,
+          "createdAt": "2025-12-04T13:31:09.561Z"
+        },
+        {
+          "id": "6530cffd-ff34-4774-a1e4-e7426e5cb609",
+          "url": "/uploads/1764774140352-9e28c98e-8c33-4390-9e7c-f78bfef10b47.jpg",
+          "order": 160,
+          "createdAt": "2025-12-04T13:31:09.567Z"
+        },
+        {
+          "id": "b299d425-d942-44fd-8c66-ffc350a1c8d0",
+          "url": "/uploads/1764774140352-81bc48bc-7831-47ae-b23c-7cccf9762ecf.jpg",
+          "order": 170,
+          "createdAt": "2025-12-04T13:31:09.580Z"
+        },
+        {
+          "id": "72a660a1-ce10-42d9-824b-6efe876e539a",
+          "url": "/uploads/1764774140353-99a9bab8-88d7-4d5c-86bf-1e9dccfb22dd.jpg",
+          "order": 180,
+          "createdAt": "2025-12-04T13:31:09.589Z"
+        },
+        {
+          "id": "49d45775-1862-4860-9a03-bd4f22a91c92",
+          "url": "/uploads/1764774140353-597626cd-fa96-46a6-92ba-7fddcf1793a2.jpg",
+          "order": 190,
+          "createdAt": "2025-12-04T13:31:09.601Z"
+        },
+        {
+          "id": "df5e3f34-cd8f-45b1-bb72-dc81438e74ad",
+          "url": "/uploads/1764774140354-dbf51536-7da8-48bc-87be-60c89275c5a4.jpg",
+          "order": 200,
+          "createdAt": "2025-12-04T13:31:09.608Z"
+        },
+        {
+          "id": "c2ece32e-7658-4c10-a2be-ce413efe8f0a",
+          "url": "/uploads/1764774140355-5a117e84-f5ca-4379-b648-6588bb5a76f6.jpg",
+          "order": 210,
+          "createdAt": "2025-12-04T13:31:09.615Z"
+        },
+        {
+          "id": "25ae4db4-f3fe-443c-b255-167006e6a9d1",
+          "url": "/uploads/1764774140356-4d92dc9d-5b5d-40b2-a1b5-f1ce6a78380f.jpg",
+          "order": 220,
+          "createdAt": "2025-12-04T13:31:09.621Z"
+        },
+        {
+          "id": "1784245f-0c91-4065-8e79-9d440a9c71f8",
+          "url": "/uploads/1764774140357-4dc5bd1c-7fe3-4d8a-a084-0c534c64b5e4.jpg",
+          "order": 230,
+          "createdAt": "2025-12-04T13:31:09.630Z"
+        },
+        {
+          "id": "080d0039-33a5-4e84-b902-635be809b36b",
+          "url": "/uploads/1764774140357-e3c298e3-6c0e-47af-881a-388e019f9fb3.jpg",
+          "order": 240,
+          "createdAt": "2025-12-04T13:31:09.636Z"
+        },
+        {
+          "id": "230c9825-80e6-4d86-b1d7-bbc17c95253f",
+          "url": "/uploads/1764774140358-c2093b64-13d0-45ac-b6f8-696067cbc57f.jpg",
+          "order": 250,
+          "createdAt": "2025-12-04T13:31:09.643Z"
+        },
+        {
+          "id": "1888cdcc-1600-4af9-ab25-cf6811b8b4fa",
+          "url": "/uploads/1764774140358-4d2c2665-fef7-4afd-934c-93e87335304f.jpg",
+          "order": 260,
+          "createdAt": "2025-12-04T13:31:09.650Z"
+        },
+        {
+          "id": "a7b52ed8-b43d-461e-884b-e0677cc687a9",
+          "url": "/uploads/1764774140359-4c05db71-5229-4484-afcf-f986e2d0949b.jpg",
+          "order": 270,
+          "createdAt": "2025-12-04T13:31:09.656Z"
+        },
+        {
+          "id": "ba195070-a5ef-40bb-9267-0c9de7fa74a4",
+          "url": "/uploads/1764774140359-d40c894f-c2a6-4f6d-bc20-675376945cf1.jpg",
+          "order": 280,
+          "createdAt": "2025-12-04T13:31:09.663Z"
+        },
+        {
+          "id": "284969b2-4c80-4f3e-bb08-e8df6d8a9c34",
+          "url": "/uploads/1764774140360-cea73536-3a2a-4e9e-9aef-2c2d4833ecdf.jpg",
+          "order": 290,
+          "createdAt": "2025-12-04T13:31:09.670Z"
+        },
+        {
+          "id": "4d9e354f-a387-465b-b59a-f427be8ab128",
+          "url": "/uploads/1764774140360-71a45cae-6125-4962-a757-930f875d8463.jpg",
+          "order": 300,
+          "createdAt": "2025-12-04T13:31:09.678Z"
+        },
+        {
+          "id": "b4cca876-9191-44cc-b2d3-a67b5516abfc",
+          "url": "/uploads/1764774140362-c0d1ca37-8754-48bf-a9b5-be22b066cec5.jpg",
+          "order": 310,
+          "createdAt": "2025-12-04T13:31:09.684Z"
+        }
+      ]
     }
   ]
 }

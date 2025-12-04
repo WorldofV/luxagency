@@ -1,59 +1,6 @@
 {
   "submissions": [
     {
-      "id": "5d3ad408-5e66-46c8-bf55-d452cd6a3d88",
-      "status": "pending",
-      "createdAt": "2025-12-03T14:24:54.652Z",
-      "updatedAt": "2025-12-03T14:24:54.655Z",
-      "firstName": "Alex",
-      "lastName": "Rossi",
-      "email": "alex@example.com",
-      "images": [
-        {
-          "id": "3ce6bbf1-9824-41ec-b72d-9f1a57c38663",
-          "url": "/uploads/1764771894654-240c5db3-4963-4915-9124-888c8c6d4c4b.svg",
-          "order": 10,
-          "createdAt": "2025-12-03T14:24:54.655Z"
-        }
-      ]
-    },
-    {
-      "id": "0e40c54c-9ecd-4b0c-b607-76f4ce5f1215",
-      "status": "pending",
-      "createdAt": "2025-12-03T14:25:25.659Z",
-      "updatedAt": "2025-12-03T14:25:25.662Z",
-      "firstName": "Alex",
-      "lastName": "Rossi",
-      "email": "alex.rossi@example.com",
-      "birthday": "2004-08-15",
-      "gender": "Male",
-      "nationality": "Italian",
-      "citizenship": "Italian",
-      "languages": "Italian, English",
-      "currentCity": "Milan",
-      "phone": "+39-333-1111111",
-      "instagram": "%40alexrossi",
-      "height": "185cm",
-      "chest": "94 cm",
-      "waist": "74 cm",
-      "hips": "90 cm",
-      "shoes": "44 - 10",
-      "eyes": "Brown",
-      "hair": "Dark Brown",
-      "experience": "Editorial shoot for indie magazine",
-      "travelAvailability": "Available summer 2026",
-      "source": "Instagram",
-      "notes": "Interested in Paris show season",
-      "images": [
-        {
-          "id": "db442744-b2f3-4519-9b9a-ea2ef7340ed9",
-          "url": "/uploads/1764771925661-b2f853f1-729d-4cdb-925f-d320b2ebecea.svg",
-          "order": 10,
-          "createdAt": "2025-12-03T14:25:25.661Z"
-        }
-      ]
-    },
-    {
       "id": "41c4a9d6-3f3c-4194-a194-e5151c7c692e",
       "status": "approved",
       "createdAt": "2025-12-03T14:36:24.859Z",
@@ -268,14 +215,14 @@
     },
     {
       "id": "7079f4a8-aee2-4d17-921a-a453a5143e1a",
-      "status": "pending",
+      "status": "approved",
       "createdAt": "2025-12-03T15:02:20.330Z",
-      "updatedAt": "2025-12-03T15:02:20.363Z",
+      "updatedAt": "2025-12-04T13:31:09.689Z",
       "firstName": "Irsida",
       "lastName": "Aliu",
       "email": "irsidaaliu@gmail.com",
       "birthday": "2025-12-01",
-      "gender": "Female",
+      "gender": "Men",
       "languages": "English",
       "currentCity": "Milan",
       "height": "168cm - 5' 6''",
@@ -471,6 +418,88 @@
           "url": "/uploads/1764774140362-c0d1ca37-8754-48bf-a9b5-be22b066cec5.jpg",
           "order": 310,
           "createdAt": "2025-12-03T15:02:20.362Z"
+        }
+      ]
+    },
+    {
+      "id": "a83c7c18-26de-4907-bdc9-6d089e260dbe",
+      "status": "approved",
+      "createdAt": "2025-12-04T12:53:55.506Z",
+      "updatedAt": "2025-12-04T13:27:32.923Z",
+      "firstName": "Pietro",
+      "lastName": "B",
+      "email": "pietrob@gmail.cpm",
+      "birthday": "2009-09-09",
+      "gender": "Male",
+      "phonePrefix": "+31",
+      "phone": "563456435634",
+      "height": "169cm - 5' 6.5''",
+      "chest": "57 cm / 22''",
+      "waist": "56 cm / 22''",
+      "hips": "60 cm / 23''",
+      "shoes": "43.5 - 10.5",
+      "eyes": "Hazel",
+      "hair": "Dark Brown",
+      "images": [
+        {
+          "id": "17d18858-ea77-484a-bdf8-304201e71045",
+          "url": "/uploads/1764852835508-906bf2c4-dc5e-4413-b2c1-00935f8ff5ef.jpg",
+          "order": 10,
+          "createdAt": "2025-12-04T12:53:55.509Z"
+        },
+        {
+          "id": "0840fbfc-699e-442b-b191-3e98806c713b",
+          "url": "/uploads/1764852835509-6a889471-b1f8-4584-8b85-d98f04006a78.jpg",
+          "order": 20,
+          "createdAt": "2025-12-04T12:53:55.509Z"
+        },
+        {
+          "id": "cb7ce779-e2a2-44ee-828a-8e6138df2c24",
+          "url": "/uploads/1764852835510-4fbc1559-bf00-4c33-9fe5-5c3aefae3f19.jpg",
+          "order": 30,
+          "createdAt": "2025-12-04T12:53:55.510Z"
+        },
+        {
+          "id": "bdc473eb-7576-4373-be08-69cb68018cd6",
+          "url": "/uploads/1764852835510-f0ce1206-48ad-4771-a03c-36e322daf951.jpg",
+          "order": 40,
+          "createdAt": "2025-12-04T12:53:55.511Z"
+        },
+        {
+          "id": "77a0aafa-f55a-4c07-8aee-e689bf8c3682",
+          "url": "/uploads/1764852835511-c8cf604a-700f-48e6-a7e4-1e9efb711754.jpg",
+          "order": 50,
+          "createdAt": "2025-12-04T12:53:55.511Z"
+        },
+        {
+          "id": "4eb692d5-d067-4c90-afa0-897a3c9a978c",
+          "url": "/uploads/1764852835511-4bb49662-a3a8-49dc-8840-be91149db732.jpg",
+          "order": 60,
+          "createdAt": "2025-12-04T12:53:55.512Z"
+        },
+        {
+          "id": "c051297c-b2d9-4121-bc56-68e6895916fc",
+          "url": "/uploads/1764852835512-e0b79e89-7f94-428b-aa24-1d4bd31e3ce9.jpg",
+          "order": 70,
+          "createdAt": "2025-12-04T12:53:55.512Z"
+        },
+        {
+          "id": "557f0e4e-3ea4-4835-acf9-95d5e567c440",
+          "url": "/uploads/1764852835512-cc4605c0-4520-4486-b103-2dae0d7800be.jpg",
+          "order": 80,
+          "createdAt": "2025-12-04T12:53:55.513Z"
+        },
+        {
+          "id": "900b9df6-1381-483a-82fa-61e66f4525e9",
+          "url": "/uploads/1764852835513-f8b06945-845c-4179-aaa5-d99275983c64.jpg",
+          "order": 90,
+          "createdAt": "2025-12-04T12:53:55.513Z"
+        },
+        {
+          "id": "97d583a7-7f1e-4822-bf9a-f59fece245a4",
+          "url": "/uploads/1764852835513-428e6ed0-4de6-44a1-8624-57f4c0008ced.jpg",
+          "order": 100,
+          "createdAt": "2025-12-04T12:53:55.514Z"
         }
       ]
     }

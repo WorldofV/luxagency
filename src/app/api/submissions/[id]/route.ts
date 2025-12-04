@@ -3,37 +3,52 @@ import { NextResponse } from "next/server";
 import {
   deleteSubmission,
   getSubmission,
+  updateSubmission,
   updateSubmissionStatus,
 } from "@/lib/submissionStore";
 
 type RouteContext = {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 };
 
-export async function GET(_: Request, { params }: RouteContext) {
-  const submission = await getSubmission(params.id);
+async function resolveParams(context: RouteContext) {
+  return context.params ? await context.params : { id: "" };
+}
+
+export async function GET(_: Request, context: RouteContext) {
+  const { id } = await resolveParams(context);
+  const submission = await getSubmission(id);
   if (!submission) {
     return NextResponse.json({ error: "Not found" }, { status: 404 });
   }
   return NextResponse.json(submission);
 }
 
-export async function PATCH(request: Request, { params }: RouteContext) {
+export async function PATCH(request: Request, context: RouteContext) {
+  const { id } = await resolveParams(context);
   const payload = await request.json();
-  if (!payload.status) {
-    return NextResponse.json({ error: "status is required" }, { status: 400 });
+  const updates: Record<string, unknown> = {};
+  if (typeof payload.status === "string") {
+    updates.status = payload.status;
   }
-  const updated = await updateSubmissionStatus(params.id, payload.status);
+  if (typeof payload.gender === "string") {
+    updates.gender = payload.gender;
+  }
+  if (!Object.keys(updates).length) {
+    return NextResponse.json({ error: "No valid fields to update" }, { status: 400 });
+  }
+  const updated = await updateSubmission(id, updates);
   if (!updated) {
     return NextResponse.json({ error: "Not found" }, { status: 404 });
   }
   return NextResponse.json(updated);
 }
 
-export async function DELETE(_: Request, { params }: RouteContext) {
-  const removed = await deleteSubmission(params.id);
+export async function DELETE(_: Request, context: RouteContext) {
+  const { id } = await resolveParams(context);
+  const removed = await deleteSubmission(id);
   if (!removed) {
     return NextResponse.json({ error: "Not found" }, { status: 404 });
   }

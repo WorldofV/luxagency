@@ -14,6 +14,7 @@ import {
 
 const genderOptions = ["Female", "Male", "Non Binary"];
 const MAX_UPLOAD_FILES = 10;
+const MIN_AGE_YEARS = 16;
 
 const getShoeOptionsForGender = (gender: string) => {
   const normalized = gender.toLowerCase();
@@ -58,6 +59,7 @@ export default function BecomeModelPage() {
   const [fileError, setFileError] = useState<string | null>(null);
   const [previewUrls, setPreviewUrls] = useState<string[]>([]);
   const fileInputId = useId();
+  const [formError, setFormError] = useState<string | null>(null);
 
   const handleChange = (field: string, value: string) => {
     setForm((prev) => ({ ...prev, [field]: value }));
@@ -81,8 +83,30 @@ export default function BecomeModelPage() {
     };
   }, [files]);
 
+  const minBirthDate = (() => {
+    const date = new Date();
+    date.setFullYear(date.getFullYear() - MIN_AGE_YEARS);
+    return date.toISOString().split("T")[0];
+  })();
+
+  const calculateAge = (birthday: string) => {
+    const birthDate = new Date(birthday);
+    const diff = Date.now() - birthDate.getTime();
+    return Math.floor(diff / (1000 * 60 * 60 * 24 * 365.25));
+  };
+
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
+    if (!form.birthday) {
+      setFormError("Birthday is required so we can verify you are at least 16.");
+      return;
+    }
+    const age = calculateAge(form.birthday);
+    if (age < MIN_AGE_YEARS) {
+      setFormError("Applicants must be at least 16 years old.");
+      return;
+    }
+    setFormError(null);
     setSubmitting(true);
     const data = new FormData();
     Object.entries(form).forEach(([key, value]) => data.append(key, value));
@@ -120,8 +144,8 @@ export default function BecomeModelPage() {
           Submit your digitals for 3MMODELS consideration.
         </h1>
         <p className="mx-auto max-w-3xl text-sm leading-relaxed text-[var(--muted)]">
-          We review applications for Women (15-23, 173-180cm) and Men (15-25, 184-195cm). Please fill the form and upload
-          natural digitals: full-length, profile, and close-up.
+          We review applications for Women (173-180cm) and Men (184-195cm). Please fill the form and upload natural digitals:
+          full-length, profile, and close-up.
         </p>
       </header>
 
@@ -131,6 +155,7 @@ export default function BecomeModelPage() {
           <ul className="space-y-3 text-sm text-[var(--muted)]">
             <li>Photos must be recent, natural light, no heavy makeup.</li>
             <li>Include accurate measurements and current location.</li>
+            <li>Applicants must be at least 16 years old.</li>
             <li>Applicants under 18 must have a parent or guardian submit.</li>
             <li>List availability to travel for show seasons or development.</li>
             <li>Files accepted: JPG/PNG up to 10 images.</li>
@@ -178,9 +203,10 @@ export default function BecomeModelPage() {
             />
             <input
               type="date"
+              required
               value={form.birthday}
               onChange={(event) => handleChange("birthday", event.target.value)}
-              placeholder="Birthday"
+              max={minBirthDate}
               className="rounded-lg border border-[var(--border-color)] px-3 py-2 text-sm"
             />
           </div>
@@ -381,6 +407,12 @@ export default function BecomeModelPage() {
               </div>
             ) : null}
           </div>
+
+          {formError ? (
+            <p className="text-center text-sm text-red-600" role="alert">
+              {formError}
+            </p>
+          ) : null}
 
           <button
             type="submit"

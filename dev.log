@@ -1,0 +1,1889 @@
+
+> lux-agency@0.1.0 dev
+> next dev
+
+ ⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of /Users/americocacciapuoti/package-lock.json as the root directory.
+ To silence this warning, set `turbopack.root` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.
+ Detected additional lockfiles: 
+   * /Users/americocacciapuoti/lux-agency/package-lock.json
+
+   ▲ Next.js 16.0.6 (Turbopack)
+   - Local:         http://localhost:3000
+   - Network:       http://192.168.1.76:3000
+
+ ✓ Starting...
+ ✓ Ready in 518ms
+ GET /admin 200 in 1121ms (compile: 992ms, render: 129ms)
+ GET /api/metrics/instagram 200 in 136ms (compile: 102ms, render: 34ms)
+ GET /api/submissions 200 in 138ms (compile: 131ms, render: 7ms)
+ GET /api/models 200 in 143ms (compile: 120ms, render: 24ms)
+ POST /api/models 201 in 16ms (compile: 3ms, render: 13ms)
+Error: Route "/api/models/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at PATCH (src/app/api/models/[id]/route.ts:26:46)
+  24 |   const updates = await request.json();
+  25 |   try {
+> 26 |     const updated = await updateModel(params.id, updates);
+     |                                              ^
+  27 |     if (!updated) {
+  28 |       return NextResponse.json({ error: "Not found" }, { status: 404 });
+  29 |     }
+ PATCH /api/models/c6465671-6f4a-43df-b9f6-bc9fa3520b66 404 in 606ms (compile: 502ms, render: 104ms)
+Error: Route "/api/models/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at PATCH (src/app/api/models/[id]/route.ts:26:46)
+  24 |   const updates = await request.json();
+  25 |   try {
+> 26 |     const updated = await updateModel(params.id, updates);
+     |                                              ^
+  27 |     if (!updated) {
+  28 |       return NextResponse.json({ error: "Not found" }, { status: 404 });
+  29 |     }
+ PATCH /api/models/c6465671-6f4a-43df-b9f6-bc9fa3520b66 404 in 66ms (compile: 6ms, render: 60ms)
+ GET / 200 in 214ms (compile: 188ms, render: 27ms)
+ GET /models 200 in 241ms (compile: 183ms, render: 57ms)
+ GET /models/herdafa 200 in 468ms (compile: 436ms, render: 32ms)
+ GET /api/models 200 in 15ms (compile: 5ms, render: 10ms)
+Error: Route "/api/models/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at PATCH (src/app/api/models/[id]/route.ts:26:46)
+  24 |   const updates = await request.json();
+  25 |   try {
+> 26 |     const updated = await updateModel(params.id, updates);
+     |                                              ^
+  27 |     if (!updated) {
+  28 |       return NextResponse.json({ error: "Not found" }, { status: 404 });
+  29 |     }
+ PATCH /api/models/d77edb44-06d5-4269-b88f-e7c96069d53c 404 in 86ms (compile: 4ms, render: 82ms)
+ GET /api/submissions 200 in 15ms (compile: 7ms, render: 7ms)
+ GET /api/metrics/instagram 200 in 17ms (compile: 10ms, render: 7ms)
+ GET /api/models 200 in 24ms (compile: 3ms, render: 21ms)
+ GET /api/metrics/instagram 200 in 8ms (compile: 1303µs, render: 7ms)
+ GET /api/submissions 200 in 9ms (compile: 3ms, render: 5ms)
+ GET /api/models 200 in 14ms (compile: 6ms, render: 8ms)
+ PATCH /api/models/d77edb44-06d5-4269-b88f-e7c96069d53c 200 in 52ms (compile: 38ms, render: 14ms)
+ GET /admin 200 in 51ms (compile: 5ms, render: 46ms)
+ GET /api/metrics/instagram 200 in 13ms (compile: 8ms, render: 5ms)
+ GET /api/submissions 200 in 14ms (compile: 4ms, render: 9ms)
+ GET /api/models 200 in 18ms (compile: 1620µs, render: 17ms)
+ PATCH /api/models/c6465671-6f4a-43df-b9f6-bc9fa3520b66 200 in 15ms (compile: 6ms, render: 9ms)
+ GET /api/models 200 in 8ms (compile: 1665µs, render: 6ms)
+ GET /models 200 in 52ms (compile: 4ms, render: 48ms)
+ GET /models/herdafa 200 in 26ms (compile: 6ms, render: 20ms)
+ GET /api/submissions 200 in 11ms (compile: 5ms, render: 6ms)
+ GET /api/metrics/instagram 200 in 12ms (compile: 7ms, render: 5ms)
+ GET /api/models 200 in 17ms (compile: 3ms, render: 15ms)
+ GET /api/metrics/instagram 200 in 8ms (compile: 3ms, render: 5ms)
+ GET /api/submissions 200 in 8ms (compile: 6ms, render: 2ms)
+ GET /api/models 200 in 12ms (compile: 5ms, render: 7ms)
+ GET /models 200 in 65ms (compile: 4ms, render: 61ms)
+ GET /models/herdafa 200 in 27ms (compile: 4ms, render: 23ms)
+ GET /api/submissions 200 in 12ms (compile: 5ms, render: 7ms)
+ GET /api/models 200 in 18ms (compile: 2ms, render: 16ms)
+ GET /api/metrics/instagram 200 in 12ms (compile: 1372µs, render: 11ms)
+ GET /api/submissions 200 in 5ms (compile: 1886µs, render: 3ms)
+ GET /api/metrics/instagram 200 in 5ms (compile: 591µs, render: 5ms)
+ GET /api/models 200 in 8ms (compile: 927µs, render: 7ms)
+ GET /admin 200 in 21ms (compile: 5ms, render: 16ms)
+ GET /admin 200 in 13ms (compile: 946µs, render: 12ms)
+ ✓ Compiled in 13ms
+ ✓ Compiled in 27ms
+ GET /models 200 in 150ms (compile: 65ms, render: 85ms)
+ GET /models/pratomo 200 in 91ms (compile: 54ms, render: 38ms)
+ GET /models/pratomo 200 in 103ms (compile: 47ms, render: 56ms)
+ GET /api/submissions 200 in 40ms (compile: 3ms, render: 37ms)
+ GET /api/metrics/instagram 200 in 40ms (compile: 36ms, render: 5ms)
+ GET /api/models 200 in 51ms (compile: 32ms, render: 19ms)
+ GET /api/submissions 200 in 6ms (compile: 1212µs, render: 5ms)
+ GET /api/metrics/instagram 200 in 7ms (compile: 3ms, render: 4ms)
+ GET /api/models 200 in 9ms (compile: 624µs, render: 8ms)
+ PATCH /api/models/c6465671-6f4a-43df-b9f6-bc9fa3520b66 200 in 46ms (compile: 32ms, render: 14ms)
+ GET /api/models 200 in 9ms (compile: 2ms, render: 7ms)
+ GET /models 200 in 54ms (compile: 4ms, render: 51ms)
+ GET /models/herdafa 200 in 26ms (compile: 5ms, render: 21ms)
+ GET /models/herdafa 200 in 115ms (compile: 57ms, render: 58ms)
+ GET /models/herdafa 200 in 120ms (compile: 6ms, render: 114ms)
+ GET /models/herdafa 200 in 146ms (compile: 74ms, render: 72ms)
+ GET /models/herdafa 200 in 127ms (compile: 63ms, render: 64ms)
+ GET /models?division=non-binary 200 in 27ms (compile: 4ms, render: 22ms)
+ GET /models 200 in 42ms (compile: 1217µs, render: 40ms)
+ GET /models/herdafa 200 in 26ms (compile: 3ms, render: 23ms)
+ GET /models?division=non-binary 200 in 17ms (compile: 1423µs, render: 16ms)
+ GET /models 200 in 54ms (compile: 1111µs, render: 53ms)
+ GET /models/pratomo 200 in 23ms (compile: 3ms, render: 20ms)
+ GET /admin 200 in 100ms (compile: 57ms, render: 43ms)
+ GET /api/submissions 200 in 14ms (compile: 6ms, render: 8ms)
+ GET /api/metrics/instagram 200 in 15ms (compile: 10ms, render: 5ms)
+ GET /api/models 200 in 21ms (compile: 2ms, render: 18ms)
+ GET /api/submissions 200 in 5ms (compile: 1332µs, render: 4ms)
+ GET /api/metrics/instagram 200 in 5ms (compile: 2ms, render: 3ms)
+ GET /api/models 200 in 8ms (compile: 1407µs, render: 7ms)
+ GET /admin 200 in 19ms (compile: 3ms, render: 17ms)
+ ✓ Compiled in 32ms
+ GET /admin 200 in 11ms (compile: 1812µs, render: 9ms)
+ GET /admin 200 in 12ms (compile: 1310µs, render: 11ms)
+ ✓ Compiled in 16ms
+ ✓ Compiled in 25ms
+ ✓ Compiled in 20ms
+ GET /admin 200 in 101ms (compile: 64ms, render: 37ms)
+ GET /admin 200 in 21ms (compile: 1454µs, render: 20ms)
+ ✓ Compiled in 17ms
+ ✓ Compiled in 11ms
+ GET /admin 200 in 104ms (compile: 56ms, render: 48ms)
+ GET / 200 in 27ms (compile: 11ms, render: 16ms)
+ GET /models 200 in 129ms (compile: 60ms, render: 68ms)
+ GET /models/pozzi 200 in 113ms (compile: 59ms, render: 54ms)
+ GET /models/pozzi 200 in 176ms (compile: 52ms, render: 124ms)
+ GET /api/submissions 200 in 43ms (compile: 3ms, render: 39ms)
+ GET /api/metrics/instagram 200 in 43ms (compile: 8ms, render: 35ms)
+ GET /api/models 200 in 50ms (compile: 37ms, render: 14ms)
+ GET /api/metrics/instagram 200 in 6ms (compile: 1847µs, render: 4ms)
+ GET /api/submissions 200 in 6ms (compile: 3ms, render: 3ms)
+ GET /api/models 200 in 9ms (compile: 1941µs, render: 7ms)
+ GET /api/models 200 in 12ms (compile: 3ms, render: 9ms)
+ GET /admin 200 in 73ms (compile: 4ms, render: 69ms)
+ GET /api/metrics/instagram 200 in 8ms (compile: 5ms, render: 3ms)
+ GET /api/submissions 200 in 9ms (compile: 3ms, render: 6ms)
+ GET /api/models 200 in 15ms (compile: 1042µs, render: 14ms)
+ GET /admin 200 in 22ms (compile: 3ms, render: 19ms)
+ ✓ Compiled in 20ms
+ ✓ Compiled in 35ms
+ GET /api/models 200 in 14ms (compile: 4ms, render: 10ms)
+ GET /admin 200 in 181ms (compile: 76ms, render: 105ms)
+ GET /api/metrics/instagram 200 in 10ms (compile: 6ms, render: 3ms)
+ GET /api/submissions 200 in 11ms (compile: 4ms, render: 7ms)
+ GET /api/models 200 in 14ms (compile: 1431µs, render: 13ms)
+ GET /admin 200 in 37ms (compile: 5ms, render: 32ms)
+ GET /api/submissions 200 in 10ms (compile: 4ms, render: 6ms)
+ GET /api/metrics/instagram 200 in 11ms (compile: 6ms, render: 5ms)
+ GET /api/models 200 in 17ms (compile: 1692µs, render: 15ms)
+ GET /api/models 200 in 13ms (compile: 3ms, render: 10ms)
+ GET / 200 in 19ms (compile: 8ms, render: 12ms)
+ GET /api/submissions 200 in 9ms (compile: 4ms, render: 5ms)
+ GET /api/metrics/instagram 200 in 10ms (compile: 3ms, render: 7ms)
+ GET /api/models 200 in 13ms (compile: 1278µs, render: 12ms)
+ GET /api/submissions 200 in 8ms (compile: 861µs, render: 7ms)
+ GET /api/metrics/instagram 200 in 8ms (compile: 4ms, render: 4ms)
+ GET /api/models 200 in 12ms (compile: 3ms, render: 9ms)
+ GET /admin 200 in 42ms (compile: 7ms, render: 35ms)
+ GET /api/submissions 200 in 12ms (compile: 4ms, render: 8ms)
+ GET /api/metrics/instagram 200 in 12ms (compile: 7ms, render: 5ms)
+ GET /api/models 200 in 18ms (compile: 1645µs, render: 16ms)
+ GET /admin 200 in 21ms (compile: 5ms, render: 17ms)
+ GET /admin 200 in 13ms (compile: 1248µs, render: 12ms)
+ ✓ Compiled in 23ms
+ ✓ Compiled in 20ms
+ ✓ Compiled in 10ms
+ GET /admin 200 in 187ms (compile: 131ms, render: 56ms)
+ PATCH /api/models/c6465671-6f4a-43df-b9f6-bc9fa3520b66 200 in 52ms (compile: 37ms, render: 15ms)
+ GET /api/models 200 in 42ms (compile: 27ms, render: 15ms)
+ GET /admin 200 in 27ms (compile: 5ms, render: 22ms)
+ ✓ Compiled in 26ms
+ GET /admin 200 in 62ms (compile: 5ms, render: 57ms)
+ GET /api/submissions 200 in 11ms (compile: 5ms, render: 6ms)
+ GET /api/metrics/instagram 200 in 14ms (compile: 7ms, render: 7ms)
+ GET /api/models 200 in 20ms (compile: 1782µs, render: 18ms)
+ PATCH /api/models/3f12184c-a975-4035-a8ca-05264caf71c7 200 in 16ms (compile: 5ms, render: 11ms)
+ GET /api/models 200 in 10ms (compile: 1559µs, render: 9ms)
+ GET /admin 200 in 38ms (compile: 4ms, render: 33ms)
+ GET /api/metrics/instagram 200 in 12ms (compile: 8ms, render: 4ms)
+ GET /api/submissions 200 in 13ms (compile: 4ms, render: 9ms)
+ GET /api/models 200 in 20ms (compile: 1742µs, render: 18ms)
+ PATCH /api/models/c6465671-6f4a-43df-b9f6-bc9fa3520b66 200 in 26ms (compile: 6ms, render: 20ms)
+ GET /api/models 200 in 11ms (compile: 1851µs, render: 9ms)
+ ✓ Compiled in 25ms
+ ✓ Compiled in 44ms
+ PATCH /api/models/c6465671-6f4a-43df-b9f6-bc9fa3520b66 200 in 21ms (compile: 8ms, render: 13ms)
+ GET /api/models 200 in 18ms (compile: 1302µs, render: 17ms)
+ PATCH /api/models/c6465671-6f4a-43df-b9f6-bc9fa3520b66 200 in 22ms (compile: 6ms, render: 17ms)
+ GET /api/models 200 in 9ms (compile: 1373µs, render: 8ms)
+ PATCH /api/models/c6465671-6f4a-43df-b9f6-bc9fa3520b66 200 in 20ms (compile: 6ms, render: 14ms)
+ GET /api/models 200 in 10ms (compile: 1269µs, render: 8ms)
+ ✓ Compiled in 17ms
+ PATCH /api/models/c6465671-6f4a-43df-b9f6-bc9fa3520b66 200 in 18ms (compile: 6ms, render: 12ms)
+ GET /api/models 200 in 11ms (compile: 1271µs, render: 10ms)
+ ✓ Compiled in 21ms
+ PATCH /api/models/c6465671-6f4a-43df-b9f6-bc9fa3520b66 200 in 21ms (compile: 7ms, render: 14ms)
+ GET /api/models 200 in 12ms (compile: 1897µs, render: 10ms)
+ PATCH /api/models/c6465671-6f4a-43df-b9f6-bc9fa3520b66 200 in 16ms (compile: 4ms, render: 12ms)
+ GET /api/models 200 in 11ms (compile: 1786µs, render: 9ms)
+ ✓ Compiled in 29ms
+ PATCH /api/models/c6465671-6f4a-43df-b9f6-bc9fa3520b66 200 in 17ms (compile: 6ms, render: 11ms)
+ GET /api/models 200 in 10ms (compile: 1223µs, render: 9ms)
+ GET /admin 200 in 136ms (compile: 73ms, render: 63ms)
+ GET /admin 200 in 22ms (compile: 5ms, render: 16ms)
+ GET /admin 200 in 10ms (compile: 1026µs, render: 9ms)
+ GET /admin 200 in 11ms (compile: 1144µs, render: 9ms)
+ GET /models 200 in 124ms (compile: 52ms, render: 72ms)
+ GET /models/pratomo 200 in 136ms (compile: 69ms, render: 66ms)
+ GET /models 200 in 48ms (compile: 5ms, render: 43ms)
+ ✓ Compiled in 46ms
+ GET /models 200 in 192ms (compile: 6ms, render: 186ms)
+ GET /models/herdafa 200 in 109ms (compile: 58ms, render: 51ms)
+ GET /models 200 in 53ms (compile: 4ms, render: 49ms)
+ GET /models/pratomo 200 in 34ms (compile: 7ms, render: 27ms)
+ GET /models 200 in 124ms (compile: 3ms, render: 122ms)
+ GET /models/pratomo 200 in 32ms (compile: 8ms, render: 24ms)
+ GET /models 200 in 63ms (compile: 11ms, render: 52ms)
+ GET /models/dileo 200 in 27ms (compile: 5ms, render: 22ms)
+ GET /models 200 in 54ms (compile: 3ms, render: 52ms)
+ GET /models/dileo 200 in 33ms (compile: 6ms, render: 27ms)
+ GET /models 200 in 42ms (compile: 3ms, render: 38ms)
+ GET /models 200 in 118ms (compile: 1115µs, render: 117ms)
+ GET /models 200 in 126ms (compile: 1913µs, render: 124ms)
+ GET /become-a-model 200 in 225ms (compile: 202ms, render: 23ms)
+ GET /models 200 in 50ms (compile: 3ms, render: 46ms)
+ GET /models 200 in 132ms (compile: 4ms, render: 128ms)
+ GET /models 200 in 95ms (compile: 3ms, render: 92ms)
+ GET /models/herdafa 200 in 145ms (compile: 75ms, render: 70ms)
+ GET /models 200 in 49ms (compile: 6ms, render: 42ms)
+ GET /models 200 in 125ms (compile: 6ms, render: 119ms)
+ GET /models 200 in 159ms (compile: 67ms, render: 92ms)
+ GET /models 200 in 159ms (compile: 64ms, render: 95ms)
+ GET /models 200 in 134ms (compile: 61ms, render: 74ms)
+ GET /models?division=men 200 in 52ms (compile: 4ms, render: 49ms)
+ GET /models/dileo 200 in 39ms (compile: 7ms, render: 32ms)
+ GET /models 200 in 43ms (compile: 4ms, render: 39ms)
+ GET /models?division=women 200 in 24ms (compile: 1747µs, render: 22ms)
+ GET /models?division=men 200 in 48ms (compile: 2ms, render: 46ms)
+ GET /models/pozzi 200 in 26ms (compile: 6ms, render: 21ms)
+ ✓ Compiled in 122ms
+ GET /models/pozzi 200 in 45ms (compile: 6ms, render: 39ms)
+ GET /models/pozzi 200 in 134ms (compile: 8ms, render: 125ms)
+ GET /models/pozzi 200 in 82ms (compile: 6ms, render: 76ms)
+ GET /models 200 in 155ms (compile: 63ms, render: 92ms)
+ GET /models/dileo 200 in 31ms (compile: 5ms, render: 26ms)
+ GET /models 200 in 50ms (compile: 3ms, render: 47ms)
+ GET /models?division=women 200 in 23ms (compile: 1582µs, render: 22ms)
+ GET /models?division=men 200 in 41ms (compile: 1704µs, render: 39ms)
+ GET /models?division=men 200 in 28ms (compile: 1228µs, render: 27ms)
+ ✓ Compiled in 32ms
+ GET /models/pozzi 200 in 115ms (compile: 65ms, render: 50ms)
+ GET /models/pozzi 200 in 122ms (compile: 65ms, render: 56ms)
+ GET /models/pozzi 200 in 137ms (compile: 59ms, render: 78ms)
+ GET /models/pozzi 200 in 19ms (compile: 1217µs, render: 17ms)
+ GET /models/pozzi 200 in 125ms (compile: 62ms, render: 62ms)
+ ✓ Compiled in 30ms
+ ✓ Compiled in 23ms
+ GET /models 200 in 143ms (compile: 69ms, render: 74ms)
+ GET /models/pratomo 200 in 121ms (compile: 60ms, render: 61ms)
+ GET /models/pratomo 200 in 102ms (compile: 7ms, render: 95ms)
+ ✓ Compiled in 23ms
+ GET /models/pratomo 200 in 150ms (compile: 80ms, render: 70ms)
+ GET /models/pratomo 200 in 173ms (compile: 99ms, render: 74ms)
+ ✓ Compiled in 20ms
+ GET /models/pratomo 200 in 153ms (compile: 68ms, render: 85ms)
+ GET /models/pratomo 200 in 115ms (compile: 66ms, render: 49ms)
+ ✓ Compiled in 30ms
+ GET /models 200 in 57ms (compile: 5ms, render: 52ms)
+ GET /models/pratomo 200 in 135ms (compile: 80ms, render: 55ms)
+ GET /models/pratomo 200 in 114ms (compile: 11ms, render: 103ms)
+ GET /models/pratomo 200 in 134ms (compile: 66ms, render: 68ms)
+ GET /models/pratomo 200 in 109ms (compile: 4ms, render: 105ms)
+ GET /models/pratomo 200 in 114ms (compile: 57ms, render: 56ms)
+ GET /models 200 in 70ms (compile: 13ms, render: 57ms)
+ GET /models/dileo 200 in 28ms (compile: 5ms, render: 23ms)
+ GET /models 200 in 55ms (compile: 4ms, render: 51ms)
+ GET /become-a-model 200 in 20ms (compile: 6ms, render: 13ms)
+ GET /models 200 in 45ms (compile: 2ms, render: 43ms)
+ GET /models/dileo 200 in 32ms (compile: 3ms, render: 28ms)
+ GET /models/dileo 200 in 105ms (compile: 51ms, render: 55ms)
+ GET /models/dileo 200 in 119ms (compile: 60ms, render: 59ms)
+ GET /models 200 in 50ms (compile: 2ms, render: 47ms)
+ GET /models/pratomo 200 in 29ms (compile: 6ms, render: 23ms)
+ GET /models 200 in 46ms (compile: 4ms, render: 42ms)
+ GET /models?division=men 200 in 36ms (compile: 2ms, render: 34ms)
+ GET /models/pozzi 200 in 23ms (compile: 4ms, render: 19ms)
+ GET /become-a-model 200 in 17ms (compile: 4ms, render: 13ms)
+ GET /admin 200 in 68ms (compile: 4ms, render: 64ms)
+ GET /api/submissions 200 in 11ms (compile: 5ms, render: 6ms)
+ GET /api/metrics/instagram 200 in 11ms (compile: 7ms, render: 4ms)
+ GET /api/models 200 in 18ms (compile: 1728µs, render: 17ms)
+Error: Route "/api/models/[id]/images" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at PATCH (src/app/api/models/[id]/images/route.ts:51:12)
+  49 |
+  50 |   const model = await reorderImages(
+> 51 |     params.id,
+     |            ^
+  52 |     payload.images.map((image: any) => ({
+  53 |       id: image.id,
+  54 |       order: Number(image.order),
+Error: Model not found
+    at reorderImages (src/lib/modelStore.ts:300:21)
+    at async PATCH (src/app/api/models/[id]/images/route.ts:50:17)
+  298 |   const store = await readStore();
+  299 |   const model = store.models.find((entry) => entry.id === modelId);
+> 300 |   if (!model) throw new Error("Model not found");
+      |                     ^
+  301 |
+  302 |   const orderMap = new Map(updates.map((item) => [item.id, item.order]));
+  303 |   model.images = model.images.map((image) =>
+ PATCH /api/models/c6465671-6f4a-43df-b9f6-bc9fa3520b66/images 500 in 670ms (compile: 561ms, render: 109ms)
+ GET /api/models 200 in 11ms (compile: 2ms, render: 9ms)
+ GET /models 200 in 55ms (compile: 5ms, render: 50ms)
+ GET /models/dileo 200 in 55ms (compile: 17ms, render: 38ms)
+ GET /models 200 in 68ms (compile: 3ms, render: 65ms)
+ GET /models/herdafa 200 in 44ms (compile: 5ms, render: 40ms)
+ GET /models 200 in 55ms (compile: 3ms, render: 52ms)
+ GET /models?division=non+binary 200 in 24ms (compile: 1381µs, render: 22ms)
+ GET /models 200 in 50ms (compile: 1872µs, render: 48ms)
+ GET /models?division=non+binary 200 in 23ms (compile: 1337µs, render: 21ms)
+ GET /models 200 in 72ms (compile: 1321µs, render: 71ms)
+ GET /models?division=non+binary 200 in 23ms (compile: 1968µs, render: 21ms)
+ GET /models 200 in 46ms (compile: 1329µs, render: 45ms)
+ GET /models?division=boys 200 in 31ms (compile: 1573µs, render: 30ms)
+ GET /models/rodrikco 200 in 27ms (compile: 5ms, render: 22ms)
+ GET /become-a-model 200 in 25ms (compile: 7ms, render: 18ms)
+ ✓ Compiled in 27ms
+ ✓ Compiled in 17ms
+ ✓ Compiled in 19ms
+ ✓ Compiled in 14ms
+ ✓ Compiled in 15ms
+ ✓ Compiled in 24ms
+ ✓ Compiled in 19ms
+ ✓ Compiled in 33ms
+ GET / 200 in 149ms (compile: 96ms, render: 53ms)
+ GET /models 200 in 118ms (compile: 4ms, render: 114ms)
+ GET /become-a-model 200 in 118ms (compile: 72ms, render: 45ms)
+ ⨯ ./lux-agency/src/lib/modelOptions.ts:123:1
+Module not found: Can't resolve './phonePrefixes'
+[0m [90m 121 |[39m ][33m;[39m
+ [90m 122 |[39m
+[31m[1m>[22m[39m[90m 123 |[39m [36mexport[39m { phonePrefixOptions } [36mfrom[39m [32m"./phonePrefixes"[39m[33m;[39m
+ [90m     |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 124 |[39m
+ [90m 125 |[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./lux-agency/src/lib/modelOptions.ts [Client Component Browser]
+    ./lux-agency/src/app/admin/page.tsx [Client Component Browser]
+    ./lux-agency/src/app/admin/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lux-agency/src/lib/modelOptions.ts [Client Component SSR]
+    ./lux-agency/src/app/admin/page.tsx [Client Component SSR]
+    ./lux-agency/src/app/admin/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./lux-agency/src/lib/modelOptions.ts:123:1
+Module not found: Can't resolve './phonePrefixes'
+[0m [90m 121 |[39m ][33m;[39m
+ [90m 122 |[39m
+[31m[1m>[22m[39m[90m 123 |[39m [36mexport[39m { phonePrefixOptions } [36mfrom[39m [32m"./phonePrefixes"[39m[33m;[39m
+ [90m     |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 124 |[39m
+ [90m 125 |[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./lux-agency/src/lib/modelOptions.ts [Client Component Browser]
+    ./lux-agency/src/app/admin/page.tsx [Client Component Browser]
+    ./lux-agency/src/app/admin/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lux-agency/src/lib/modelOptions.ts [Client Component SSR]
+    ./lux-agency/src/app/admin/page.tsx [Client Component SSR]
+    ./lux-agency/src/app/admin/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./lux-agency/src/lib/modelOptions.ts:123:1
+Module not found: Can't resolve './phonePrefixes'
+[0m [90m 121 |[39m ][33m;[39m
+ [90m 122 |[39m
+[31m[1m>[22m[39m[90m 123 |[39m [36mexport[39m { phonePrefixOptions } [36mfrom[39m [32m"./phonePrefixes"[39m[33m;[39m
+ [90m     |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 124 |[39m
+ [90m 125 |[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./lux-agency/src/lib/modelOptions.ts [Client Component Browser]
+    ./lux-agency/src/app/admin/page.tsx [Client Component Browser]
+    ./lux-agency/src/app/admin/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lux-agency/src/lib/modelOptions.ts [Client Component SSR]
+    ./lux-agency/src/app/admin/page.tsx [Client Component SSR]
+    ./lux-agency/src/app/admin/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./lux-agency/src/lib/modelOptions.ts:123:1
+Module not found: Can't resolve './phonePrefixes'
+[0m [90m 121 |[39m ][33m;[39m
+ [90m 122 |[39m
+[31m[1m>[22m[39m[90m 123 |[39m [36mexport[39m { phonePrefixOptions } [36mfrom[39m [32m"./phonePrefixes"[39m[33m;[39m
+ [90m     |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 124 |[39m
+ [90m 125 |[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./lux-agency/src/lib/modelOptions.ts [Client Component Browser]
+    ./lux-agency/src/app/admin/page.tsx [Client Component Browser]
+    ./lux-agency/src/app/admin/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lux-agency/src/lib/modelOptions.ts [Client Component SSR]
+    ./lux-agency/src/app/admin/page.tsx [Client Component SSR]
+    ./lux-agency/src/app/admin/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./lux-agency/src/lib/modelOptions.ts:123:1
+Module not found: Can't resolve './phonePrefixes'
+[0m [90m 121 |[39m ][33m;[39m
+ [90m 122 |[39m
+[31m[1m>[22m[39m[90m 123 |[39m [36mexport[39m { phonePrefixOptions } [36mfrom[39m [32m"./phonePrefixes"[39m[33m;[39m
+ [90m     |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 124 |[39m
+ [90m 125 |[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./lux-agency/src/lib/modelOptions.ts [Client Component Browser]
+    ./lux-agency/src/app/admin/page.tsx [Client Component Browser]
+    ./lux-agency/src/app/admin/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lux-agency/src/lib/modelOptions.ts [Client Component SSR]
+    ./lux-agency/src/app/admin/page.tsx [Client Component SSR]
+    ./lux-agency/src/app/admin/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./lux-agency/src/lib/modelOptions.ts:123:1
+Module not found: Can't resolve './phonePrefixes'
+[0m [90m 121 |[39m ][33m;[39m
+ [90m 122 |[39m
+[31m[1m>[22m[39m[90m 123 |[39m [36mexport[39m { phonePrefixOptions } [36mfrom[39m [32m"./phonePrefixes"[39m[33m;[39m
+ [90m     |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 124 |[39m
+ [90m 125 |[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./lux-agency/src/lib/modelOptions.ts [Client Component Browser]
+    ./lux-agency/src/app/admin/page.tsx [Client Component Browser]
+    ./lux-agency/src/app/admin/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lux-agency/src/lib/modelOptions.ts [Client Component SSR]
+    ./lux-agency/src/app/admin/page.tsx [Client Component SSR]
+    ./lux-agency/src/app/admin/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./lux-agency/src/lib/modelOptions.ts:123:1
+Module not found: Can't resolve './phonePrefixes'
+[0m [90m 121 |[39m ][33m;[39m
+ [90m 122 |[39m
+[31m[1m>[22m[39m[90m 123 |[39m [36mexport[39m { phonePrefixOptions } [36mfrom[39m [32m"./phonePrefixes"[39m[33m;[39m
+ [90m     |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 124 |[39m
+ [90m 125 |[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./lux-agency/src/lib/modelOptions.ts [Client Component Browser]
+    ./lux-agency/src/app/admin/page.tsx [Client Component Browser]
+    ./lux-agency/src/app/admin/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lux-agency/src/lib/modelOptions.ts [Client Component SSR]
+    ./lux-agency/src/app/admin/page.tsx [Client Component SSR]
+    ./lux-agency/src/app/admin/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./lux-agency/src/lib/modelOptions.ts:123:1
+Module not found: Can't resolve './phonePrefixes'
+[0m [90m 121 |[39m ][33m;[39m
+ [90m 122 |[39m
+[31m[1m>[22m[39m[90m 123 |[39m [36mexport[39m { phonePrefixOptions } [36mfrom[39m [32m"./phonePrefixes"[39m[33m;[39m
+ [90m     |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 124 |[39m
+ [90m 125 |[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./lux-agency/src/lib/modelOptions.ts [Client Component Browser]
+    ./lux-agency/src/app/admin/page.tsx [Client Component Browser]
+    ./lux-agency/src/app/admin/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lux-agency/src/lib/modelOptions.ts [Client Component SSR]
+    ./lux-agency/src/app/admin/page.tsx [Client Component SSR]
+    ./lux-agency/src/app/admin/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./lux-agency/src/lib/modelOptions.ts:123:1
+Module not found: Can't resolve './phonePrefixes'
+[0m [90m 121 |[39m ][33m;[39m
+ [90m 122 |[39m
+[31m[1m>[22m[39m[90m 123 |[39m [36mexport[39m { phonePrefixOptions } [36mfrom[39m [32m"./phonePrefixes"[39m[33m;[39m
+ [90m     |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 124 |[39m
+ [90m 125 |[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./lux-agency/src/lib/modelOptions.ts [Client Component Browser]
+    ./lux-agency/src/app/admin/page.tsx [Client Component Browser]
+    ./lux-agency/src/app/admin/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lux-agency/src/lib/modelOptions.ts [Client Component SSR]
+    ./lux-agency/src/app/admin/page.tsx [Client Component SSR]
+    ./lux-agency/src/app/admin/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./lux-agency/src/lib/modelOptions.ts:123:1
+Module not found: Can't resolve './phonePrefixes'
+[0m [90m 121 |[39m ][33m;[39m
+ [90m 122 |[39m
+[31m[1m>[22m[39m[90m 123 |[39m [36mexport[39m { phonePrefixOptions } [36mfrom[39m [32m"./phonePrefixes"[39m[33m;[39m
+ [90m     |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 124 |[39m
+ [90m 125 |[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./lux-agency/src/lib/modelOptions.ts [Client Component Browser]
+    ./lux-agency/src/app/admin/page.tsx [Client Component Browser]
+    ./lux-agency/src/app/admin/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lux-agency/src/lib/modelOptions.ts [Client Component SSR]
+    ./lux-agency/src/app/admin/page.tsx [Client Component SSR]
+    ./lux-agency/src/app/admin/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./lux-agency/src/lib/modelOptions.ts:123:1
+Module not found: Can't resolve './phonePrefixes'
+[0m [90m 121 |[39m ][33m;[39m
+ [90m 122 |[39m
+[31m[1m>[22m[39m[90m 123 |[39m [36mexport[39m { phonePrefixOptions } [36mfrom[39m [32m"./phonePrefixes"[39m[33m;[39m
+ [90m     |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 124 |[39m
+ [90m 125 |[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./lux-agency/src/lib/modelOptions.ts [Client Component Browser]
+    ./lux-agency/src/app/admin/page.tsx [Client Component Browser]
+    ./lux-agency/src/app/admin/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lux-agency/src/lib/modelOptions.ts [Client Component SSR]
+    ./lux-agency/src/app/admin/page.tsx [Client Component SSR]
+    ./lux-agency/src/app/admin/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./lux-agency/src/lib/modelOptions.ts:123:1
+Module not found: Can't resolve './phonePrefixes'
+[0m [90m 121 |[39m ][33m;[39m
+ [90m 122 |[39m
+[31m[1m>[22m[39m[90m 123 |[39m [36mexport[39m { phonePrefixOptions } [36mfrom[39m [32m"./phonePrefixes"[39m[33m;[39m
+ [90m     |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 124 |[39m
+ [90m 125 |[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./lux-agency/src/lib/modelOptions.ts [Client Component Browser]
+    ./lux-agency/src/app/admin/page.tsx [Client Component Browser]
+    ./lux-agency/src/app/admin/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lux-agency/src/lib/modelOptions.ts [Client Component SSR]
+    ./lux-agency/src/app/admin/page.tsx [Client Component SSR]
+    ./lux-agency/src/app/admin/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./lux-agency/src/lib/modelOptions.ts:123:1
+Module not found: Can't resolve './phonePrefixes'
+[0m [90m 121 |[39m ][33m;[39m
+ [90m 122 |[39m
+[31m[1m>[22m[39m[90m 123 |[39m [36mexport[39m { phonePrefixOptions } [36mfrom[39m [32m"./phonePrefixes"[39m[33m;[39m
+ [90m     |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 124 |[39m
+ [90m 125 |[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./lux-agency/src/lib/modelOptions.ts [Client Component Browser]
+    ./lux-agency/src/app/admin/page.tsx [Client Component Browser]
+    ./lux-agency/src/app/admin/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lux-agency/src/lib/modelOptions.ts [Client Component SSR]
+    ./lux-agency/src/app/admin/page.tsx [Client Component SSR]
+    ./lux-agency/src/app/admin/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./lux-agency/src/lib/modelOptions.ts:123:1
+Module not found: Can't resolve './phonePrefixes'
+[0m [90m 121 |[39m ][33m;[39m
+ [90m 122 |[39m
+[31m[1m>[22m[39m[90m 123 |[39m [36mexport[39m { phonePrefixOptions } [36mfrom[39m [32m"./phonePrefixes"[39m[33m;[39m
+ [90m     |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 124 |[39m
+ [90m 125 |[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./lux-agency/src/lib/modelOptions.ts [Client Component Browser]
+    ./lux-agency/src/app/admin/page.tsx [Client Component Browser]
+    ./lux-agency/src/app/admin/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lux-agency/src/lib/modelOptions.ts [Client Component SSR]
+    ./lux-agency/src/app/admin/page.tsx [Client Component SSR]
+    ./lux-agency/src/app/admin/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./lux-agency/src/lib/modelOptions.ts:123:1
+Module not found: Can't resolve './phonePrefixes'
+[0m [90m 121 |[39m ][33m;[39m
+ [90m 122 |[39m
+[31m[1m>[22m[39m[90m 123 |[39m [36mexport[39m { phonePrefixOptions } [36mfrom[39m [32m"./phonePrefixes"[39m[33m;[39m
+ [90m     |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 124 |[39m
+ [90m 125 |[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./lux-agency/src/lib/modelOptions.ts [Client Component Browser]
+    ./lux-agency/src/app/admin/page.tsx [Client Component Browser]
+    ./lux-agency/src/app/admin/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lux-agency/src/lib/modelOptions.ts [Client Component SSR]
+    ./lux-agency/src/app/admin/page.tsx [Client Component SSR]
+    ./lux-agency/src/app/admin/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./lux-agency/src/lib/modelOptions.ts:123:1
+Module not found: Can't resolve './phonePrefixes'
+[0m [90m 121 |[39m ][33m;[39m
+ [90m 122 |[39m
+[31m[1m>[22m[39m[90m 123 |[39m [36mexport[39m { phonePrefixOptions } [36mfrom[39m [32m"./phonePrefixes"[39m[33m;[39m
+ [90m     |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 124 |[39m
+ [90m 125 |[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./lux-agency/src/lib/modelOptions.ts [Client Component Browser]
+    ./lux-agency/src/app/admin/page.tsx [Client Component Browser]
+    ./lux-agency/src/app/admin/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lux-agency/src/lib/modelOptions.ts [Client Component SSR]
+    ./lux-agency/src/app/admin/page.tsx [Client Component SSR]
+    ./lux-agency/src/app/admin/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./lux-agency/src/lib/modelOptions.ts:123:1
+Module not found: Can't resolve './phonePrefixes'
+[0m [90m 121 |[39m ][33m;[39m
+ [90m 122 |[39m
+[31m[1m>[22m[39m[90m 123 |[39m [36mexport[39m { phonePrefixOptions } [36mfrom[39m [32m"./phonePrefixes"[39m[33m;[39m
+ [90m     |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 124 |[39m
+ [90m 125 |[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./lux-agency/src/lib/modelOptions.ts [Client Component Browser]
+    ./lux-agency/src/app/become-a-model/page.tsx [Client Component Browser]
+    ./lux-agency/src/app/become-a-model/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lux-agency/src/lib/modelOptions.ts [Client Component SSR]
+    ./lux-agency/src/app/become-a-model/page.tsx [Client Component SSR]
+    ./lux-agency/src/app/become-a-model/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./lux-agency/src/lib/modelOptions.ts:123:1
+Module not found: Can't resolve './phonePrefixes'
+[0m [90m 121 |[39m ][33m;[39m
+ [90m 122 |[39m
+[31m[1m>[22m[39m[90m 123 |[39m [36mexport[39m { phonePrefixOptions } [36mfrom[39m [32m"./phonePrefixes"[39m[33m;[39m
+ [90m     |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 124 |[39m
+ [90m 125 |[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./lux-agency/src/lib/modelOptions.ts [Client Component Browser]
+    ./lux-agency/src/app/become-a-model/page.tsx [Client Component Browser]
+    ./lux-agency/src/app/become-a-model/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lux-agency/src/lib/modelOptions.ts [Client Component SSR]
+    ./lux-agency/src/app/become-a-model/page.tsx [Client Component SSR]
+    ./lux-agency/src/app/become-a-model/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./lux-agency/src/lib/modelOptions.ts:123:1
+Module not found: Can't resolve './phonePrefixes'
+[0m [90m 121 |[39m ][33m;[39m
+ [90m 122 |[39m
+[31m[1m>[22m[39m[90m 123 |[39m [36mexport[39m { phonePrefixOptions } [36mfrom[39m [32m"./phonePrefixes"[39m[33m;[39m
+ [90m     |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 124 |[39m
+ [90m 125 |[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./lux-agency/src/lib/modelOptions.ts [Client Component Browser]
+    ./lux-agency/src/app/become-a-model/page.tsx [Client Component Browser]
+    ./lux-agency/src/app/become-a-model/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lux-agency/src/lib/modelOptions.ts [Client Component SSR]
+    ./lux-agency/src/app/become-a-model/page.tsx [Client Component SSR]
+    ./lux-agency/src/app/become-a-model/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./lux-agency/src/lib/modelOptions.ts:123:1
+Module not found: Can't resolve './phonePrefixes'
+[0m [90m 121 |[39m ][33m;[39m
+ [90m 122 |[39m
+[31m[1m>[22m[39m[90m 123 |[39m [36mexport[39m { phonePrefixOptions } [36mfrom[39m [32m"./phonePrefixes"[39m[33m;[39m
+ [90m     |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 124 |[39m
+ [90m 125 |[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./lux-agency/src/lib/modelOptions.ts [Client Component Browser]
+    ./lux-agency/src/app/become-a-model/page.tsx [Client Component Browser]
+    ./lux-agency/src/app/become-a-model/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lux-agency/src/lib/modelOptions.ts [Client Component SSR]
+    ./lux-agency/src/app/become-a-model/page.tsx [Client Component SSR]
+    ./lux-agency/src/app/become-a-model/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./lux-agency/src/lib/modelOptions.ts:123:1
+Module not found: Can't resolve './phonePrefixes'
+[0m [90m 121 |[39m ][33m;[39m
+ [90m 122 |[39m
+[31m[1m>[22m[39m[90m 123 |[39m [36mexport[39m { phonePrefixOptions } [36mfrom[39m [32m"./phonePrefixes"[39m[33m;[39m
+ [90m     |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 124 |[39m
+ [90m 125 |[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./lux-agency/src/lib/modelOptions.ts [Client Component Browser]
+    ./lux-agency/src/app/become-a-model/page.tsx [Client Component Browser]
+    ./lux-agency/src/app/become-a-model/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lux-agency/src/lib/modelOptions.ts [Client Component SSR]
+    ./lux-agency/src/app/become-a-model/page.tsx [Client Component SSR]
+    ./lux-agency/src/app/become-a-model/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./lux-agency/src/lib/modelOptions.ts:123:1
+Module not found: Can't resolve './phonePrefixes'
+[0m [90m 121 |[39m ][33m;[39m
+ [90m 122 |[39m
+[31m[1m>[22m[39m[90m 123 |[39m [36mexport[39m { phonePrefixOptions } [36mfrom[39m [32m"./phonePrefixes"[39m[33m;[39m
+ [90m     |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 124 |[39m
+ [90m 125 |[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./lux-agency/src/lib/modelOptions.ts [Client Component Browser]
+    ./lux-agency/src/app/become-a-model/page.tsx [Client Component Browser]
+    ./lux-agency/src/app/become-a-model/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lux-agency/src/lib/modelOptions.ts [Client Component SSR]
+    ./lux-agency/src/app/become-a-model/page.tsx [Client Component SSR]
+    ./lux-agency/src/app/become-a-model/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./lux-agency/src/lib/modelOptions.ts:123:1
+Module not found: Can't resolve './phonePrefixes'
+[0m [90m 121 |[39m ][33m;[39m
+ [90m 122 |[39m
+[31m[1m>[22m[39m[90m 123 |[39m [36mexport[39m { phonePrefixOptions } [36mfrom[39m [32m"./phonePrefixes"[39m[33m;[39m
+ [90m     |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 124 |[39m
+ [90m 125 |[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./lux-agency/src/lib/modelOptions.ts [Client Component Browser]
+    ./lux-agency/src/app/become-a-model/page.tsx [Client Component Browser]
+    ./lux-agency/src/app/become-a-model/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lux-agency/src/lib/modelOptions.ts [Client Component SSR]
+    ./lux-agency/src/app/become-a-model/page.tsx [Client Component SSR]
+    ./lux-agency/src/app/become-a-model/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./lux-agency/src/lib/modelOptions.ts:123:1
+Module not found: Can't resolve './phonePrefixes'
+[0m [90m 121 |[39m ][33m;[39m
+ [90m 122 |[39m
+[31m[1m>[22m[39m[90m 123 |[39m [36mexport[39m { phonePrefixOptions } [36mfrom[39m [32m"./phonePrefixes"[39m[33m;[39m
+ [90m     |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 124 |[39m
+ [90m 125 |[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./lux-agency/src/lib/modelOptions.ts [Client Component Browser]
+    ./lux-agency/src/app/become-a-model/page.tsx [Client Component Browser]
+    ./lux-agency/src/app/become-a-model/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lux-agency/src/lib/modelOptions.ts [Client Component SSR]
+    ./lux-agency/src/app/become-a-model/page.tsx [Client Component SSR]
+    ./lux-agency/src/app/become-a-model/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./lux-agency/src/lib/modelOptions.ts:123:1
+Module not found: Can't resolve './phonePrefixes'
+[0m [90m 121 |[39m ][33m;[39m
+ [90m 122 |[39m
+[31m[1m>[22m[39m[90m 123 |[39m [36mexport[39m { phonePrefixOptions } [36mfrom[39m [32m"./phonePrefixes"[39m[33m;[39m
+ [90m     |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 124 |[39m
+ [90m 125 |[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./lux-agency/src/lib/modelOptions.ts [Client Component Browser]
+    ./lux-agency/src/app/become-a-model/page.tsx [Client Component Browser]
+    ./lux-agency/src/app/become-a-model/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lux-agency/src/lib/modelOptions.ts [Client Component SSR]
+    ./lux-agency/src/app/become-a-model/page.tsx [Client Component SSR]
+    ./lux-agency/src/app/become-a-model/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./lux-agency/src/lib/modelOptions.ts:123:1
+Module not found: Can't resolve './phonePrefixes'
+[0m [90m 121 |[39m ][33m;[39m
+ [90m 122 |[39m
+[31m[1m>[22m[39m[90m 123 |[39m [36mexport[39m { phonePrefixOptions } [36mfrom[39m [32m"./phonePrefixes"[39m[33m;[39m
+ [90m     |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 124 |[39m
+ [90m 125 |[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./lux-agency/src/lib/modelOptions.ts [Client Component Browser]
+    ./lux-agency/src/app/become-a-model/page.tsx [Client Component Browser]
+    ./lux-agency/src/app/become-a-model/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lux-agency/src/lib/modelOptions.ts [Client Component SSR]
+    ./lux-agency/src/app/become-a-model/page.tsx [Client Component SSR]
+    ./lux-agency/src/app/become-a-model/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./lux-agency/src/lib/modelOptions.ts:123:1
+Module not found: Can't resolve './phonePrefixes'
+[0m [90m 121 |[39m ][33m;[39m
+ [90m 122 |[39m
+[31m[1m>[22m[39m[90m 123 |[39m [36mexport[39m { phonePrefixOptions } [36mfrom[39m [32m"./phonePrefixes"[39m[33m;[39m
+ [90m     |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 124 |[39m
+ [90m 125 |[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./lux-agency/src/lib/modelOptions.ts [Client Component Browser]
+    ./lux-agency/src/app/become-a-model/page.tsx [Client Component Browser]
+    ./lux-agency/src/app/become-a-model/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lux-agency/src/lib/modelOptions.ts [Client Component SSR]
+    ./lux-agency/src/app/become-a-model/page.tsx [Client Component SSR]
+    ./lux-agency/src/app/become-a-model/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./lux-agency/src/lib/modelOptions.ts:123:1
+Module not found: Can't resolve './phonePrefixes'
+[0m [90m 121 |[39m ][33m;[39m
+ [90m 122 |[39m
+[31m[1m>[22m[39m[90m 123 |[39m [36mexport[39m { phonePrefixOptions } [36mfrom[39m [32m"./phonePrefixes"[39m[33m;[39m
+ [90m     |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 124 |[39m
+ [90m 125 |[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./lux-agency/src/lib/modelOptions.ts [Client Component Browser]
+    ./lux-agency/src/app/become-a-model/page.tsx [Client Component Browser]
+    ./lux-agency/src/app/become-a-model/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lux-agency/src/lib/modelOptions.ts [Client Component SSR]
+    ./lux-agency/src/app/become-a-model/page.tsx [Client Component SSR]
+    ./lux-agency/src/app/become-a-model/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ✓ Compiled in 78ms
+ ✓ Compiled in 27ms
+ GET /become-a-model 200 in 144ms (compile: 92ms, render: 52ms)
+ GET /become-a-model 200 in 11ms (compile: 1825µs, render: 9ms)
+ ✓ Compiled in 17ms
+ ✓ Compiled in 24ms
+ ✓ Compiled in 21ms
+ ✓ Compiled in 39ms
+ ✓ Compiled in 19ms
+ ✓ Compiled in 19ms
+ ✓ Compiled in 20ms
+ GET /become-a-model 200 in 18ms (compile: 4ms, render: 15ms)
+ GET /become-a-model 200 in 14ms (compile: 1359µs, render: 13ms)
+ ✓ Compiled in 16ms
+ ✓ Compiled in 21ms
+ ✓ Compiled in 45ms
+ ✓ Compiled in 36ms
+ ✓ Compiled in 52ms
+ ✓ Compiled in 21ms
+ ✓ Compiled in 26ms
+ ✓ Compiled in 31ms
+ ✓ Compiled in 56ms
+ ✓ Compiled in 29ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ✓ Compiled in 21ms
+ GET /become-a-model 200 in 254ms (compile: 101ms, render: 152ms)
+ ✓ Compiled in 25ms
+ GET /become-a-model 200 in 20ms (compile: 3ms, render: 16ms)
+ ✓ Compiled in 22ms
+ ✓ Compiled in 17ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ✓ Compiled in 16ms
+ GET /become-a-model 200 in 228ms (compile: 90ms, render: 138ms)
+ ✓ Compiled in 18ms
+ ✓ Compiled in 22ms
+ ✓ Compiled in 19ms
+ ✓ Compiled in 18ms
+ ✓ Compiled in 17ms
+ ✓ Compiled in 48ms
+ ✓ Compiled in 39ms
+ GET /become-a-model 200 in 192ms (compile: 75ms, render: 118ms)
+ ✓ Compiled in 32ms
+ ✓ Compiled in 37ms
+ ✓ Compiled in 41ms
+ ✓ Compiled in 48ms
+ ✓ Compiled in 29ms
+ ✓ Compiled in 18ms
+ GET /models 200 in 309ms (compile: 89ms, render: 220ms)
+ GET /models/herdafa 200 in 104ms (compile: 59ms, render: 45ms)
+ GET /models 200 in 51ms (compile: 3ms, render: 48ms)
+ GET /models/americo-cacciapuoti 200 in 29ms (compile: 5ms, render: 24ms)
+ GET /models 200 in 66ms (compile: 6ms, render: 60ms)
+ GET /models?division=boys 200 in 25ms (compile: 1129µs, render: 24ms)
+ GET /models?division=men 200 in 35ms (compile: 1350µs, render: 33ms)
+ GET /models/battarra 200 in 30ms (compile: 4ms, render: 26ms)
+ GET /become-a-model 200 in 117ms (compile: 73ms, render: 44ms)
+ GET /become-a-model 200 in 33ms (compile: 8ms, render: 24ms)
+ ✓ Compiled in 30ms
+ ✓ Compiled in 23ms
+ ✓ Compiled in 17ms
+ ✓ Compiled in 37ms
+ GET /models 200 in 116ms (compile: 7ms, render: 110ms)
+ ✓ Compiled in 19ms
+ GET /models?division=women 200 in 39ms (compile: 4ms, render: 35ms)
+ GET /models?division=men 200 in 42ms (compile: 2ms, render: 39ms)
+ GET /models/dileo 200 in 34ms (compile: 6ms, render: 28ms)
+ GET /models 200 in 63ms (compile: 5ms, render: 57ms)
+ GET /models/pratomo 200 in 44ms (compile: 5ms, render: 38ms)
+ GET /contact 200 in 285ms (compile: 249ms, render: 35ms)
+ GET /become-a-model 200 in 108ms (compile: 68ms, render: 39ms)
+ POST /api/submissions 200 in 61ms (compile: 39ms, render: 22ms)
+ GET /become-a-model 200 in 106ms (compile: 3ms, render: 103ms)
+ GET /admin 200 in 153ms (compile: 71ms, render: 82ms)
+ GET /api/submissions 200 in 42ms (compile: 2ms, render: 40ms)
+ GET /api/metrics/instagram 200 in 43ms (compile: 6ms, render: 37ms)
+ GET /api/models 200 in 50ms (compile: 36ms, render: 14ms)
+Error: Route "/api/models/[id]/images" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at PATCH (src/app/api/models/[id]/images/route.ts:51:12)
+  49 |
+  50 |   const model = await reorderImages(
+> 51 |     params.id,
+     |            ^
+  52 |     payload.images.map((image: any) => ({
+  53 |       id: image.id,
+  54 |       order: Number(image.order),
+Error: Model not found
+    at reorderImages (src/lib/modelStore.ts:304:21)
+    at async PATCH (src/app/api/models/[id]/images/route.ts:50:17)
+  302 |   const store = await readStore();
+  303 |   const model = store.models.find((entry) => entry.id === modelId);
+> 304 |   if (!model) throw new Error("Model not found");
+      |                     ^
+  305 |
+  306 |   const orderMap = new Map(updates.map((item) => [item.id, item.order]));
+  307 |   model.images = model.images.map((image) =>
+ PATCH /api/models/eb1042c0-dcf9-4e0b-836b-44a9c8aea983/images 500 in 166ms (compile: 41ms, render: 125ms)
+ GET /api/models 200 in 14ms (compile: 2ms, render: 12ms)
+Error: Route "/api/models/[id]/images" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at PATCH (src/app/api/models/[id]/images/route.ts:51:12)
+  49 |
+  50 |   const model = await reorderImages(
+> 51 |     params.id,
+     |            ^
+  52 |     payload.images.map((image: any) => ({
+  53 |       id: image.id,
+  54 |       order: Number(image.order),
+Error: Model not found
+    at reorderImages (src/lib/modelStore.ts:304:21)
+    at async PATCH (src/app/api/models/[id]/images/route.ts:50:17)
+  302 |   const store = await readStore();
+  303 |   const model = store.models.find((entry) => entry.id === modelId);
+> 304 |   if (!model) throw new Error("Model not found");
+      |                     ^
+  305 |
+  306 |   const orderMap = new Map(updates.map((item) => [item.id, item.order]));
+  307 |   model.images = model.images.map((image) =>
+ PATCH /api/models/eb1042c0-dcf9-4e0b-836b-44a9c8aea983/images 500 in 101ms (compile: 4ms, render: 97ms)
+ GET /api/models 200 in 12ms (compile: 1275µs, render: 11ms)
+ PATCH /api/models/eb1042c0-dcf9-4e0b-836b-44a9c8aea983 200 in 65ms (compile: 50ms, render: 15ms)
+ GET /api/models 200 in 12ms (compile: 1563µs, render: 10ms)
+Error: Route "/api/submissions/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at DELETE (src/app/api/submissions/[id]/route.ts:36:49)
+  34 |
+  35 | export async function DELETE(_: Request, { params }: RouteContext) {
+> 36 |   const removed = await deleteSubmission(params.id);
+     |                                                 ^
+  37 |   if (!removed) {
+  38 |     return NextResponse.json({ error: "Not found" }, { status: 404 });
+  39 |   }
+TypeError: Cannot read properties of undefined (reading 'trim')
+    at deleteSubmission (src/lib/submissionStore.ts:115:25)
+    at async DELETE (src/app/api/submissions/[id]/route.ts:36:19)
+  113 | export async function deleteSubmission(id: string) {
+  114 |   const store = await readStore();
+> 115 |   const normalized = id.trim().toLowerCase();
+      |                         ^
+  116 |   const index = store.submissions.findIndex((record) => record.id.toLowerCase() === normalized);
+  117 |   if (index === -1) return null;
+  118 |   const [removed] = store.submissions.splice(index, 1);
+ DELETE /api/submissions/0e40c54c-9ecd-4b0c-b607-76f4ce5f1215 500 in 688ms (compile: 572ms, render: 115ms)
+ GET /api/submissions 200 in 7ms (compile: 3ms, render: 5ms)
+Error: Route "/api/models/[id]/images" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at POST (src/app/api/models/[id]/images/route.ts:32:44)
+  30 |
+  31 |   const saved = await saveUploadedFile(file);
+> 32 |   const image = await addModelImage(params.id, {
+     |                                            ^
+  33 |     url: saved.url,
+  34 |     caption,
+  35 |     order,
+Error: Model not found
+    at addModelImage (src/lib/modelStore.ts:272:11)
+    at async POST (src/app/api/models/[id]/images/route.ts:32:17)
+  270 |   const model = store.models.find((entry) => entry.id === modelId);
+  271 |   if (!model) {
+> 272 |     throw new Error("Model not found");
+      |           ^
+  273 |   }
+  274 |
+  275 |   const maxOrder =
+ POST /api/models/c6465671-6f4a-43df-b9f6-bc9fa3520b66/images 500 in 138ms (compile: 5ms, render: 133ms)
+ GET /api/models 200 in 13ms (compile: 3ms, render: 11ms)
+Error: Route "/api/models/[id]/images" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at POST (src/app/api/models/[id]/images/route.ts:32:44)
+  30 |
+  31 |   const saved = await saveUploadedFile(file);
+> 32 |   const image = await addModelImage(params.id, {
+     |                                            ^
+  33 |     url: saved.url,
+  34 |     caption,
+  35 |     order,
+Error: Model not found
+    at addModelImage (src/lib/modelStore.ts:272:11)
+    at async POST (src/app/api/models/[id]/images/route.ts:32:17)
+  270 |   const model = store.models.find((entry) => entry.id === modelId);
+  271 |   if (!model) {
+> 272 |     throw new Error("Model not found");
+      |           ^
+  273 |   }
+  274 |
+  275 |   const maxOrder =
+ POST /api/models/c6465671-6f4a-43df-b9f6-bc9fa3520b66/images 500 in 106ms (compile: 5ms, render: 102ms)
+ GET /api/models 200 in 12ms (compile: 1268µs, render: 11ms)
+ GET /admin 200 in 72ms (compile: 13ms, render: 60ms)
+ GET /api/metrics/instagram 200 in 13ms (compile: 8ms, render: 4ms)
+ GET /api/submissions 200 in 15ms (compile: 5ms, render: 10ms)
+ GET /api/models 200 in 20ms (compile: 2ms, render: 18ms)
+ GET /models 200 in 90ms (compile: 6ms, render: 84ms)
+ GET /api/metrics/instagram 200 in 13ms (compile: 9ms, render: 5ms)
+ GET /api/submissions 200 in 15ms (compile: 6ms, render: 9ms)
+ GET /api/models 200 in 20ms (compile: 3ms, render: 17ms)
+ GET /api/submissions 200 in 7ms (compile: 1393µs, render: 6ms)
+ GET /api/metrics/instagram 200 in 8ms (compile: 4ms, render: 3ms)
+ GET /api/models 200 in 19ms (compile: 3ms, render: 16ms)
+ GET /become-a-model 200 in 47ms (compile: 4ms, render: 44ms)
+ GET /contact 200 in 21ms (compile: 4ms, render: 17ms)
+ GET /contact 200 in 145ms (compile: 79ms, render: 65ms)
+ GET /contact 200 in 16ms (compile: 1173µs, render: 15ms)
+ GET /contact 200 in 13ms (compile: 1361µs, render: 12ms)
+ GET /contact 200 in 14ms (compile: 1486µs, render: 13ms)
+ GET /contact 200 in 13ms (compile: 1177µs, render: 11ms)
+ GET /contact 200 in 15ms (compile: 1173µs, render: 14ms)
+ GET /contact 200 in 27ms (compile: 11ms, render: 16ms)
+ ✓ Compiled in 52ms
+ GET /contact 404 in 292ms (compile: 226ms, render: 66ms)
+ GET /contact 404 in 42ms (compile: 2ms, render: 40ms)
+ GET /contact 404 in 35ms (compile: 1413µs, render: 34ms)
+ GET /contact 404 in 41ms (compile: 2ms, render: 39ms)
+ GET /contact 404 in 33ms (compile: 1186µs, render: 32ms)
+ GET /contact 404 in 59ms (compile: 2ms, render: 57ms)
+ GET /contact 404 in 52ms (compile: 3ms, render: 49ms)
+ GET /contact 404 in 41ms (compile: 10ms, render: 32ms)
+ GET /contact 404 in 34ms (compile: 1539µs, render: 32ms)
+ GET /contact 404 in 37ms (compile: 1278µs, render: 36ms)
+ GET /contact 404 in 38ms (compile: 1768µs, render: 36ms)
+ GET /contact 404 in 35ms (compile: 1288µs, render: 33ms)
+ GET /contact 404 in 34ms (compile: 1390µs, render: 33ms)
+ GET /contact 404 in 38ms (compile: 1480µs, render: 37ms)
+ GET /contact 404 in 39ms (compile: 2ms, render: 37ms)
+ GET /contact 404 in 36ms (compile: 1223µs, render: 35ms)
+ GET /contact 404 in 33ms (compile: 2ms, render: 31ms)
+ GET /contact 404 in 35ms (compile: 1958µs, render: 33ms)
+ GET /contact 404 in 34ms (compile: 1743µs, render: 32ms)
+ GET /contact 404 in 24ms (compile: 1514µs, render: 22ms)
+ GET /contact 404 in 21ms (compile: 1236µs, render: 20ms)
+ GET /contact 404 in 34ms (compile: 1172µs, render: 32ms)
+ GET /contact 404 in 34ms (compile: 2ms, render: 32ms)
+ GET /contact 404 in 32ms (compile: 1233µs, render: 31ms)
+ GET /contact 404 in 30ms (compile: 1293µs, render: 29ms)
+ GET /contact 404 in 36ms (compile: 1196µs, render: 35ms)
+ GET /contact 404 in 38ms (compile: 1378µs, render: 36ms)
+ GET /contact 404 in 38ms (compile: 1475µs, render: 36ms)
+ GET /contact 404 in 36ms (compile: 1941µs, render: 34ms)
+ GET /contact 404 in 37ms (compile: 1491µs, render: 36ms)
+ GET /contact 404 in 37ms (compile: 1956µs, render: 35ms)
+ GET /contact 404 in 34ms (compile: 1203µs, render: 33ms)
+ GET /contact 404 in 32ms (compile: 1344µs, render: 30ms)
+ GET /contact 404 in 23ms (compile: 1312µs, render: 21ms)
+ GET /contact 404 in 14ms (compile: 1764µs, render: 13ms)
+ GET /contact 404 in 68ms (compile: 1878µs, render: 66ms)
+ GET /models 200 in 194ms (compile: 72ms, render: 121ms)
+ GET /become-a-model 200 in 94ms (compile: 61ms, render: 33ms)
+ ⨯ Error: ENOENT: no such file or directory, open '/Users/americocacciapuoti/lux-agency/.next/dev/server/app/admin/page/build-manifest.json'
+    at ignore-listed frames {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/americocacciapuoti/lux-agency/.next/dev/server/app/admin/page/build-manifest.json'
+}
+ ⨯ Error: ENOENT: no such file or directory, open '/Users/americocacciapuoti/lux-agency/.next/dev/static/development/_buildManifest.js.tmp.2u3ki1lig5'
+    at ignore-listed frames {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/americocacciapuoti/lux-agency/.next/dev/static/development/_buildManifest.js.tmp.2u3ki1lig5'
+}
+Error: ENOENT: no such file or directory, open '/Users/americocacciapuoti/lux-agency/.next/dev/server/app/admin/page/build-manifest.json'
+    at ignore-listed frames {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/americocacciapuoti/lux-agency/.next/dev/server/app/admin/page/build-manifest.json'
+}
+ ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/americocacciapuoti/lux-agency/.next/dev/server/pages/_document.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/require.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/load-components.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/utils.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/swc/options.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/swc/index.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/next-config-ts/transpile-config.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/config.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/next.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/lib/start-server.js
+    at Object.<anonymous> (.next/dev/server/pages/_document.js:1:7) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+Error: ENOENT: no such file or directory, open '/Users/americocacciapuoti/lux-agency/.next/dev/routes-manifest.json'
+    at ignore-listed frames {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/americocacciapuoti/lux-agency/.next/dev/routes-manifest.json'
+}
+ GET /admin 500 in 676ms (compile: 661ms, render: 15ms)
+ GET /admin 500 in 676ms (compile: 661ms, render: 15ms)
+ ⨯ Error: ENOENT: no such file or directory, open '/Users/americocacciapuoti/lux-agency/.next/dev/server/app/admin/page/build-manifest.json'
+    at ignore-listed frames {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/americocacciapuoti/lux-agency/.next/dev/server/app/admin/page/build-manifest.json'
+}
+ ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/americocacciapuoti/lux-agency/.next/dev/server/pages/_document.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/require.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/load-components.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/utils.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/swc/options.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/swc/index.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/next-config-ts/transpile-config.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/config.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/next.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/lib/start-server.js
+    at Object.<anonymous> (.next/dev/server/pages/_document.js:1:7) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+Error: ENOENT: no such file or directory, open '/Users/americocacciapuoti/lux-agency/.next/dev/server/app/admin/page/build-manifest.json'
+    at ignore-listed frames {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/americocacciapuoti/lux-agency/.next/dev/server/app/admin/page/build-manifest.json'
+}
+ ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/americocacciapuoti/lux-agency/.next/dev/server/pages/_document.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/require.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/load-components.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/utils.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/swc/options.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/swc/index.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/next-config-ts/transpile-config.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/config.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/next.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/lib/start-server.js
+    at Object.<anonymous> (.next/dev/server/pages/_document.js:1:7) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+Error: ENOENT: no such file or directory, open '/Users/americocacciapuoti/lux-agency/.next/dev/routes-manifest.json'
+    at ignore-listed frames {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/americocacciapuoti/lux-agency/.next/dev/routes-manifest.json'
+}
+ GET /admin 500 in 140ms (compile: 129ms, render: 12ms)
+ GET /admin 500 in 140ms (compile: 129ms, render: 12ms)
+ ⨯ Error: ENOENT: no such file or directory, open '/Users/americocacciapuoti/lux-agency/.next/dev/server/app/admin/page/build-manifest.json'
+    at ignore-listed frames {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/americocacciapuoti/lux-agency/.next/dev/server/app/admin/page/build-manifest.json'
+}
+ ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/americocacciapuoti/lux-agency/.next/dev/server/pages/_document.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/require.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/load-components.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/utils.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/swc/options.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/swc/index.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/next-config-ts/transpile-config.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/config.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/next.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/lib/start-server.js
+    at Object.<anonymous> (.next/dev/server/pages/_document.js:1:7) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+Error: ENOENT: no such file or directory, open '/Users/americocacciapuoti/lux-agency/.next/dev/server/app/admin/page/build-manifest.json'
+    at ignore-listed frames {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/americocacciapuoti/lux-agency/.next/dev/server/app/admin/page/build-manifest.json'
+}
+ ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/americocacciapuoti/lux-agency/.next/dev/server/pages/_document.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/require.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/load-components.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/utils.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/swc/options.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/swc/index.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/next-config-ts/transpile-config.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/config.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/next.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/lib/start-server.js
+    at Object.<anonymous> (.next/dev/server/pages/_document.js:1:7) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+Error: ENOENT: no such file or directory, open '/Users/americocacciapuoti/lux-agency/.next/dev/routes-manifest.json'
+    at ignore-listed frames {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/americocacciapuoti/lux-agency/.next/dev/routes-manifest.json'
+}
+ GET /admin 500 in 93ms (compile: 81ms, render: 12ms)
+ GET /admin 500 in 93ms (compile: 81ms, render: 12ms)
+ ⨯ Error: ENOENT: no such file or directory, open '/Users/americocacciapuoti/lux-agency/.next/dev/server/app/admin/page/build-manifest.json'
+    at ignore-listed frames {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/americocacciapuoti/lux-agency/.next/dev/server/app/admin/page/build-manifest.json'
+}
+ ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/americocacciapuoti/lux-agency/.next/dev/server/pages/_document.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/require.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/load-components.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/utils.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/swc/options.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/swc/index.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/next-config-ts/transpile-config.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/config.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/next.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/lib/start-server.js
+    at Object.<anonymous> (.next/dev/server/pages/_document.js:1:7) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+Error: ENOENT: no such file or directory, open '/Users/americocacciapuoti/lux-agency/.next/dev/server/app/admin/page/build-manifest.json'
+    at ignore-listed frames {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/americocacciapuoti/lux-agency/.next/dev/server/app/admin/page/build-manifest.json'
+}
+ ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/americocacciapuoti/lux-agency/.next/dev/server/pages/_document.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/require.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/load-components.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/utils.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/swc/options.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/swc/index.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/next-config-ts/transpile-config.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/config.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/next.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/lib/start-server.js
+    at Object.<anonymous> (.next/dev/server/pages/_document.js:1:7) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+Error: ENOENT: no such file or directory, open '/Users/americocacciapuoti/lux-agency/.next/dev/routes-manifest.json'
+    at ignore-listed frames {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/americocacciapuoti/lux-agency/.next/dev/routes-manifest.json'
+}
+ GET /admin 500 in 114ms (compile: 99ms, render: 15ms)
+ GET /admin 500 in 114ms (compile: 99ms, render: 15ms)
+ ⨯ Error: ENOENT: no such file or directory, open '/Users/americocacciapuoti/lux-agency/.next/dev/server/app/admin/page/build-manifest.json'
+    at ignore-listed frames {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/americocacciapuoti/lux-agency/.next/dev/server/app/admin/page/build-manifest.json'
+}
+ ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/americocacciapuoti/lux-agency/.next/dev/server/pages/_document.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/require.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/load-components.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/utils.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/swc/options.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/swc/index.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/next-config-ts/transpile-config.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/config.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/next.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/lib/start-server.js
+    at Object.<anonymous> (.next/dev/server/pages/_document.js:1:7) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+Error: ENOENT: no such file or directory, open '/Users/americocacciapuoti/lux-agency/.next/dev/server/app/admin/page/build-manifest.json'
+    at ignore-listed frames {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/americocacciapuoti/lux-agency/.next/dev/server/app/admin/page/build-manifest.json'
+}
+ ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/americocacciapuoti/lux-agency/.next/dev/server/pages/_document.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/require.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/load-components.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/utils.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/swc/options.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/swc/index.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/next-config-ts/transpile-config.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/config.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/next.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/lib/start-server.js
+    at Object.<anonymous> (.next/dev/server/pages/_document.js:1:7) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+Error: ENOENT: no such file or directory, open '/Users/americocacciapuoti/lux-agency/.next/dev/routes-manifest.json'
+    at ignore-listed frames {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/americocacciapuoti/lux-agency/.next/dev/routes-manifest.json'
+}
+ GET /admin 500 in 104ms (compile: 90ms, render: 14ms)
+ GET /admin 500 in 104ms (compile: 90ms, render: 14ms)
+ ⨯ Error: ENOENT: no such file or directory, open '/Users/americocacciapuoti/lux-agency/.next/dev/server/app/become-a-model/page/build-manifest.json'
+    at ignore-listed frames {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/americocacciapuoti/lux-agency/.next/dev/server/app/become-a-model/page/build-manifest.json'
+}
+ ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/americocacciapuoti/lux-agency/.next/dev/server/pages/_document.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/require.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/load-components.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/utils.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/swc/options.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/swc/index.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/next-config-ts/transpile-config.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/config.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/next.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/lib/start-server.js
+    at Object.<anonymous> (.next/dev/server/pages/_document.js:1:7) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+Error: ENOENT: no such file or directory, open '/Users/americocacciapuoti/lux-agency/.next/dev/server/app/become-a-model/page/build-manifest.json'
+    at ignore-listed frames {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/americocacciapuoti/lux-agency/.next/dev/server/app/become-a-model/page/build-manifest.json'
+}
+ ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/americocacciapuoti/lux-agency/.next/dev/server/pages/_document.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/require.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/load-components.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/utils.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/swc/options.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/swc/index.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/next-config-ts/transpile-config.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/config.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/next.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/lib/start-server.js
+    at Object.<anonymous> (.next/dev/server/pages/_document.js:1:7) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+Error: ENOENT: no such file or directory, open '/Users/americocacciapuoti/lux-agency/.next/dev/routes-manifest.json'
+    at ignore-listed frames {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/americocacciapuoti/lux-agency/.next/dev/routes-manifest.json'
+}
+ GET /become-a-model 500 in 102ms (compile: 88ms, render: 15ms)
+ GET /become-a-model 500 in 102ms (compile: 88ms, render: 15ms)
+ ⨯ Error: ENOENT: no such file or directory, open '/Users/americocacciapuoti/lux-agency/.next/dev/server/app/models/page/build-manifest.json'
+    at ignore-listed frames {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/americocacciapuoti/lux-agency/.next/dev/server/app/models/page/build-manifest.json'
+}
+ ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/americocacciapuoti/lux-agency/.next/dev/server/pages/_document.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/require.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/load-components.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/utils.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/swc/options.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/swc/index.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/next-config-ts/transpile-config.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/config.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/next.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/lib/start-server.js
+    at Object.<anonymous> (.next/dev/server/pages/_document.js:1:7) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+Error: ENOENT: no such file or directory, open '/Users/americocacciapuoti/lux-agency/.next/dev/server/app/models/page/build-manifest.json'
+    at ignore-listed frames {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/americocacciapuoti/lux-agency/.next/dev/server/app/models/page/build-manifest.json'
+}
+ ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/americocacciapuoti/lux-agency/.next/dev/server/pages/_document.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/require.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/load-components.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/utils.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/swc/options.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/swc/index.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/next-config-ts/transpile-config.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/config.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/next.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/lib/start-server.js
+    at Object.<anonymous> (.next/dev/server/pages/_document.js:1:7) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+Error: ENOENT: no such file or directory, open '/Users/americocacciapuoti/lux-agency/.next/dev/routes-manifest.json'
+    at ignore-listed frames {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/americocacciapuoti/lux-agency/.next/dev/routes-manifest.json'
+}
+ GET /models 500 in 107ms (compile: 93ms, render: 14ms)
+ GET /models 500 in 107ms (compile: 93ms, render: 14ms)
+ ⨯ Error: ENOENT: no such file or directory, open '/Users/americocacciapuoti/lux-agency/.next/dev/server/app/models/page/build-manifest.json'
+    at ignore-listed frames {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/americocacciapuoti/lux-agency/.next/dev/server/app/models/page/build-manifest.json'
+}
+ ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/americocacciapuoti/lux-agency/.next/dev/server/pages/_document.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/require.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/load-components.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/utils.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/swc/options.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/swc/index.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/next-config-ts/transpile-config.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/config.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/next.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/lib/start-server.js
+    at Object.<anonymous> (.next/dev/server/pages/_document.js:1:7) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+Error: ENOENT: no such file or directory, open '/Users/americocacciapuoti/lux-agency/.next/dev/server/app/models/page/build-manifest.json'
+    at ignore-listed frames {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/americocacciapuoti/lux-agency/.next/dev/server/app/models/page/build-manifest.json'
+}
+ ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/americocacciapuoti/lux-agency/.next/dev/server/pages/_document.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/require.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/load-components.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/utils.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/swc/options.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/swc/index.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/next-config-ts/transpile-config.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/config.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/next.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/lib/start-server.js
+    at Object.<anonymous> (.next/dev/server/pages/_document.js:1:7) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+Error: ENOENT: no such file or directory, open '/Users/americocacciapuoti/lux-agency/.next/dev/routes-manifest.json'
+    at ignore-listed frames {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/americocacciapuoti/lux-agency/.next/dev/routes-manifest.json'
+}
+ GET /models 500 in 101ms (compile: 88ms, render: 13ms)
+ GET /models 500 in 101ms (compile: 88ms, render: 13ms)
+ ⨯ Error: ENOENT: no such file or directory, open '/Users/americocacciapuoti/lux-agency/.next/dev/server/app/models/page/build-manifest.json'
+    at ignore-listed frames {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/americocacciapuoti/lux-agency/.next/dev/server/app/models/page/build-manifest.json'
+}
+ ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/americocacciapuoti/lux-agency/.next/dev/server/pages/_document.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/require.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/load-components.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/utils.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/swc/options.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/swc/index.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/next-config-ts/transpile-config.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/config.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/next.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/lib/start-server.js
+    at Object.<anonymous> (.next/dev/server/pages/_document.js:1:7) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+Error: ENOENT: no such file or directory, open '/Users/americocacciapuoti/lux-agency/.next/dev/server/app/models/page/build-manifest.json'
+    at ignore-listed frames {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/americocacciapuoti/lux-agency/.next/dev/server/app/models/page/build-manifest.json'
+}
+ ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/americocacciapuoti/lux-agency/.next/dev/server/pages/_document.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/require.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/load-components.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/utils.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/swc/options.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/swc/index.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/next-config-ts/transpile-config.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/config.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/next.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/lib/start-server.js
+    at Object.<anonymous> (.next/dev/server/pages/_document.js:1:7) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+Error: ENOENT: no such file or directory, open '/Users/americocacciapuoti/lux-agency/.next/dev/routes-manifest.json'
+    at ignore-listed frames {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/americocacciapuoti/lux-agency/.next/dev/routes-manifest.json'
+}
+ GET /models 500 in 126ms (compile: 100ms, render: 26ms)
+ GET /models 500 in 126ms (compile: 100ms, render: 26ms)
+ ⨯ Error: ENOENT: no such file or directory, open '/Users/americocacciapuoti/lux-agency/.next/dev/server/app/models/page/build-manifest.json'
+    at ignore-listed frames {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/americocacciapuoti/lux-agency/.next/dev/server/app/models/page/build-manifest.json'
+}
+ ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/americocacciapuoti/lux-agency/.next/dev/server/pages/_document.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/require.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/load-components.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/utils.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/swc/options.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/swc/index.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/next-config-ts/transpile-config.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/config.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/next.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/lib/start-server.js
+    at Object.<anonymous> (.next/dev/server/pages/_document.js:1:7) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+Error: ENOENT: no such file or directory, open '/Users/americocacciapuoti/lux-agency/.next/dev/server/app/models/page/build-manifest.json'
+    at ignore-listed frames {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/americocacciapuoti/lux-agency/.next/dev/server/app/models/page/build-manifest.json'
+}
+ ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/americocacciapuoti/lux-agency/.next/dev/server/pages/_document.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/require.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/load-components.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/utils.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/swc/options.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/swc/index.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/next-config-ts/transpile-config.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/config.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/next.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/lib/start-server.js
+    at Object.<anonymous> (.next/dev/server/pages/_document.js:1:7) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+Error: ENOENT: no such file or directory, open '/Users/americocacciapuoti/lux-agency/.next/dev/routes-manifest.json'
+    at ignore-listed frames {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/americocacciapuoti/lux-agency/.next/dev/routes-manifest.json'
+}
+ GET /models 500 in 90ms (compile: 77ms, render: 13ms)
+ GET /models 500 in 91ms (compile: 77ms, render: 13ms)
+ ⨯ Error: ENOENT: no such file or directory, open '/Users/americocacciapuoti/lux-agency/.next/dev/server/app/models/page/build-manifest.json'
+    at ignore-listed frames {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/americocacciapuoti/lux-agency/.next/dev/server/app/models/page/build-manifest.json'
+}
+ ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/americocacciapuoti/lux-agency/.next/dev/server/pages/_document.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/require.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/load-components.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/utils.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/swc/options.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/swc/index.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/next-config-ts/transpile-config.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/config.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/next.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/lib/start-server.js
+    at Object.<anonymous> (.next/dev/server/pages/_document.js:1:7) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+Error: ENOENT: no such file or directory, open '/Users/americocacciapuoti/lux-agency/.next/dev/server/app/models/page/build-manifest.json'
+    at ignore-listed frames {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/americocacciapuoti/lux-agency/.next/dev/server/app/models/page/build-manifest.json'
+}
+ ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/americocacciapuoti/lux-agency/.next/dev/server/pages/_document.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/require.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/load-components.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/utils.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/swc/options.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/swc/index.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/build/next-config-ts/transpile-config.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/config.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/next.js
+- /Users/americocacciapuoti/lux-agency/node_modules/next/dist/server/lib/start-server.js
+    at Object.<anonymous> (.next/dev/server/pages/_document.js:1:7) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+Error: ENOENT: no such file or directory, open '/Users/americocacciapuoti/lux-agency/.next/dev/routes-manifest.json'
+    at ignore-listed frames {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/americocacciapuoti/lux-agency/.next/dev/routes-manifest.json'
+}
+ GET /models 500 in 126ms (compile: 111ms, render: 15ms)
+ GET /models 500 in 126ms (compile: 111ms, render: 15ms)
+ ✓ Compiled in 59ms
+ ✓ Compiled in 43ms
+ ✓ Compiled in 134ms
+ ✓ Compiled in 35ms
+ ✓ Compiled in 26ms

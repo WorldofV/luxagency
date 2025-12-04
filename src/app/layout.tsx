@@ -13,7 +13,6 @@ const primaryNav = [
   { href: "/", label: "Home" },
   { href: "/models", label: "Models" },
   { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
   { href: "/become-a-model", label: "Become a model" },
 ];
 
@@ -23,7 +22,7 @@ const boardNav = [
   { label: "Women", division: "women" },
   { label: "Men", division: "men" },
   { label: "Boys", division: "boys" },
-  { label: "Become a model", href: "/contact" },
+  { label: "Become a model", href: "/become-a-model" },
 ];
 
 const dosis = Dosis({

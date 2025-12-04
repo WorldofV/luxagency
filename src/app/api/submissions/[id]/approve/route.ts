@@ -11,9 +11,29 @@ type RouteContext = {
 
 const divisionFromGender = (gender?: string) => {
   if (!gender) return "Women";
-  const normalized = gender.toLowerCase();
-  if (normalized.includes("male")) return "Men";
-  if (normalized.includes("non") || normalized.includes("binary")) return "Non Binary";
+  const normalized = gender.trim().toLowerCase();
+
+  const explicitMap: Record<string, string> = {
+    women: "Women",
+    woman: "Women",
+    female: "Women",
+    men: "Men",
+    man: "Men",
+    male: "Men",
+    girls: "Girls",
+    girl: "Girls",
+    boys: "Boys",
+    boy: "Boys",
+    "non binary": "Non Binary",
+    "non-binary": "Non Binary",
+    "nonbinary": "Non Binary",
+  };
+
+  const match = Object.keys(explicitMap).find((key) => normalized.includes(key));
+  if (match) {
+    return explicitMap[match];
+  }
+
   return "Women";
 };
 

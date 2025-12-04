@@ -110,6 +110,27 @@ export async function updateSubmissionStatus(id: string, status: SubmissionStatu
   return submission;
 }
 
+export async function updateSubmission(
+  id: string,
+  updates: Partial<SubmissionRecord>
+) {
+  const store = await readStore();
+  const normalized = id.trim().toLowerCase();
+  const submission = store.submissions.find((record) => record.id.toLowerCase() === normalized);
+  if (!submission) return null;
+
+  if (typeof updates.status === "string") {
+    submission.status = updates.status as SubmissionStatus;
+  }
+  if (typeof updates.gender === "string") {
+    submission.gender = updates.gender;
+  }
+
+  submission.updatedAt = new Date().toISOString();
+  await writeStore(store);
+  return submission;
+}
+
 export async function deleteSubmission(id: string) {
   const store = await readStore();
   const normalized = id.trim().toLowerCase();
