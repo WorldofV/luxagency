@@ -5,6 +5,13 @@ import { useEffect, useMemo, useRef, useState } from "react";
 
 import type { ModelRecord } from "@/lib/modelStore";
 import type { SubmissionRecord } from "@/lib/submissionStore";
+import {
+  eyeOptions,
+  hairOptions,
+  heightOptions,
+  measurementOptions,
+  shoeOptions,
+} from "@/lib/modelOptions";
 
 const divisionOptions = ["Women", "Men", "Girls", "Boys", "Non Binary"];
 
@@ -67,7 +74,7 @@ export default function AdminPage() {
   const [submissionsLoading, setSubmissionsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [creating, setCreating] = useState(false);
-  const [activeTab, setActiveTab] = useState<"models" | "submissions">("models");
+  const [activeTab, setActiveTab] = useState<"models" | "submissions" | "stats">("models");
   const [search, setSearch] = useState("");
   const [form, setForm] = useState({
     name: "",
@@ -159,6 +166,7 @@ export default function AdminPage() {
   }, [imagePreview]);
 
   const [formCollapsed, setFormCollapsed] = useState(true);
+  const [instagramClicks, setInstagramClicks] = useState<number | null>(null);
 
   const refreshModels = async () => {
     setLoading(true);
@@ -183,14 +191,23 @@ export default function AdminPage() {
     setSubmissionsLoading(false);
   };
 
+  const refreshMetrics = async () => {
+    const response = await fetch("/api/metrics/instagram");
+    if (response.ok) {
+      const data = await response.json();
+      setInstagramClicks(data.count);
+    }
+  };
+
   useEffect(() => {
     refreshModels();
     refreshSubmissions();
+    refreshMetrics();
   }, []);
 
   useEffect(() => {
     if (!confirmationVisible) return;
-    const timer = setTimeout(() => setConfirmationVisible(false), 2500);
+    const timer = setTimeout(() => setConfirmationVisible(false), 2000);
     return () => clearTimeout(timer);
   }, [confirmationVisible]);
 
@@ -255,6 +272,16 @@ export default function AdminPage() {
             onClick={() => setActiveTab("submissions")}
           >
             Submissions
+          </button>
+          <button
+            className={`pb-1 ${
+              activeTab === "stats"
+                ? "border-b border-black text-black"
+                : "hover:text-black"
+            }`}
+            onClick={() => setActiveTab("stats")}
+          >
+            Stats
           </button>
         </nav>
       </header>
@@ -476,6 +503,36 @@ export default function AdminPage() {
             </div>
           )}
         </section>
+      ) : activeTab === "stats" ? (
+        <section className="space-y-6">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <h2 className="text-xl font-medium tracking-[0.1em]">Stats</h2>
+              <p className="text-sm text-[var(--muted)]">
+                Monitor marketing touch points across the site.
+              </p>
+            </div>
+            <button
+              onClick={refreshMetrics}
+              className="text-sm uppercase tracking-[0.3em] text-[var(--muted)] underline-offset-4 hover:underline"
+            >
+              Refresh
+            </button>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div className="rounded-[24px] border border-[var(--border-color)] bg-white/90 p-6">
+              <p className="text-xs uppercase tracking-[0.4em] text-[var(--muted)]">
+                Instagram clicks
+              </p>
+              <p className="mt-2 text-4xl font-light tracking-[0.1em]">
+                {instagramClicks ?? "—"}
+              </p>
+              <p className="mt-1 text-xs text-[var(--muted)]">
+                Tracked from the footer CTA.
+              </p>
+            </div>
+          </div>
+        </section>
       ) : null}
       <ConfirmationPopup
         visible={confirmationVisible}
@@ -662,7 +719,7 @@ function ConfirmationPopup({
 type ModelCardProps = {
   model: ModelRecord;
   onChange(): Promise<void> | void;
-  onShowConfirmation(): void;
+  onShowConfirmation(message?: string, action?: string): void;
   onShowDeleteConfirmation(message: string, action: string, onConfirm: () => void): void;
 };
 
@@ -674,6 +731,12 @@ function ModelCard({ model, onChange, onShowConfirmation, onShowDeleteConfirmati
   const [dirty, setDirty] = useState(false);
   const shortHeightModel = shouldFlagShortTalent(localModel.division, localModel.height);
   const shortHeightModelLabel = shortHeightLabel(localModel.division);
+  const modelAge = localModel.birthday
+    ? Math.floor(
+        (Date.now() - new Date(localModel.birthday).getTime()) /
+          (1000 * 60 * 60 * 24 * 365.25)
+      )
+    : null;
 
   useEffect(() => {
     setLocalModel(model);
@@ -694,6 +757,7 @@ function ModelCard({ model, onChange, onShowConfirmation, onShowDeleteConfirmati
     value: string | undefined
   ) => {
     setLocalModel((prev) => ({ ...prev, [field]: value }));
+    setDirty(true);
   };
 
   const saveModel = async () => {
@@ -704,6 +768,13 @@ function ModelCard({ model, onChange, onShowConfirmation, onShowDeleteConfirmati
       body: JSON.stringify({
         city: localModel.city,
         division: localModel.division,
+        citizenship: localModel.citizenship,
+        instagram: localModel.instagram,
+        modelsComUrl: localModel.modelsComUrl,
+        email: localModel.email,
+        phone: localModel.phone,
+        whatsapp: localModel.whatsapp,
+        birthday: localModel.birthday,
         height: localModel.height,
         bust: localModel.bust,
         waist: localModel.waist,
@@ -718,7 +789,9 @@ function ModelCard({ model, onChange, onShowConfirmation, onShowDeleteConfirmati
       alert("Unable to update model");
       return;
     }
+    setDirty(false);
     await onChange();
+    onShowConfirmation("Model info saved", "Fields updated");
   };
 
   const deleteModel = async () => {
@@ -824,14 +897,27 @@ function ModelCard({ model, onChange, onShowConfirmation, onShowDeleteConfirmati
                 aria-label={shortHeightModelLabel}
               />
             ) : null}
+            {modelAge !== null ? (
+              <span className="ml-3 text-sm uppercase tracking-[0.4em] text-[var(--muted)]">
+                {modelAge} yrs
+              </span>
+            ) : null}
           </h3>
-          <p className="text-sm text-[var(--muted)]">/{localModel.slug}</p>
+          {localModel.email ? (
+            <p className="text-sm text-[var(--muted)] lowercase">
+              {localModel.email}
+            </p>
+          ) : null}
         </div>
         <div className="flex flex-wrap gap-2">
           <button
             onClick={saveModel}
             disabled={pending}
-            className="rounded-full border border-black px-4 py-1 text-xs uppercase tracking-[0.4em] disabled:opacity-60"
+            className={`rounded-full px-4 py-1 text-xs uppercase tracking-[0.4em] disabled:opacity-60 ${
+              dirty
+                ? "border-green-600 text-green-700"
+                : "border-black text-black"
+            }`}
           >
             Save info
           </button>
@@ -855,68 +941,178 @@ function ModelCard({ model, onChange, onShowConfirmation, onShowDeleteConfirmati
           />
         </label>
         <label className="text-xs uppercase tracking-[0.4em] text-[var(--muted)]">
-          Height
+          Citizenship
           <input
             className="mt-1 w-full rounded-lg border border-[var(--border-color)] px-3 py-2"
-            value={localModel.height ?? ""}
+            value={localModel.citizenship ?? ""}
             onChange={(event) =>
-              handleFieldChange("height", event.target.value)
+              handleFieldChange("citizenship", event.target.value)
             }
           />
+        </label>
+        <label className="text-xs uppercase tracking-[0.4em] text-[var(--muted)]">
+          Instagram
+          <input
+            className="mt-1 w-full rounded-lg border border-[var(--border-color)] px-3 py-2"
+            value={localModel.instagram ?? ""}
+            onChange={(event) =>
+              handleFieldChange("instagram", event.target.value)
+            }
+          />
+        </label>
+        <label className="text-xs uppercase tracking-[0.4em] text-[var(--muted)]">
+          Models.com
+          <input
+            className="mt-1 w-full rounded-lg border border-[var(--border-color)] px-3 py-2"
+            value={localModel.modelsComUrl ?? ""}
+            onChange={(event) =>
+              handleFieldChange("modelsComUrl", event.target.value)
+            }
+            placeholder="https://models.com/people/..."
+          />
+        </label>
+        <label className="text-xs uppercase tracking-[0.4em] text-[var(--muted)]">
+          Email
+          <input
+            type="email"
+            className="mt-1 w-full rounded-lg border border-[var(--border-color)] px-3 py-2"
+            value={localModel.email ?? ""}
+            onChange={(event) => handleFieldChange("email", event.target.value)}
+          />
+        </label>
+        <label className="text-xs uppercase tracking-[0.4em] text-[var(--muted)]">
+          Phone
+          <input
+            className="mt-1 w-full rounded-lg border border-[var(--border-color)] px-3 py-2"
+            value={localModel.phone ?? ""}
+            onChange={(event) => handleFieldChange("phone", event.target.value)}
+          />
+        </label>
+        <label className="text-xs uppercase tracking-[0.4em] text-[var(--muted)]">
+          WhatsApp
+          <input
+            className="mt-1 w-full rounded-lg border border-[var(--border-color)] px-3 py-2"
+            value={localModel.whatsapp ?? ""}
+            onChange={(event) =>
+              handleFieldChange("whatsapp", event.target.value)
+            }
+          />
+        </label>
+        <label className="text-xs uppercase tracking-[0.4em] text-[var(--muted)]">
+          Birthday
+          <input
+            type="date"
+            className="mt-1 w-full rounded-lg border border-[var(--border-color)] px-3 py-2"
+            value={localModel.birthday ?? ""}
+            onChange={(event) =>
+              handleFieldChange("birthday", event.target.value)
+            }
+          />
+        </label>
+        <label className="text-xs uppercase tracking-[0.4em] text-[var(--muted)]">
+          Height
+          <select
+            className="mt-1 w-full rounded-lg border border-[var(--border-color)] px-3 py-2"
+            value={localModel.height ?? ""}
+            onChange={(event) => handleFieldChange("height", event.target.value)}
+          >
+            <option value="">Select height</option>
+            {heightOptions.map((option) => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
         </label>
         <label className="text-xs uppercase tracking-[0.4em] text-[var(--muted)]">
           Bust
-          <input
+          <select
             className="mt-1 w-full rounded-lg border border-[var(--border-color)] px-3 py-2"
             value={localModel.bust ?? ""}
-            onChange={(event) =>
-              handleFieldChange("bust", event.target.value)
-            }
-          />
+            onChange={(event) => handleFieldChange("bust", event.target.value)}
+          >
+            <option value="">Select bust</option>
+            {measurementOptions.map((option) => (
+              <option key={`bust-${option}`} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
         </label>
         <label className="text-xs uppercase tracking-[0.4em] text-[var(--muted)]">
           Waist
-          <input
+          <select
             className="mt-1 w-full rounded-lg border border-[var(--border-color)] px-3 py-2"
             value={localModel.waist ?? ""}
-            onChange={(event) =>
-              handleFieldChange("waist", event.target.value)
-            }
-          />
+            onChange={(event) => handleFieldChange("waist", event.target.value)}
+          >
+            <option value="">Select waist</option>
+            {measurementOptions.map((option) => (
+              <option key={`waist-${option}`} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
         </label>
         <label className="text-xs uppercase tracking-[0.4em] text-[var(--muted)]">
           Hips
-          <input
+          <select
             className="mt-1 w-full rounded-lg border border-[var(--border-color)] px-3 py-2"
             value={localModel.hips ?? ""}
             onChange={(event) => handleFieldChange("hips", event.target.value)}
-          />
+          >
+            <option value="">Select hips</option>
+            {measurementOptions.map((option) => (
+              <option key={`hips-${option}`} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
         </label>
         <label className="text-xs uppercase tracking-[0.4em] text-[var(--muted)]">
           Shoes
-          <input
+          <select
             className="mt-1 w-full rounded-lg border border-[var(--border-color)] px-3 py-2"
             value={localModel.shoes ?? ""}
-            onChange={(event) =>
-              handleFieldChange("shoes", event.target.value)
-            }
-          />
+            onChange={(event) => handleFieldChange("shoes", event.target.value)}
+          >
+            <option value="">Select shoes</option>
+            {shoeOptions.map((option) => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
         </label>
         <label className="text-xs uppercase tracking-[0.4em] text-[var(--muted)]">
           Eyes
-          <input
+          <select
             className="mt-1 w-full rounded-lg border border-[var(--border-color)] px-3 py-2"
             value={localModel.eyes ?? ""}
             onChange={(event) => handleFieldChange("eyes", event.target.value)}
-          />
+          >
+            <option value="">Select eyes</option>
+            {eyeOptions.map((option) => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
         </label>
         <label className="text-xs uppercase tracking-[0.4em] text-[var(--muted)]">
           Hair
-          <input
+          <select
             className="mt-1 w-full rounded-lg border border-[var(--border-color)] px-3 py-2"
             value={localModel.hair ?? ""}
             onChange={(event) => handleFieldChange("hair", event.target.value)}
-          />
+          >
+            <option value="">Select hair</option>
+            {hairOptions.map((option) => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
         </label>
       </div>
 
@@ -989,7 +1185,7 @@ function ModelCard({ model, onChange, onShowConfirmation, onShowDeleteConfirmati
               onClick={async () => {
                 await saveOrder();
                 setDirty(false);
-                onShowConfirmation();
+                onShowConfirmation("Model info saved", "Fields updated");
               }}
               disabled={pending}
               className={`rounded-full border px-4 py-1 text-xs uppercase tracking-[0.4em] disabled:opacity-60 ${
@@ -1001,6 +1197,39 @@ function ModelCard({ model, onChange, onShowConfirmation, onShowDeleteConfirmati
           </div>
         )}
       </div>
+      {(localModel.email || localModel.phone || localModel.whatsapp || localModel.birthday) ? (
+        <div className="mt-6 rounded-[20px] border border-[var(--border-color)] bg-white/70 px-4 py-3 text-xs uppercase tracking-[0.4em] text-[var(--muted)]">
+          <p className="text-[10px] uppercase tracking-[0.5em] text-[var(--muted)]">
+            Private contact
+          </p>
+          <dl className="mt-3 space-y-1 text-[var(--foreground)]">
+            {localModel.email ? (
+              <div className="flex items-baseline justify-between gap-4">
+                <dt className="text-[var(--muted)]">Email</dt>
+                <dd className="text-right text-[11px] normal-case">{localModel.email}</dd>
+              </div>
+            ) : null}
+            {localModel.phone ? (
+              <div className="flex items-baseline justify-between gap-4">
+                <dt className="text-[var(--muted)]">Phone</dt>
+                <dd className="text-right text-[11px] normal-case">{localModel.phone}</dd>
+              </div>
+            ) : null}
+            {localModel.whatsapp ? (
+              <div className="flex items-baseline justify-between gap-4">
+                <dt className="text-[var(--muted)]">WhatsApp</dt>
+                <dd className="text-right text-[11px] normal-case">{localModel.whatsapp}</dd>
+              </div>
+            ) : null}
+            {localModel.birthday ? (
+              <div className="flex items-baseline justify-between gap-4">
+                <dt className="text-[var(--muted)]">Birthday</dt>
+                <dd className="text-right text-[11px] normal-case">{localModel.birthday}</dd>
+              </div>
+            ) : null}
+          </dl>
+        </div>
+      ) : null}
     </div>
   );
 }

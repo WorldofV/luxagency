@@ -29,14 +29,32 @@ export default async function ModelDetailPage({ params }: ModelsDetailPageProps)
     return notFound();
   }
 
-  const hasStats =
-    model.height ||
-    model.bust ||
-    model.waist ||
-    model.hips ||
-    model.shoes ||
-    model.eyes ||
-    model.hair;
+  const measurementItems = [
+    { label: "Height", value: model.height },
+    { label: "Bust", value: model.bust },
+    { label: "Waist", value: model.waist },
+    { label: "Hips", value: model.hips },
+    { label: "Shoes", value: model.shoes },
+    { label: "Eye", value: model.eyes },
+    { label: "Hair", value: model.hair },
+  ].filter((item) => Boolean(item.value));
+
+  const profileItems = [
+    { label: "Located", value: model.city },
+    { label: "Citizenship", value: model.citizenship },
+    {
+      label: "Instagram",
+      value: model.instagram,
+      isLink: true,
+      linkPrefix: "https://instagram.com/",
+    },
+    {
+      label: "Models.com",
+      value: model.modelsComUrl,
+      isLink: true,
+    },
+    { label: "Birthday", value: model.birthday },
+  ].filter((item) => Boolean(item.value));
 
   return (
     <section className="space-y-12">
@@ -47,14 +65,16 @@ export default async function ModelDetailPage({ params }: ModelsDetailPageProps)
         <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
           <h1 className="text-4xl font-light tracking-[0.1em] text-[var(--foreground)] sm:text-5xl">
             {model.name}
-          </h1>
-          {model.city ? (
-            <div className="text-[11px] uppercase tracking-[0.4em] text-[var(--muted)] sm:text-right">
-              <span className="uppercase tracking-[0.24em]">
-                Based in {model.city}
+            {model.birthday ? (
+              <span className="ml-4 text-sm uppercase tracking-[0.4em] text-[var(--muted)]">
+                {Math.floor(
+                  (Date.now() - new Date(model.birthday).getTime()) /
+                    (1000 * 60 * 60 * 24 * 365.25)
+                )}{" "}
+                yrs
               </span>
-            </div>
-          ) : null}
+            ) : null}
+          </h1>
         </div>
       </header>
 
@@ -63,52 +83,47 @@ export default async function ModelDetailPage({ params }: ModelsDetailPageProps)
 
         {/* Stats / measurements */}
         <aside className="space-y-6 text-xs uppercase tracking-[0.4em] text-[var(--muted)]">
-          {hasStats ? (
+          {measurementItems.length ? (
             <div className="space-y-3 border-t border-[var(--border-color)] pt-4">
               <p className="text-[10px] uppercase tracking-[0.5em] text-[var(--muted)]">Measurements</p>
               <dl className="grid grid-cols-2 gap-x-6 gap-y-2 text-[var(--foreground)]">
-                {model.height && (
-                  <>
-                    <dt className="text-[var(--muted)]">Height</dt>
-                    <dd>{model.height}</dd>
-                  </>
-                )}
-                {model.bust && (
-                  <>
-                    <dt className="text-zinc-500">Bust</dt>
-                    <dd>{model.bust}</dd>
-                  </>
-                )}
-                {model.waist && (
-                  <>
-                    <dt className="text-zinc-500">Waist</dt>
-                    <dd>{model.waist}</dd>
-                  </>
-                )}
-                {model.hips && (
-                  <>
-                    <dt className="text-zinc-500">Hips</dt>
-                    <dd>{model.hips}</dd>
-                  </>
-                )}
-                {model.shoes && (
-                  <>
-                    <dt className="text-zinc-500">Shoes</dt>
-                    <dd>{model.shoes}</dd>
-                  </>
-                )}
-                {model.eyes && (
-                  <>
-                    <dt className="text-zinc-500">Eyes</dt>
-                    <dd>{model.eyes}</dd>
-                  </>
-                )}
-                {model.hair && (
-                  <>
-                    <dt className="text-zinc-500">Hair</dt>
-                    <dd>{model.hair}</dd>
-                  </>
-                )}
+                {measurementItems.map((item) => (
+                  <div key={item.label} className="contents">
+                    <dt className="text-[var(--muted)]">{item.label}</dt>
+                    <dd>{item.value}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          ) : null}
+
+          {profileItems.length ? (
+            <div className="space-y-3 border-t border-[var(--border-color)] pt-4">
+              <p className="text-[10px] uppercase tracking-[0.5em] text-[var(--muted)]">Profile</p>
+              <dl className="space-y-2 text-[var(--foreground)]">
+                {profileItems.map((item) => (
+                  <div key={item.label} className="flex items-baseline justify-between gap-4">
+                    <dt className="text-[var(--muted)]">{item.label}</dt>
+                    <dd className="text-right">
+                      {item.isLink ? (
+                        <Link
+                          href={
+                            (item.value as string).startsWith("http")
+                              ? (item.value as string)
+                              : `${item.linkPrefix ?? ""}${item.value}`
+                          }
+                          target="_blank"
+                          rel="noreferrer"
+                          className="underline-offset-4 hover:underline"
+                        >
+                          {item.value}
+                        </Link>
+                      ) : (
+                        item.value
+                      )}
+                    </dd>
+                  </div>
+                ))}
               </dl>
             </div>
           ) : null}

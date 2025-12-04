@@ -7,23 +7,29 @@ import {
 } from "@/lib/modelStore";
 
 type RouteContext = {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 };
 
-export async function GET(_: Request, { params }: RouteContext) {
-  const model = await getModelById(params.id);
+async function resolveParams(context: RouteContext) {
+  return context.params ? await context.params : { id: "" };
+}
+
+export async function GET(_: Request, context: RouteContext) {
+  const { id } = await resolveParams(context);
+  const model = await getModelById(id);
   if (!model) {
     return NextResponse.json({ error: "Not found" }, { status: 404 });
   }
   return NextResponse.json(model);
 }
 
-export async function PATCH(request: Request, { params }: RouteContext) {
+export async function PATCH(request: Request, context: RouteContext) {
   const updates = await request.json();
   try {
-    const updated = await updateModel(params.id, updates);
+    const { id } = await resolveParams(context);
+    const updated = await updateModel(id, updates);
     if (!updated) {
       return NextResponse.json({ error: "Not found" }, { status: 404 });
     }
@@ -36,8 +42,9 @@ export async function PATCH(request: Request, { params }: RouteContext) {
   }
 }
 
-export async function DELETE(_: Request, { params }: RouteContext) {
-  const deleted = await deleteModel(params.id);
+export async function DELETE(_: Request, context: RouteContext) {
+  const { id } = await resolveParams(context);
+  const deleted = await deleteModel(id);
   if (!deleted) {
     return NextResponse.json({ error: "Not found" }, { status: 404 });
   }

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Dosis } from "next/font/google";
 import "./globals.css";
+import { FooterInstagramLink } from "@/components/FooterInstagramLink";
 
 export const metadata: Metadata = {
   title: "3MMODELS",
@@ -54,18 +55,6 @@ export default function RootLayout({
                 ))}
               </nav>
             </div>
-            <div className="border-t border-[var(--border-color)]">
-              <div className="mx-auto flex flex-wrap justify-center gap-4 px-6 py-3 text-[10px] uppercase tracking-[0.5em] text-[var(--muted)] lg:max-w-6xl lg:px-8">
-                {boardNav.map((item) => {
-                  const href = item.href ?? `/models?division=${encodeURIComponent(item.division ?? "")}`;
-                  return (
-                    <Link key={item.label} href={href} className="hover:text-black transition-colors">
-                      {item.label}
-                    </Link>
-                  );
-                })}
-              </div>
-            </div>
           </header>
 
           <main className="flex-1">
@@ -75,9 +64,13 @@ export default function RootLayout({
           </main>
 
           <footer className="border-t border-[var(--border-color)] bg-white/90">
-            <div className="mx-auto flex flex-col items-center gap-2 px-6 py-6 text-[11px] uppercase tracking-[0.4em] text-[var(--muted)] lg:max-w-6xl lg:flex-row lg:justify-between lg:px-8">
+            <div className="mx-auto flex flex-col items-center gap-3 px-6 py-6 text-[11px] uppercase tracking-[0.4em] text-[var(--muted)] lg:max-w-6xl lg:flex-row lg:justify-between lg:px-8">
               <span>© {new Date().getFullYear()} 3MMODELS. All rights reserved.</span>
-              <span>Mediaslide model agency software</span>
+              <FooterInstagramLink
+                href="https://www.instagram.com/3mmodels_official/"
+                label="Instagram"
+                handle="@3mmodels_official"
+              />
             </div>
           </footer>
         </div>

@@ -16,6 +16,13 @@ export type ModelRecord = {
   name: string;
   division: string;
   city?: string;
+  citizenship?: string;
+  instagram?: string;
+  modelsComUrl?: string;
+  email?: string;
+  phone?: string;
+  whatsapp?: string;
+  birthday?: string;
   height?: string;
   bust?: string;
   waist?: string;
@@ -109,6 +116,13 @@ type CreateModelInput = {
   division: string;
   slug?: string;
   city?: string;
+  citizenship?: string;
+  instagram?: string;
+  modelsComUrl?: string;
+  email?: string;
+  phone?: string;
+  whatsapp?: string;
+  birthday?: string;
   height?: string;
   bust?: string;
   waist?: string;
@@ -134,6 +148,13 @@ export async function createModel(input: CreateModelInput) {
     name: input.name,
     division: input.division,
     city: input.city,
+    citizenship: input.citizenship,
+    instagram: input.instagram,
+    modelsComUrl: input.modelsComUrl,
+    email: input.email,
+    phone: input.phone,
+    whatsapp: input.whatsapp,
+    birthday: input.birthday,
     height: input.height,
     bust: input.bust,
     waist: input.waist,
@@ -177,6 +198,13 @@ export async function updateModel(id: string, updates: UpdateModelInput) {
     name: updates.name ?? target.name,
     division: updates.division ?? target.division,
     city: updates.city ?? target.city,
+    citizenship: updates.citizenship ?? target.citizenship,
+    instagram: updates.instagram ?? target.instagram,
+    modelsComUrl: updates.modelsComUrl ?? target.modelsComUrl,
+    email: updates.email ?? target.email,
+    phone: updates.phone ?? target.phone,
+    whatsapp: updates.whatsapp ?? target.whatsapp,
+    birthday: updates.birthday ?? target.birthday,
     height: updates.height ?? target.height,
     bust: updates.bust ?? target.bust,
     waist: updates.waist ?? target.waist,

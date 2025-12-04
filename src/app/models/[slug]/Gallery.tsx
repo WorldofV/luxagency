@@ -40,7 +40,13 @@ export function ModelGallery({ images, name }: ModelGalleryProps) {
   }, [lightboxIndex, images.length]);
 
   if (!images.length) {
-    return <div className="space-y-6" />;
+    return (
+      <div className="space-y-6">
+        <div className="aspect-[3/4] w-full overflow-hidden rounded-[36px] border border-[var(--border-color)] bg-gradient-to-br from-neutral-200 via-white to-neutral-100 text-center text-xs uppercase tracking-[0.4em] text-[var(--muted)] flex items-center justify-center">
+          <span>Book imagery coming soon</span>
+        </div>
+      </div>
+    );
   }
 
   const openLightbox = (index: number) => setLightboxIndex(index);
@@ -76,6 +82,7 @@ export function ModelGallery({ images, name }: ModelGalleryProps) {
             height={1200}
             className="h-full w-full object-cover transition-transform duration-500 hover:scale-[1.02]"
             priority
+            unoptimized
           />
         </button>
 
@@ -98,6 +105,7 @@ export function ModelGallery({ images, name }: ModelGalleryProps) {
                     width={600}
                     height={800}
                     className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                    unoptimized
                   />
                 </button>
               ))}
@@ -121,6 +129,7 @@ export function ModelGallery({ images, name }: ModelGalleryProps) {
               width={1000}
               height={1400}
               className="max-h-[80vh] w-full rounded-2xl object-contain"
+              unoptimized
             />
             <div className="mt-4 flex flex-wrap gap-2 text-[11px] uppercase tracking-[0.4em] text-white">
               <button

@@ -55,24 +55,23 @@ export default async function ModelsPage({ searchParams }: ModelsPageProps) {
 
   return (
     <section className="space-y-10">
-      <header className="space-y-4">
-        <p className="section-title">Models</p>
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-          <h1 className="text-3xl font-light tracking-[0.1em] text-[var(--foreground)] sm:text-4xl">
-            {activeLabel === "All divisions" ? "Mainboard & development boards." : `${activeLabel} board.`}
-          </h1>
-          <p className="max-w-md text-sm leading-relaxed text-[var(--muted)]">
-            Real-time feed synced from 3MMODELS ({`https://3mmodels.com/`}).
-            Click any profile to view the complete book, measurements and campaign work.
-          </p>
-        </div>
-      </header>
-
       <div className="flex flex-col gap-2 border-t border-[var(--border-color)] pt-6 text-[11px] uppercase tracking-[0.4em] text-[var(--muted)] sm:flex-row sm:items-center sm:justify-between">
         <span>
           {total} {total === 1 ? "model" : "models"} on {activeLabel.toLowerCase()}
         </span>
-        <span>Women · Men · Girls · Boys · Non Binary</span>
+        <div className="flex flex-wrap gap-3 text-[10px] uppercase tracking-[0.5em] text-[var(--muted)]">
+          {["Women", "Men", "Girls", "Boys", "Non Binary"].map((division) => (
+            <Link
+              key={division}
+              href={`/models?division=${encodeURIComponent(division.toLowerCase())}`}
+              className={`transition-colors hover:text-black ${
+                normalizedDivision === division.toLowerCase() ? "text-black" : ""
+              }`}
+            >
+              {division}
+            </Link>
+          ))}
+        </div>
       </div>
 
       {total === 0 ? (
@@ -91,15 +90,20 @@ export default async function ModelsPage({ searchParams }: ModelsPageProps) {
               href={`/models/${model.slug}`}
               className="block aspect-[3/4] w-full overflow-hidden rounded-2xl bg-[#f4eee4]"
             >
-              {model.polaroids && model.polaroids.length > 0 ? (
+              {model.images && model.images.length > 0 ? (
                 <Image
-                  src={model.polaroids[0]}
+                  src={model.images[0].url}
                   alt={model.name}
                   width={600}
                   height={800}
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  unoptimized
                 />
-              ) : null}
+              ) : (
+                <div className="flex h-full w-full items-center justify-center text-[11px] uppercase tracking-[0.4em] text-[var(--muted)]">
+                  No imagery yet
+                </div>
+              )}
             </Link>
             <div className="space-y-1">
               <h2 className="text-base font-medium tracking-[0.1em] text-[var(--foreground)]">

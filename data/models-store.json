@@ -14265,12 +14265,12 @@
       "city": "Jakarta",
       "height": "188cm - 6' 2''",
       "waist": "64 - 25''",
-      "hips": "89 - 35''",
-      "shoes": "44 - 10",
+      "hips": "57 cm / 22''",
+      "shoes": "44.5 - 10.5",
       "eyes": "Black",
       "hair": "Black",
       "createdAt": "2025-12-03T12:56:42.079Z",
-      "updatedAt": "2025-12-03T12:56:42.079Z",
+      "updatedAt": "2025-12-03T20:27:52.056Z",
       "images": [
         {
           "id": "0c530320-d49c-4fdf-8496-4c836ba227ab",
@@ -14302,7 +14302,11 @@
           "order": 40,
           "createdAt": "2025-12-03T12:56:42.079Z"
         }
-      ]
+      ],
+      "instagram": "ALBANA",
+      "birthday": "2006-02-01",
+      "email": "albana@gmail.com",
+      "bust": "59 cm / 23''"
     },
     {
       "id": "3f12184c-a975-4035-a8ca-05264caf71c7",
@@ -14317,7 +14321,7 @@
       "eyes": "Brown",
       "hair": "Black",
       "createdAt": "2025-12-03T12:56:42.079Z",
-      "updatedAt": "2025-12-03T12:56:42.079Z",
+      "updatedAt": "2025-12-03T20:14:28.459Z",
       "images": [
         {
           "id": "cc569c69-68bb-446e-a17e-186dc58844f8",
@@ -14487,7 +14491,8 @@
           "order": 270,
           "createdAt": "2025-12-03T12:56:42.079Z"
         }
-      ]
+      ],
+      "birthday": "2016-06-09"
     },
     {
       "id": "6e1bec94-dd1f-4bca-b7b9-639df9135e40",
@@ -16080,11 +16085,11 @@
       "height": "187cm - 6' 1.5''",
       "waist": "72 - 28''",
       "hips": "89 - 35''",
-      "shoes": "44,5 - 10.5",
+      "shoes": "44.5 - 10.5",
       "eyes": "Blue",
       "hair": "Dark Blond",
       "createdAt": "2025-12-03T12:56:42.079Z",
-      "updatedAt": "2025-12-03T12:56:42.079Z",
+      "updatedAt": "2025-12-03T19:51:50.274Z",
       "images": [
         {
           "id": "0222136d-a07d-409e-819b-002c30c06c61",
@@ -17053,6 +17058,16 @@
           "createdAt": "2025-12-03T14:53:04.490Z"
         }
       ]
+    },
+    {
+      "id": "4560a2ec-b12b-41da-9621-169061461fb3",
+      "slug": "test",
+      "name": "Test",
+      "division": "Men",
+      "height": "180cm",
+      "createdAt": "2025-12-03T19:49:28.066Z",
+      "updatedAt": "2025-12-03T19:49:28.066Z",
+      "images": []
     }
   ]
 }
