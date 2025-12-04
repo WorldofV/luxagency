@@ -20,6 +20,7 @@ export type SubmissionRecord = {
   citizenship?: string;
   languages?: string;
   currentCity?: string;
+  phonePrefix?: string;
   phone?: string;
   instagram?: string;
   height?: string;

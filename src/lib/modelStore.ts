@@ -20,6 +20,7 @@ export type ModelRecord = {
   instagram?: string;
   modelsComUrl?: string;
   email?: string;
+  phonePrefix?: string;
   phone?: string;
   whatsapp?: string;
   birthday?: string;
@@ -120,6 +121,7 @@ type CreateModelInput = {
   instagram?: string;
   modelsComUrl?: string;
   email?: string;
+  phonePrefix?: string;
   phone?: string;
   whatsapp?: string;
   birthday?: string;
@@ -152,6 +154,7 @@ export async function createModel(input: CreateModelInput) {
     instagram: input.instagram,
     modelsComUrl: input.modelsComUrl,
     email: input.email,
+    phonePrefix: input.phonePrefix,
     phone: input.phone,
     whatsapp: input.whatsapp,
     birthday: input.birthday,
@@ -202,6 +205,7 @@ export async function updateModel(id: string, updates: UpdateModelInput) {
     instagram: updates.instagram ?? target.instagram,
     modelsComUrl: updates.modelsComUrl ?? target.modelsComUrl,
     email: updates.email ?? target.email,
+    phonePrefix: updates.phonePrefix ?? target.phonePrefix,
     phone: updates.phone ?? target.phone,
     whatsapp: updates.whatsapp ?? target.whatsapp,
     birthday: updates.birthday ?? target.birthday,

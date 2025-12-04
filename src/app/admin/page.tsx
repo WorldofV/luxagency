@@ -10,6 +10,7 @@ import {
   hairOptions,
   heightOptions,
   measurementOptions,
+  phonePrefixOptions,
   shoeOptions,
 } from "@/lib/modelOptions";
 
@@ -65,6 +66,24 @@ const shortHeightLabel = (descriptor?: string) => {
   if (isMaleDescriptor(descriptor)) return "Male talent under 180 cm";
   if (isFemaleDescriptor(descriptor)) return "Female talent under 170 cm";
   return "Below preferred height";
+};
+
+const getShoeOptionsForDivision = (division?: string) => {
+  const normalized = division?.toLowerCase() ?? "";
+  if (normalized.includes("men") || normalized.includes("boys")) {
+    return shoeOptions.male;
+  }
+  if (normalized.includes("women") || normalized.includes("girls")) {
+    return shoeOptions.female;
+  }
+  return shoeOptions.neutral;
+};
+
+const formatPhoneNumber = (prefix?: string | null, number?: string | null) => {
+  const normalizedPrefix = prefix?.trim() ?? "";
+  const normalizedNumber = number?.trim() ?? "";
+  if (normalizedPrefix && normalizedNumber) return `${normalizedPrefix} ${normalizedNumber}`;
+  return normalizedPrefix || normalizedNumber;
 };
 
 export default function AdminPage() {
@@ -737,6 +756,8 @@ function ModelCard({ model, onChange, onShowConfirmation, onShowDeleteConfirmati
           (1000 * 60 * 60 * 24 * 365.25)
       )
     : null;
+  const formattedPhone = formatPhoneNumber(localModel.phonePrefix, localModel.phone);
+  const divisionShoeOptions = getShoeOptionsForDivision(localModel.division);
 
   useEffect(() => {
     setLocalModel(model);
@@ -772,6 +793,7 @@ function ModelCard({ model, onChange, onShowConfirmation, onShowDeleteConfirmati
         instagram: localModel.instagram,
         modelsComUrl: localModel.modelsComUrl,
         email: localModel.email,
+        phonePrefix: localModel.phonePrefix,
         phone: localModel.phone,
         whatsapp: localModel.whatsapp,
         birthday: localModel.birthday,
@@ -982,11 +1004,27 @@ function ModelCard({ model, onChange, onShowConfirmation, onShowDeleteConfirmati
         </label>
         <label className="text-xs uppercase tracking-[0.4em] text-[var(--muted)]">
           Phone
-          <input
-            className="mt-1 w-full rounded-lg border border-[var(--border-color)] px-3 py-2"
-            value={localModel.phone ?? ""}
-            onChange={(event) => handleFieldChange("phone", event.target.value)}
-          />
+          <div className="mt-1 flex gap-2">
+            <select
+              className="w-28 rounded-lg border border-[var(--border-color)] px-2 py-2 text-xs"
+              value={localModel.phonePrefix ?? ""}
+              onChange={(event) =>
+                handleFieldChange("phonePrefix", event.target.value || undefined)
+              }
+            >
+              <option value="">Prefix</option>
+              {phonePrefixOptions.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
+            </select>
+            <input
+              className="flex-1 rounded-lg border border-[var(--border-color)] px-3 py-2"
+              value={localModel.phone ?? ""}
+              onChange={(event) => handleFieldChange("phone", event.target.value)}
+            />
+          </div>
         </label>
         <label className="text-xs uppercase tracking-[0.4em] text-[var(--muted)]">
           WhatsApp
@@ -1077,7 +1115,7 @@ function ModelCard({ model, onChange, onShowConfirmation, onShowDeleteConfirmati
             onChange={(event) => handleFieldChange("shoes", event.target.value)}
           >
             <option value="">Select shoes</option>
-            {shoeOptions.map((option) => (
+            {divisionShoeOptions.map((option) => (
               <option key={option} value={option}>
                 {option}
               </option>
@@ -1197,7 +1235,7 @@ function ModelCard({ model, onChange, onShowConfirmation, onShowDeleteConfirmati
           </div>
         )}
       </div>
-      {(localModel.email || localModel.phone || localModel.whatsapp || localModel.birthday) ? (
+      {(localModel.email || formattedPhone || localModel.whatsapp || localModel.birthday) ? (
         <div className="mt-6 rounded-[20px] border border-[var(--border-color)] bg-white/70 px-4 py-3 text-xs uppercase tracking-[0.4em] text-[var(--muted)]">
           <p className="text-[10px] uppercase tracking-[0.5em] text-[var(--muted)]">
             Private contact
@@ -1209,10 +1247,10 @@ function ModelCard({ model, onChange, onShowConfirmation, onShowDeleteConfirmati
                 <dd className="text-right text-[11px] normal-case">{localModel.email}</dd>
               </div>
             ) : null}
-            {localModel.phone ? (
+            {formattedPhone ? (
               <div className="flex items-baseline justify-between gap-4">
                 <dt className="text-[var(--muted)]">Phone</dt>
-                <dd className="text-right text-[11px] normal-case">{localModel.phone}</dd>
+                <dd className="text-right text-[11px] normal-case">{formattedPhone}</dd>
               </div>
             ) : null}
             {localModel.whatsapp ? (
@@ -1258,6 +1296,7 @@ function SubmissionCard({ submission, onApprove, onDelete, onPreview }: Submissi
     url: image.url,
     alt: `${submission.firstName} ${submission.lastName}`,
   }));
+  const formattedSubmissionPhone = formatPhoneNumber(submission.phonePrefix, submission.phone);
 
   return (
     <article className="rounded-[24px] border border-[var(--border-color)] bg-white/85 p-4">
@@ -1308,7 +1347,7 @@ function SubmissionCard({ submission, onApprove, onDelete, onPreview }: Submissi
         <div>
           <p className="section-title">Contact</p>
           <p>
-            {submission.phone || "—"}
+            {formattedSubmissionPhone || "—"}
             <br />
             {submission.instagram || "No Instagram"}
           </p>

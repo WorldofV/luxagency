@@ -31,6 +31,7 @@ export async function POST(request: Request) {
       instagram: payload.instagram,
       modelsComUrl: payload.modelsComUrl,
       email: payload.email,
+      phonePrefix: payload.phonePrefix,
       phone: payload.phone,
       whatsapp: payload.whatsapp,
       birthday: payload.birthday,

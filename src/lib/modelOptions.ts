@@ -89,19 +89,47 @@ export const measurementOptions = [
   "105 cm / 41''",
 ];
 
-export const shoeOptions = [
-  "39 - 6.5",
-  "40 - 7.5",
-  "41 - 8",
-  "42 - 8.5",
-  "43 - 9",
-  "43.5 - 9.5",
-  "44 - 10",
-  "44.5 - 10.5",
-  "45 - 11",
-  "45.5 - 11.5",
-  "46 - 12",
+const femaleShoeOptions = [
+  "35 - 5",
+  "35.5 - 5.5",
+  "36 - 6",
+  "36.5 - 6.5",
+  "37 - 7",
+  "37.5 - 7.5",
+  "38 - 8",
+  "38.5 - 8.5",
+  "39 - 9",
+  "39.5 - 9.5",
+  "40 - 10",
+  "40.5 - 10.5",
+  "41 - 11",
+  "41.5 - 11.5",
+  "42 - 12",
 ];
+
+const maleShoeOptions = [
+  "40 - 7",
+  "40.5 - 7.5",
+  "41 - 8",
+  "41.5 - 8.5",
+  "42 - 9",
+  "42.5 - 9.5",
+  "43 - 10",
+  "43.5 - 10.5",
+  "44 - 11",
+  "44.5 - 11.5",
+  "45 - 12",
+  "45.5 - 12.5",
+  "46 - 13",
+  "46.5 - 13.5",
+  "47 - 14",
+];
+
+export const shoeOptions = {
+  female: femaleShoeOptions,
+  male: maleShoeOptions,
+  neutral: Array.from(new Set([...femaleShoeOptions, ...maleShoeOptions])).sort(),
+};
 
 export const eyeOptions = ["Black", "Blue", "Brown", "Green", "Hazel", "Honey", "Gray"];
 
@@ -119,4 +147,6 @@ export const hairOptions = [
   "Gray",
   "White",
 ];
+
+export { phonePrefixOptions } from "./phonePrefixes";
 

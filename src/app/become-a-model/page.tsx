@@ -1,16 +1,30 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useId, useState } from "react";
+import type { ChangeEvent } from "react";
 
 import {
   eyeOptions,
   hairOptions,
   heightOptions,
   measurementOptions,
+  phonePrefixOptions,
   shoeOptions,
 } from "@/lib/modelOptions";
 
 const genderOptions = ["Female", "Male", "Non Binary"];
+const MAX_UPLOAD_FILES = 10;
+
+const getShoeOptionsForGender = (gender: string) => {
+  const normalized = gender.toLowerCase();
+  if (normalized.includes("male") && !normalized.includes("fe")) {
+    return shoeOptions.male;
+  }
+  if (normalized.includes("female")) {
+    return shoeOptions.female;
+  }
+  return shoeOptions.neutral;
+};
 
 export default function BecomeModelPage() {
   const [submitting, setSubmitting] = useState(false);
@@ -26,6 +40,7 @@ export default function BecomeModelPage() {
     languages: "",
     currentCity: "",
     phone: "",
+    phonePrefix: "",
     instagram: "",
     height: "",
     chest: "",
@@ -39,20 +54,39 @@ export default function BecomeModelPage() {
     source: "",
     notes: "",
   });
-  const [files, setFiles] = useState<FileList | null>(null);
+  const [files, setFiles] = useState<File[]>([]);
+  const [fileError, setFileError] = useState<string | null>(null);
+  const [previewUrls, setPreviewUrls] = useState<string[]>([]);
+  const fileInputId = useId();
 
   const handleChange = (field: string, value: string) => {
     setForm((prev) => ({ ...prev, [field]: value }));
   };
+
+  const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const selection = Array.from(event.target.files ?? []);
+    if (selection.length > MAX_UPLOAD_FILES) {
+      setFileError(`Please upload up to ${MAX_UPLOAD_FILES} images.`);
+    } else {
+      setFileError(null);
+    }
+    setFiles(selection.slice(0, MAX_UPLOAD_FILES));
+  };
+
+  useEffect(() => {
+    const urls = files.map((file) => URL.createObjectURL(file));
+    setPreviewUrls(urls);
+    return () => {
+      urls.forEach((url) => URL.revokeObjectURL(url));
+    };
+  }, [files]);
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     setSubmitting(true);
     const data = new FormData();
     Object.entries(form).forEach(([key, value]) => data.append(key, value));
-    if (files) {
-      Array.from(files).forEach((file) => data.append("images", file));
-    }
+    files.slice(0, MAX_UPLOAD_FILES).forEach((file) => data.append("images", file));
 
     const response = await fetch("/api/submissions", {
       method: "POST",
@@ -62,10 +96,21 @@ export default function BecomeModelPage() {
     setSubmitting(false);
     if (response.ok) {
       setSuccess(true);
-      setForm((prev) => ({ ...prev, firstName: "", lastName: "", email: "", instagram: "", phone: "" }));
-      setFiles(null);
+      setForm((prev) => ({
+        ...prev,
+        firstName: "",
+        lastName: "",
+        email: "",
+        instagram: "",
+        phone: "",
+        phonePrefix: "",
+      }));
+      setFiles([]);
+      setFileError(null);
     }
   };
+
+  const genderedShoeOptions = getShoeOptionsForGender(form.gender);
 
   return (
     <section className="space-y-10">
@@ -75,12 +120,8 @@ export default function BecomeModelPage() {
           Submit your digitals for 3MMODELS consideration.
         </h1>
         <p className="mx-auto max-w-3xl text-sm leading-relaxed text-[var(--muted)]">
-          Following the requirements published on the official board{" "}
-          <a href="https://3mmodels.com/become" className="underline" target="_blank" rel="noreferrer">
-            (3mmodels.com/become)
-          </a>{" "}
-          we review applications for Women (15-23, 173-180cm) and Men (15-25, 184-195cm). Please fill the form and
-          upload natural digitals: full-length, profile, and close-up.
+          We review applications for Women (15-23, 173-180cm) and Men (15-25, 184-195cm). Please fill the form and upload
+          natural digitals: full-length, profile, and close-up.
         </p>
       </header>
 
@@ -92,7 +133,7 @@ export default function BecomeModelPage() {
             <li>Include accurate measurements and current location.</li>
             <li>Applicants under 18 must have a parent or guardian submit.</li>
             <li>List availability to travel for show seasons or development.</li>
-            <li>Files accepted: JPG/PNG up to 5 images.</li>
+            <li>Files accepted: JPG/PNG up to 10 images.</li>
           </ul>
           <div>
             <p className="section-title">Contact</p>
@@ -183,11 +224,27 @@ export default function BecomeModelPage() {
             />
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="grid gap-4 sm:grid-cols-[110px_minmax(0,1fr)_minmax(0,1fr)]">
+            <select
+              value={form.phonePrefix}
+              onChange={(event) => handleChange("phonePrefix", event.target.value)}
+              className="rounded-lg border border-[var(--border-color)] px-2 py-2 text-sm sm:w-[110px]"
+            >
+              <option value="">Prefix</option>
+              {phonePrefixOptions.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
+            </select>
             <input
               value={form.phone}
-              onChange={(event) => handleChange("phone", event.target.value)}
+              onChange={(event) =>
+                handleChange("phone", event.target.value.replace(/[^0-9]/g, ""))
+              }
               placeholder="Phone"
+              inputMode="numeric"
+              pattern="[0-9]*"
               className="rounded-lg border border-[var(--border-color)] px-3 py-2 text-sm"
             />
             <input
@@ -231,7 +288,7 @@ export default function BecomeModelPage() {
               className="rounded-lg border border-[var(--border-color)] px-3 py-2 text-sm"
             >
               <option value="">Shoes (EU/US)</option>
-              {shoeOptions.map((option) => (
+              {genderedShoeOptions.map((option) => (
                 <option key={option}>{option}</option>
               ))}
             </select>
@@ -282,17 +339,47 @@ export default function BecomeModelPage() {
           />
 
           <div className="space-y-2 rounded-2xl border border-dashed border-[var(--border-color)] p-4 text-center">
-            <p className="text-xs uppercase tracking-[0.4em] text-[var(--muted)]">Pictures*</p>
             <input
+              id={fileInputId}
               type="file"
               accept="image/*"
               multiple
-              onChange={(event) => setFiles(event.target.files)}
-              className="mx-auto block"
+              onChange={handleFileChange}
+              className="sr-only"
             />
+            <label
+              htmlFor={fileInputId}
+              className="mx-auto inline-flex cursor-pointer items-center rounded-full border border-black px-4 py-1 text-xs uppercase tracking-[0.4em]"
+            >
+              Select images
+            </label>
             <p className="text-xs text-[var(--muted)]">
-              Drag and drop digitals (full-length front, profile, close-up). Max 5 files.
+              Drag and drop digitals (full-length front, profile, close-up). Max {MAX_UPLOAD_FILES} files.
             </p>
+            <p className="text-xs text-[var(--muted)]">
+              {files.length}/{MAX_UPLOAD_FILES} selected
+            </p>
+            {fileError ? (
+              <p className="text-xs text-red-600" role="alert">
+                {fileError}
+              </p>
+            ) : null}
+            {previewUrls.length ? (
+              <div className="grid gap-3 pt-3 sm:grid-cols-3">
+                {previewUrls.map((url, index) => (
+                  <div
+                    key={`${url}-${index}`}
+                    className="overflow-hidden rounded-2xl border border-[var(--border-color)] bg-white"
+                  >
+                    <img
+                      src={url}
+                      alt={`Upload preview ${index + 1}`}
+                      className="h-40 w-full object-cover"
+                    />
+                  </div>
+                ))}
+              </div>
+            ) : null}
           </div>
 
           <button

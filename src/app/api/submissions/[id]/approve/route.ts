@@ -28,6 +28,9 @@ export async function POST(_: Request, context: RouteContext) {
     name: `${submission.firstName} ${submission.lastName}`.trim(),
     division: divisionFromGender(submission.gender),
     city: submission.currentCity,
+    email: submission.email,
+    phonePrefix: submission.phonePrefix,
+    phone: submission.phone,
     height: submission.height,
     bust: submission.chest,
     waist: submission.waist,
@@ -35,6 +38,9 @@ export async function POST(_: Request, context: RouteContext) {
     shoes: submission.shoes,
     eyes: submission.eyes,
     hair: submission.hair,
+    instagram: submission.instagram,
+    citizenship: submission.citizenship,
+    birthday: submission.birthday,
   });
 
   for (const image of submission.images) {

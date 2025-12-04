@@ -35,6 +35,7 @@ export async function POST(request: Request) {
     citizenship: formData.get("citizenship")?.toString() || undefined,
     languages: formData.get("languages")?.toString() || undefined,
     currentCity: formData.get("currentCity")?.toString() || undefined,
+    phonePrefix: formData.get("phonePrefix")?.toString() || undefined,
     phone: formData.get("phone")?.toString() || undefined,
     instagram: formData.get("instagram")?.toString() || undefined,
     height: formData.get("height")?.toString() || undefined,
