@@ -25,3 +25,19 @@ body {
   letter-spacing: 0.6em;
   color: var(--muted);
 }
+
+/* Leaflet map styling for minimalist look */
+.leaflet-container {
+  background: white;
+  font-family: inherit;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.leaflet-popup-tip {
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}

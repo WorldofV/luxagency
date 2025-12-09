@@ -14,7 +14,7 @@
       "eyes": "Brown",
       "hair": "Brown",
       "createdAt": "2025-12-03T12:56:42.079Z",
-      "updatedAt": "2025-12-03T12:56:42.079Z",
+      "updatedAt": "2025-12-08T17:21:11.625Z",
       "images": [
         {
           "id": "a8293edc-8d35-4f9b-bd2d-6f8d8d5cd019",
@@ -68,12 +68,6 @@
           "id": "ffc16100-c09f-47cf-96bf-8e08c8768174",
           "url": "https://3mmodels.com/web/published/contacts/7211/portfolio/%D0%97%D0%BD%D1%96%D0%BC%D0%BE%D0%BA%20%D0%B5%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202024-02-02%20%D0%BE%2011.32.01.jpg",
           "order": 80,
-          "createdAt": "2025-12-03T12:56:42.079Z"
-        },
-        {
-          "id": "203feaf5-9c03-4e08-b048-687448d3c707",
-          "url": "https://3mmodels.com/web/published/contacts/7211/portfolio/off-white-popel-shirt_17589419_37962019_2048.jpg",
-          "order": 90,
           "createdAt": "2025-12-03T12:56:42.079Z"
         },
         {
@@ -202,7 +196,8 @@
           "order": 300,
           "createdAt": "2025-12-03T12:56:42.079Z"
         }
-      ]
+      ],
+      "bookUpdatedAt": "2025-12-08T17:21:11.625Z"
     },
     {
       "id": "ac080c33-ddfb-4a36-acb7-76353015327b",
@@ -2857,7 +2852,7 @@
       "eyes": "Blue",
       "hair": "Blond",
       "createdAt": "2025-12-03T12:56:42.079Z",
-      "updatedAt": "2025-12-03T12:56:42.079Z",
+      "updatedAt": "2025-12-08T16:42:17.516Z",
       "images": [
         {
           "id": "fb73967d-8150-40ef-918d-f271fc478b67",
@@ -2985,12 +2980,21 @@
           "order": 200,
           "createdAt": "2025-12-03T12:56:42.079Z"
         }
+      ],
+      "agencyPlacements": [
+        {
+          "id": "45bb8259-8a71-4771-8553-c487a7549ddc",
+          "city": "Shanghai",
+          "agencyName": "Funs",
+          "startDate": "2025-10-22",
+          "createdAt": "2025-12-08T16:42:17.516Z"
+        }
       ]
     },
     {
       "id": "b1bbe820-041b-4f0c-8e99-07f6e53e9fc2",
       "slug": "dileo",
-      "name": "Alec Di Leo",
+      "name": "Boy Di Leo",
       "division": "Men",
       "city": "Milan",
       "height": "186cm - 6' 1''",
@@ -3000,7 +3004,7 @@
       "eyes": "Green",
       "hair": "Light Brown",
       "createdAt": "2025-12-03T12:56:42.079Z",
-      "updatedAt": "2025-12-03T12:56:42.079Z",
+      "updatedAt": "2025-12-06T17:14:04.854Z",
       "images": [
         {
           "id": "44d6adfd-6428-489d-820e-4c6f06101310",
@@ -3302,7 +3306,9 @@
           "order": 490,
           "createdAt": "2025-12-03T12:56:42.079Z"
         }
-      ]
+      ],
+      "firstName": "Boy",
+      "lastName": "Di Leo"
     },
     {
       "id": "b2a697be-69fe-48a5-83df-c85cc378eb9c",
@@ -3315,9 +3321,9 @@
       "hips": "102 - 40''",
       "shoes": "43 - 9",
       "eyes": "Brown",
-      "hair": "Brown",
+      "hair": "Blond",
       "createdAt": "2025-12-03T12:56:42.079Z",
-      "updatedAt": "2025-12-03T12:56:42.079Z",
+      "updatedAt": "2025-12-07T17:16:02.949Z",
       "images": [
         {
           "id": "8dfebc0a-9514-48a3-9ac2-d3da6044a78d",
@@ -3326,8 +3332,8 @@
           "createdAt": "2025-12-03T12:56:42.079Z"
         },
         {
-          "id": "645cc45d-9473-46c8-9fe9-c83fb0e0e83b",
-          "url": "https://3mmodels.com/web/published/contacts/2088/portfolio/Screenshot%202024-12-06%20at%2015.07.32.jpg",
+          "id": "2ad64aff-9cca-43ac-a2ce-9da1d5c103ef",
+          "url": "https://3mmodels.com/web/published/contacts/2088/portfolio/Screenshot%202024-12-06%20at%2015.07.55.jpg",
           "order": 10,
           "createdAt": "2025-12-03T12:56:42.079Z"
         },
@@ -3338,8 +3344,8 @@
           "createdAt": "2025-12-03T12:56:42.079Z"
         },
         {
-          "id": "2ad64aff-9cca-43ac-a2ce-9da1d5c103ef",
-          "url": "https://3mmodels.com/web/published/contacts/2088/portfolio/Screenshot%202024-12-06%20at%2015.07.55.jpg",
+          "id": "645cc45d-9473-46c8-9fe9-c83fb0e0e83b",
+          "url": "https://3mmodels.com/web/published/contacts/2088/portfolio/Screenshot%202024-12-06%20at%2015.07.32.jpg",
           "order": 30,
           "createdAt": "2025-12-03T12:56:42.079Z"
         },
@@ -3714,6 +3720,33 @@
           "url": "https://3mmodels.com/web/published/contacts/2088/portfolio/Export_I5A5993%201.jpg",
           "order": 650,
           "createdAt": "2025-12-03T12:56:42.079Z"
+        }
+      ],
+      "bookUpdatedAt": "2025-12-06T20:24:05.878Z",
+      "hidden": false,
+      "firstName": "Alessio",
+      "lastName": "Pozzi",
+      "agencyPlacements": [
+        {
+          "id": "64573111-6b49-4053-95e2-3f6545aa62da",
+          "city": "New York",
+          "agencyName": "Next",
+          "startDate": "2021-02-07",
+          "createdAt": "2025-12-07T16:57:03.587Z"
+        },
+        {
+          "id": "7ee73c00-4eb7-43b8-b3fd-456dac9bf509",
+          "city": "London",
+          "agencyName": "Supa",
+          "startDate": "2023-02-07",
+          "createdAt": "2025-12-07T16:59:29.645Z"
+        },
+        {
+          "id": "eddfcdb3-27bf-498f-a4a1-152744848b04",
+          "city": "Barcellona",
+          "agencyName": "Sight",
+          "startDate": "2023-02-07",
+          "createdAt": "2025-12-07T16:59:59.343Z"
         }
       ]
     },
@@ -14110,29 +14143,29 @@
       "eyes": "Brown",
       "hair": "Black",
       "createdAt": "2025-12-03T12:56:42.079Z",
-      "updatedAt": "2025-12-03T12:56:42.079Z",
+      "updatedAt": "2025-12-08T17:33:51.120Z",
       "images": [
-        {
-          "id": "8ee36f36-d7e7-4822-bf29-1e75544b9cae",
-          "url": "https://3mmodels.com/web/published/contacts/14502/portfolio/Screenshot%202024-09-20%20at%2010.33.51.jpg",
-          "order": 0,
-          "createdAt": "2025-12-03T12:56:42.079Z"
-        },
-        {
-          "id": "686b5ac8-f6b3-471b-bff3-a916d4ab88c6",
-          "url": "https://3mmodels.com/web/published/contacts/14502/portfolio/Screenshot%202024-09-20%20at%2010.36.12.jpg",
-          "order": 10,
-          "createdAt": "2025-12-03T12:56:42.079Z"
-        },
         {
           "id": "d67c893e-b3a0-43d6-9973-23e4290a44e0",
           "url": "https://3mmodels.com/web/published/contacts/14502/portfolio/Screenshot%202024-09-20%20at%2010.34.20.jpg",
-          "order": 20,
+          "order": 0,
           "createdAt": "2025-12-03T12:56:42.079Z"
         },
         {
           "id": "e6622cdd-ba6b-47f1-abd7-1d08a3449e23",
           "url": "https://3mmodels.com/web/published/contacts/14502/portfolio/Screenshot%202024-09-20%20at%2010.34.46.jpg",
+          "order": 10,
+          "createdAt": "2025-12-03T12:56:42.079Z"
+        },
+        {
+          "id": "8ee36f36-d7e7-4822-bf29-1e75544b9cae",
+          "url": "https://3mmodels.com/web/published/contacts/14502/portfolio/Screenshot%202024-09-20%20at%2010.33.51.jpg",
+          "order": 20,
+          "createdAt": "2025-12-03T12:56:42.079Z"
+        },
+        {
+          "id": "686b5ac8-f6b3-471b-bff3-a916d4ab88c6",
+          "url": "https://3mmodels.com/web/published/contacts/14502/portfolio/Screenshot%202024-09-20%20at%2010.36.12.jpg",
           "order": 30,
           "createdAt": "2025-12-03T12:56:42.079Z"
         },
@@ -14256,7 +14289,8 @@
           "order": 230,
           "createdAt": "2025-12-03T12:56:42.079Z"
         }
-      ]
+      ],
+      "bookUpdatedAt": "2025-12-08T17:33:51.120Z"
     },
     {
       "id": "c6465671-6f4a-43df-b9f6-bc9fa3520b66",
@@ -14271,7 +14305,7 @@
       "eyes": "Black",
       "hair": "Black",
       "createdAt": "2025-12-03T12:56:42.079Z",
-      "updatedAt": "2025-12-03T20:27:52.056Z",
+      "updatedAt": "2025-12-08T18:34:01.443Z",
       "images": [
         {
           "id": "0c530320-d49c-4fdf-8496-4c836ba227ab",
@@ -14280,34 +14314,38 @@
           "createdAt": "2025-12-03T12:56:42.079Z"
         },
         {
-          "id": "5372edca-310a-4c1d-a90c-754ad56e1e47",
-          "url": "https://3mmodels.com/web/published/contacts/15644/portfolio/cd8a28f31e677b6d2a3302de6884e65d.jpg",
-          "order": 10,
-          "createdAt": "2025-12-03T12:56:42.079Z"
-        },
-        {
           "id": "acd0e34d-fc36-4d6c-be86-02ca077bb8f5",
           "url": "https://3mmodels.com/web/published/contacts/15644/portfolio/17fbcf3e530ed7f3ced66bb70fec4cbe.jpg",
-          "order": 20,
+          "order": 10,
           "createdAt": "2025-12-03T12:56:42.079Z"
         },
         {
           "id": "3c93b4fc-59d9-4cf4-8abd-a749c660ba17",
           "url": "https://3mmodels.com/web/published/contacts/15644/portfolio/2.jpg",
-          "order": 30,
+          "order": 20,
           "createdAt": "2025-12-03T12:56:42.079Z"
         },
         {
-          "id": "38a82bae-5bd5-48eb-b6b4-6ca39d9807e2",
-          "url": "https://3mmodels.com/web/published/contacts/15644/portfolio/2%20%281%29.jpg",
-          "order": 40,
+          "id": "5372edca-310a-4c1d-a90c-754ad56e1e47",
+          "url": "https://3mmodels.com/web/published/contacts/15644/portfolio/cd8a28f31e677b6d2a3302de6884e65d.jpg",
+          "order": 30,
           "createdAt": "2025-12-03T12:56:42.079Z"
         }
       ],
       "instagram": "ALBANA",
       "birthday": "2006-02-01",
       "email": "albana@gmail.com",
-      "bust": "59 cm / 23''"
+      "bust": "59 cm / 23''",
+      "bookUpdatedAt": "2025-12-08T18:34:01.443Z",
+      "agencyPlacements": [
+        {
+          "id": "b59aca3f-ad31-42fb-b1ac-097579c97e2e",
+          "city": "Milan",
+          "agencyName": "Elite",
+          "startDate": "2023-02-07",
+          "createdAt": "2025-12-07T21:28:19.073Z"
+        }
+      ]
     },
     {
       "id": "3f12184c-a975-4035-a8ca-05264caf71c7",
@@ -14322,7 +14360,7 @@
       "eyes": "Brown",
       "hair": "Black",
       "createdAt": "2025-12-03T12:56:42.079Z",
-      "updatedAt": "2025-12-03T20:14:28.459Z",
+      "updatedAt": "2025-12-08T19:03:23.833Z",
       "images": [
         {
           "id": "cc569c69-68bb-446e-a17e-186dc58844f8",
@@ -14331,20 +14369,20 @@
           "createdAt": "2025-12-03T12:56:42.079Z"
         },
         {
-          "id": "403c28fc-b539-4eb2-9333-0a16eca6e92d",
-          "url": "https://3mmodels.com/web/published/contacts/16664/portfolio/IMG_9384.jpg",
-          "order": 10,
-          "createdAt": "2025-12-03T12:56:42.079Z"
-        },
-        {
           "id": "fa799904-c946-406f-84c7-19ef9b970f6e",
           "url": "https://3mmodels.com/web/published/contacts/16664/portfolio/IMG_9383.jpg",
-          "order": 20,
+          "order": 10,
           "createdAt": "2025-12-03T12:56:42.079Z"
         },
         {
           "id": "5f80874b-98c6-427c-a007-5973a9c8e0b8",
           "url": "https://3mmodels.com/web/published/contacts/16664/portfolio/473766301_18338282368159456_7591806898651844751_n.jpg",
+          "order": 20,
+          "createdAt": "2025-12-03T12:56:42.079Z"
+        },
+        {
+          "id": "403c28fc-b539-4eb2-9333-0a16eca6e92d",
+          "url": "https://3mmodels.com/web/published/contacts/16664/portfolio/IMG_9384.jpg",
           "order": 30,
           "createdAt": "2025-12-03T12:56:42.079Z"
         },
@@ -14493,7 +14531,17 @@
           "createdAt": "2025-12-03T12:56:42.079Z"
         }
       ],
-      "birthday": "2016-06-09"
+      "birthday": "2016-06-09",
+      "bookUpdatedAt": "2025-12-08T18:30:04.740Z",
+      "agencyPlacements": [
+        {
+          "id": "42c7d1f0-0d3b-47c8-8398-dcec794c7397",
+          "city": "Milan",
+          "agencyName": "Elite",
+          "startDate": "2025-12-03",
+          "createdAt": "2025-12-08T19:03:23.833Z"
+        }
+      ]
     },
     {
       "id": "6e1bec94-dd1f-4bca-b7b9-639df9135e40",
@@ -16853,8 +16901,9 @@
       "division": "Men",
       "city": "Milan",
       "createdAt": "2025-12-03T13:21:08.795Z",
-      "updatedAt": "2025-12-03T13:21:08.795Z",
-      "images": []
+      "updatedAt": "2025-12-06T17:24:10.298Z",
+      "images": [],
+      "hidden": true
     },
     {
       "id": "be26e05f-21b7-4cec-a0ca-9ccea65ac92a",
@@ -16870,195 +16919,154 @@
       "eyes": "Brown",
       "hair": "Blond",
       "createdAt": "2025-12-03T14:53:04.236Z",
-      "updatedAt": "2025-12-03T14:53:04.490Z",
+      "updatedAt": "2025-12-08T17:33:27.354Z",
       "images": [
         {
           "id": "c72d8a1f-7ff8-4f88-a5f7-c7cb23bd811c",
           "url": "/uploads/1764772584860-b5809cdf-310a-4d8c-a222-958accc4e25b.jpg",
-          "order": 10,
+          "order": 0,
           "createdAt": "2025-12-03T14:53:04.243Z"
         },
         {
           "id": "c994da6e-3679-4b7c-a1c9-0821a0231418",
           "url": "/uploads/1764772584862-c15cc3cd-57a0-4e0d-b1c6-47a0ead7c750.jpg",
-          "order": 20,
+          "order": 10,
           "createdAt": "2025-12-03T14:53:04.249Z"
-        },
-        {
-          "id": "4a15a562-e33e-484a-b873-3a161d4317bd",
-          "url": "/uploads/1764772584862-1e4beea4-3915-4906-9e96-0aaeef22861e.jpg",
-          "order": 30,
-          "createdAt": "2025-12-03T14:53:04.261Z"
         },
         {
           "id": "1c262572-490e-4a3d-af6e-02736d5ee1bd",
           "url": "/uploads/1764772584863-e7aba53b-98e0-488c-b317-2ad9ea16d26c.jpg",
-          "order": 40,
+          "order": 20,
           "createdAt": "2025-12-03T14:53:04.272Z"
         },
         {
           "id": "6652dbee-b6d7-44ca-a6ac-94fdf878454f",
           "url": "/uploads/1764772584864-4274c6b4-e275-47b1-8f50-bb6207bce49f.jpg",
-          "order": 50,
+          "order": 30,
           "createdAt": "2025-12-03T14:53:04.282Z"
         },
         {
           "id": "b4832d13-7182-4f65-956b-cacf8c63fba7",
           "url": "/uploads/1764772584865-8c1d84d5-e875-49a1-b0ec-e4771bda1ba2.jpg",
-          "order": 60,
+          "order": 40,
           "createdAt": "2025-12-03T14:53:04.289Z"
         },
         {
           "id": "651f723a-80d9-4b41-8b4e-47a23d9a4187",
           "url": "/uploads/1764772584866-54736826-c683-4c79-8786-189e2634b0c1.jpg",
-          "order": 70,
+          "order": 50,
           "createdAt": "2025-12-03T14:53:04.295Z"
         },
         {
           "id": "f4db152a-3574-42d8-8b12-b68b0f7ce520",
           "url": "/uploads/1764772584866-81f3397d-8b5d-4aa2-836e-c70d3b91eebd.jpg",
-          "order": 80,
+          "order": 60,
           "createdAt": "2025-12-03T14:53:04.302Z"
         },
         {
           "id": "a60a6c6c-ef35-4b05-b687-a18dd1bf96d4",
           "url": "/uploads/1764772584867-160f9c1a-4ebf-4a44-b0da-e4e65cd1de3f.jpg",
-          "order": 90,
+          "order": 70,
           "createdAt": "2025-12-03T14:53:04.309Z"
         },
         {
           "id": "75c46d1b-e1f2-4152-8229-9e75e43c81fc",
           "url": "/uploads/1764772584868-0ab7fa9e-819c-4dd7-ad60-40d0c2925fdf.jpg",
-          "order": 100,
+          "order": 80,
           "createdAt": "2025-12-03T14:53:04.319Z"
         },
         {
           "id": "b27cb432-268f-4c45-b1ce-f2b768ca041a",
           "url": "/uploads/1764772584868-ed12351c-f39e-4dee-abda-11c661ccdb6a.jpg",
-          "order": 110,
+          "order": 90,
           "createdAt": "2025-12-03T14:53:04.329Z"
         },
         {
           "id": "3e3d4ed5-2ed3-44de-a4ca-48b1dcafb3ca",
           "url": "/uploads/1764772584869-eaff0919-d671-46b5-b028-3d74bfe76791.jpg",
-          "order": 120,
+          "order": 100,
           "createdAt": "2025-12-03T14:53:04.339Z"
-        },
-        {
-          "id": "f56434ad-0123-436d-b1b1-2d702ac15917",
-          "url": "/uploads/1764772584869-1a5e06b5-32fb-41fc-840d-48706f2f546a.jpg",
-          "order": 130,
-          "createdAt": "2025-12-03T14:53:04.345Z"
         },
         {
           "id": "f3e9a0bc-2f94-47f0-b974-8ff1346e3bf7",
           "url": "/uploads/1764772584870-6a68ef87-146e-4faf-8f3a-4a6a02caabd4.jpg",
-          "order": 140,
+          "order": 110,
           "createdAt": "2025-12-03T14:53:04.354Z"
         },
         {
           "id": "6945d999-39c7-4e76-a1ea-e42de85c4c60",
           "url": "/uploads/1764772584870-abe86621-1fdb-4cba-977d-2d42cdb8c909.jpg",
-          "order": 150,
+          "order": 120,
           "createdAt": "2025-12-03T14:53:04.367Z"
-        },
-        {
-          "id": "ea2ad7bc-537c-4869-b15a-ea7ecc06f1fd",
-          "url": "/uploads/1764772584871-00b4a2fe-7ceb-46bf-ac6a-36285d78e691.jpg",
-          "order": 160,
-          "createdAt": "2025-12-03T14:53:04.373Z"
-        },
-        {
-          "id": "350a2d6a-2065-460c-81af-31e0b8829458",
-          "url": "/uploads/1764772584871-83347843-d010-46d9-9379-70f4cdad6885.jpg",
-          "order": 170,
-          "createdAt": "2025-12-03T14:53:04.379Z"
         },
         {
           "id": "625bab38-2f6d-4422-866d-c6cea496f47c",
           "url": "/uploads/1764772584872-5a86ef3d-ef7b-4357-bd3d-2deb0c457fe1.jpg",
-          "order": 180,
+          "order": 130,
           "createdAt": "2025-12-03T14:53:04.386Z"
         },
         {
           "id": "1153b4dd-c082-443c-bec7-e31a455fd462",
           "url": "/uploads/1764772584873-d6d7307b-2975-483c-af38-c03f31e44319.jpg",
-          "order": 190,
+          "order": 140,
           "createdAt": "2025-12-03T14:53:04.394Z"
         },
         {
           "id": "dcc144bd-dd48-4d9a-b276-ce4b31cdef49",
           "url": "/uploads/1764772584873-c295331c-5261-41ec-a028-6932b9f785b7.jpg",
-          "order": 200,
+          "order": 150,
           "createdAt": "2025-12-03T14:53:04.402Z"
         },
         {
           "id": "7733fb49-6416-40ff-b3c3-922a15cc6544",
           "url": "/uploads/1764772584874-d958ef7d-7626-470e-9659-d07b3a38860e.jpg",
-          "order": 210,
+          "order": 160,
           "createdAt": "2025-12-03T14:53:04.414Z"
         },
         {
           "id": "f05d1255-6dcc-4e81-99a1-f68dbe015074",
           "url": "/uploads/1764772584874-3ab5b6dd-dd76-44b2-a60f-05513cba2d1f.jpg",
-          "order": 220,
+          "order": 170,
           "createdAt": "2025-12-03T14:53:04.420Z"
         },
         {
           "id": "eea3ebe3-a860-4da4-90de-dd894e9dd9fd",
           "url": "/uploads/1764772584875-523c808b-726a-4613-8de6-e477011d5fc6.jpg",
-          "order": 230,
+          "order": 180,
           "createdAt": "2025-12-03T14:53:04.426Z"
         },
         {
           "id": "42bf4c9c-1404-46a8-aebc-d46723c3dd85",
           "url": "/uploads/1764772584876-a5475798-51ed-4201-adcb-d0c702646762.jpg",
-          "order": 240,
+          "order": 190,
           "createdAt": "2025-12-03T14:53:04.434Z"
-        },
-        {
-          "id": "1e25daa7-d42f-4105-b48f-2b91b6793bda",
-          "url": "/uploads/1764772584876-e4a751f6-9f3f-4da1-81de-a320cbf9f833.jpg",
-          "order": 250,
-          "createdAt": "2025-12-03T14:53:04.440Z"
         },
         {
           "id": "4314a1e6-00e9-473e-9606-041cf7a3e5a3",
           "url": "/uploads/1764772584877-f124aba1-04e5-4594-9301-4fa6eca7891a.jpg",
-          "order": 260,
+          "order": 200,
           "createdAt": "2025-12-03T14:53:04.445Z"
         },
         {
           "id": "eaabe438-40bf-47f2-ae43-d705ca3e606f",
           "url": "/uploads/1764772584877-05fd88ff-f9ba-4fdd-aa71-34a5a99e6f0b.jpg",
-          "order": 270,
+          "order": 210,
           "createdAt": "2025-12-03T14:53:04.455Z"
         },
         {
           "id": "ef290842-96d0-40db-bdf1-99c02ff6f440",
           "url": "/uploads/1764772584878-a5b9f77d-e85a-479c-be94-bb2c89068664.jpg",
-          "order": 280,
+          "order": 220,
           "createdAt": "2025-12-03T14:53:04.463Z"
-        },
-        {
-          "id": "a43ea607-72fb-444c-8674-0d5abcf2ee12",
-          "url": "/uploads/1764772584878-7ca3575f-7800-4b14-ab95-54d5fb5143fc.jpg",
-          "order": 290,
-          "createdAt": "2025-12-03T14:53:04.468Z"
-        },
-        {
-          "id": "ff592d79-bf20-4da7-9e79-11e98f7e6f68",
-          "url": "/uploads/1764772584879-1e741473-7040-4027-a77b-a7fa3c187934.jpg",
-          "order": 300,
-          "createdAt": "2025-12-03T14:53:04.479Z"
         },
         {
           "id": "5aec18c5-4e4f-42f5-9e4d-7273255f0a83",
           "url": "/uploads/1764772584880-42b5b782-0461-4707-91a6-8d6e9f5bc338.jpg",
-          "order": 310,
+          "order": 230,
           "createdAt": "2025-12-03T14:53:04.490Z"
         }
-      ]
+      ],
+      "bookUpdatedAt": "2025-12-08T17:33:27.354Z"
     },
     {
       "id": "4560a2ec-b12b-41da-9621-169061461fb3",
@@ -17356,6 +17364,107 @@
           "createdAt": "2025-12-04T13:31:09.684Z"
         }
       ]
+    },
+    {
+      "id": "cc450dbe-275d-4ba4-9dcd-e3689961c729",
+      "slug": "lily-moore",
+      "name": "Lily Moore",
+      "firstName": "Lily",
+      "lastName": "Moore",
+      "division": "Girls",
+      "city": "Milan",
+      "nationality": "American",
+      "citizenship": "American",
+      "languages": "English, French",
+      "instagram": "lily_moore",
+      "modelsComUrl": "",
+      "email": "lily.moore@example.com",
+      "phonePrefix": "+44",
+      "phone": "9013724935",
+      "whatsapp": "9013724935",
+      "birthday": "2006-03-12",
+      "height": "175cm - 5' 9''",
+      "bust": "88 - 35''",
+      "waist": "86 - 34''",
+      "hips": "78 - 31''",
+      "shoes": "38 - 7",
+      "eyes": "Green",
+      "hair": "Light Brown",
+      "experience": "Previous modeling experience with various agencies",
+      "travelAvailability": "Worldwide",
+      "source": "Direct application",
+      "notes": "Sample model data",
+      "createdAt": "2025-12-06T17:32:37.007Z",
+      "updatedAt": "2025-12-06T17:32:37.007Z",
+      "images": []
+    },
+    {
+      "id": "a3c3e797-a75c-4439-b24c-8ae73bbdd3bc",
+      "slug": "aubrey-smith",
+      "name": "Aubrey Smith",
+      "firstName": "Aubrey",
+      "lastName": "Smith",
+      "division": "Girls",
+      "city": "Berlin",
+      "nationality": "British",
+      "citizenship": "British",
+      "languages": "English, German",
+      "instagram": "aubrey_smith",
+      "modelsComUrl": "",
+      "email": "aubrey.smith@example.com",
+      "phonePrefix": "+49",
+      "phone": "4729080404",
+      "whatsapp": "4729080404",
+      "birthday": "1998-01-01",
+      "height": "173cm - 5' 8''",
+      "bust": "84 - 33''",
+      "waist": "84 - 33''",
+      "hips": "84 - 33''",
+      "shoes": "38 - 7",
+      "eyes": "Brown",
+      "hair": "Dark Brown",
+      "experience": "Previous modeling experience with various agencies",
+      "travelAvailability": "Worldwide",
+      "source": "Direct application",
+      "notes": "Sample model data",
+      "createdAt": "2025-12-06T17:38:08.805Z",
+      "updatedAt": "2025-12-06T17:38:08.805Z",
+      "images": [],
+      "hidden": true
+    },
+    {
+      "id": "30fd8b46-0930-49db-af71-262a61aaf23c",
+      "slug": "aria-lopez",
+      "name": "Aria Lopez",
+      "firstName": "Aria",
+      "lastName": "Lopez",
+      "division": "Girls",
+      "city": "Stockholm",
+      "nationality": "Dutch",
+      "citizenship": "Dutch",
+      "languages": "English, Italian",
+      "instagram": "aria_lopez",
+      "modelsComUrl": "",
+      "email": "aria.lopez@example.com",
+      "phonePrefix": "+33",
+      "phone": "8651054413",
+      "whatsapp": "8651054413",
+      "birthday": "2004-03-06",
+      "height": "173cm - 5' 8''",
+      "bust": "80 - 31''",
+      "waist": "88 - 35''",
+      "hips": "80 - 31''",
+      "shoes": "37 - 6.5",
+      "eyes": "Green",
+      "hair": "Brown",
+      "experience": "Previous modeling experience with various agencies",
+      "travelAvailability": "Worldwide",
+      "source": "Direct application",
+      "notes": "Sample model data",
+      "createdAt": "2025-12-06T17:38:43.003Z",
+      "updatedAt": "2025-12-06T17:38:43.003Z",
+      "images": [],
+      "hidden": true
     }
   ]
 }

@@ -1,0 +1,40 @@
+{
+  "rules": [
+    {
+      "name": "Upcoming Job Tomorrow",
+      "enabled": true,
+      "trigger": {
+        "eventType": "job",
+        "timing": "before",
+        "value": 1,
+        "unit": "days"
+      },
+      "channels": [
+        "email",
+        "slack"
+      ],
+      "emailRecipients": "americo@3mmodels.com , irsida@3mmodels.com",
+      "createdBy": "americo@3mmodels.com",
+      "id": "668a65a8-1b00-4960-9c89-a506fa164a17",
+      "createdAt": "2025-12-09T13:33:00.854Z",
+      "updatedAt": "2025-12-09T13:42:11.664Z",
+    },
+    {
+      "name": "Option Expiring in 4 days",
+      "enabled": true,
+      "trigger": {
+        "eventType": "option",
+        "timing": "before",
+        "value": 4,
+        "unit": "days"
+      },
+      "channels": [
+        "slack"
+      ],
+      "createdBy": "americo@3mmodels.com",
+      "id": "20c0fca6-7ab9-453e-b5ef-33283ffd12ca",
+      "createdAt": "2025-12-09T13:42:52.948Z",
+      "updatedAt": "2025-12-09T13:42:52.948Z"
+    }
+  ]
+}

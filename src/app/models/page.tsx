@@ -39,7 +39,7 @@ const resolveSearchParams = async (
 };
 
 export default async function ModelsPage({ searchParams }: ModelsPageProps) {
-  const allModels = await listModels();
+  const allModels = await listModels(false);
   const resolvedParams = await resolveSearchParams(searchParams);
   const rawDivisionValue = resolvedParams.division;
   const rawDivision = Array.isArray(rawDivisionValue)
@@ -78,47 +78,47 @@ export default async function ModelsPage({ searchParams }: ModelsPageProps) {
         <div className="rounded-[24px] border border-[var(--border-color)] bg-white/80 p-8 text-center text-sm text-[var(--muted)]">
           No models found in this division yet. Please choose another board.
         </div>
-      ) : null}
-
-      <div className="grid gap-6 border-t border-[var(--border-color)] pt-8 sm:grid-cols-2 lg:grid-cols-3">
-        {filteredModels.map((model) => (
-          <article
-            key={model.id}
-            className="group space-y-3 rounded-[28px] border border-[var(--border-color)] bg-white/80 p-4 pb-5 transition duration-200 hover:-translate-y-1 hover:border-black/40"
-          >
-            <Link
-              href={`/models/${model.slug}`}
-              className="block aspect-[3/4] w-full overflow-hidden rounded-2xl bg-[#f4eee4]"
+      ) : (
+        <div className="grid gap-6 border-t border-[var(--border-color)] pt-8 sm:grid-cols-2 lg:grid-cols-3">
+          {filteredModels.map((model) => (
+            <article
+              key={model.id}
+              className="group space-y-3 rounded-[28px] border border-[var(--border-color)] bg-white/80 p-4 pb-5 transition duration-200 hover:-translate-y-1 hover:border-black/40"
             >
-              {model.images && model.images.length > 0 ? (
-                <Image
-                  src={model.images[0].url}
-                  alt={model.name}
-                  width={600}
-                  height={800}
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  unoptimized
-                />
-              ) : (
-                <div className="flex h-full w-full items-center justify-center text-[11px] uppercase tracking-[0.4em] text-[var(--muted)]">
-                  No imagery yet
-                </div>
-              )}
-            </Link>
-            <div className="space-y-1">
-              <h2 className="text-base font-medium tracking-[0.1em] text-[var(--foreground)]">
-                {model.name}
-              </h2>
-              <p className="text-[10px] uppercase tracking-[0.6em] text-[var(--muted)]">
-                {model.division}
-              </p>
-              {model.city ? (
-                <p className="text-[11px] text-[var(--muted)]">{model.city}</p>
-              ) : null}
-            </div>
-          </article>
-        ))}
-      </div>
+              <Link
+                href={`/models/${model.slug}`}
+                className="block aspect-[3/4] w-full overflow-hidden rounded-2xl bg-[#f4eee4]"
+              >
+                {model.images && model.images.length > 0 ? (
+                  <Image
+                    src={model.images[0].url}
+                    alt={model.name}
+                    width={600}
+                    height={800}
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    unoptimized
+                  />
+                ) : (
+                  <div className="flex h-full w-full items-center justify-center text-[11px] uppercase tracking-[0.4em] text-[var(--muted)]">
+                    No imagery yet
+                  </div>
+                )}
+              </Link>
+              <div className="space-y-1">
+                <h2 className="text-base font-medium tracking-[0.1em] text-[var(--foreground)]">
+                  {model.name}
+                </h2>
+                <p className="text-[10px] uppercase tracking-[0.6em] text-[var(--muted)]">
+                  {model.division}
+                </p>
+                {model.city ? (
+                  <p className="text-[11px] text-[var(--muted)]">{model.city}</p>
+                ) : null}
+              </div>
+            </article>
+          ))}
+        </div>
+      )}
     </section>
   );
 }

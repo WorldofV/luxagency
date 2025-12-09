@@ -1,0 +1,220 @@
+{
+  "activities": [
+    {
+      "id": "d90286d5-3e2e-4968-b2bb-5a6b02a12a18",
+      "timestamp": "2025-12-08T18:29:27.249Z",
+      "adminEmail": "americo@3mmodels.com",
+      "activityType": "submission_deleted",
+      "description": "Deleted submission from Oliver Moore",
+      "metadata": {
+        "submissionId": "b463ee68-d9ae-42c7-a8c1-704797f890c7",
+        "email": "oliver.moore@icloud.com"
+      }
+    },
+    {
+      "id": "bd0f6e81-aabe-424b-b117-51c071b8dc9c",
+      "timestamp": "2025-12-08T18:30:04.750Z",
+      "adminEmail": "americo@3mmodels.com",
+      "activityType": "images_reordered",
+      "description": "Reordered images for model: Aldebran Pratomo",
+      "metadata": {
+        "modelId": "3f12184c-a975-4035-a8ca-05264caf71c7",
+        "imageCount": 28
+      }
+    },
+    {
+      "id": "17c4cd29-7d59-4423-8809-6584acf807a0",
+      "timestamp": "2025-12-08T18:33:04.030Z",
+      "adminEmail": "americo@3mmodels.com",
+      "activityType": "package_link_copied",
+      "description": "Copied package link for Piergiorgio",
+      "metadata": {
+        "packageId": "5ee37ff0-ba1d-405b-a911-c62854a9ac0e",
+        "packageSlug": "package-1765143040437",
+        "packageLink": "http://localhost:3000/packages/view/package-1765143040437"
+      }
+    },
+    {
+      "id": "3f9e434d-e4ed-49f2-9615-96f65691eee7",
+      "timestamp": "2025-12-08T18:33:59.843Z",
+      "adminEmail": "americo@3mmodels.com",
+      "activityType": "image_deleted",
+      "description": "Deleted image from model: Albana Herdafa",
+      "metadata": {
+        "modelId": "c6465671-6f4a-43df-b9f6-bc9fa3520b66",
+        "imageId": "38a82bae-5bd5-48eb-b6b4-6ca39d9807e2"
+      }
+    },
+    {
+      "id": "feaa6978-c216-4f5f-ae2a-cb235e2bf6c5",
+      "timestamp": "2025-12-08T18:34:01.463Z",
+      "adminEmail": "americo@3mmodels.com",
+      "activityType": "images_reordered",
+      "description": "Reordered images for model: Albana Herdafa",
+      "metadata": {
+        "modelId": "c6465671-6f4a-43df-b9f6-bc9fa3520b66",
+        "imageCount": 4
+      }
+    },
+    {
+      "id": "7043c788-0b35-4b0b-b506-e312c6e6e378",
+      "timestamp": "2025-12-08T19:03:23.844Z",
+      "adminEmail": "americo@3mmodels.com",
+      "activityType": "model_updated",
+      "description": "Added agency placement for model: Aldebran Pratomo",
+      "metadata": {
+        "modelId": "3f12184c-a975-4035-a8ca-05264caf71c7",
+        "placement": {
+          "city": "Milan",
+          "agencyName": "Elite",
+          "startDate": "2025-12-03"
+        }
+      }
+    },
+    {
+      "id": "3aaed85e-5aa5-4fd5-b7c4-ff84b744e259",
+      "timestamp": "2025-12-08T19:14:03.036Z",
+      "adminEmail": "americo@3mmodels.com",
+      "activityType": "package_created",
+      "description": "Created package",
+      "metadata": {
+        "packageId": "12a5a2f2-c452-4d9d-b266-9fee1d8cf7b8",
+        "packageSlug": "package-1765221243007",
+        "modelCount": 3
+      }
+    },
+    {
+      "id": "417e3318-4292-4f92-8edc-3d22ef59a26b",
+      "timestamp": "2025-12-08T19:41:15.216Z",
+      "adminEmail": "americo@3mmodels.com",
+      "activityType": "calendar_event_created",
+      "description": "Created job event: Albana Herdafa - Availability",
+      "metadata": {
+        "eventId": "6e66f715-52d7-4c44-a9f4-cb2585141a65",
+        "modelId": "c6465671-6f4a-43df-b9f6-bc9fa3520b66",
+        "eventType": "job"
+      }
+    },
+    {
+      "id": "6e7bc62b-e887-43b3-82ad-b002f4894b93",
+      "timestamp": "2025-12-08T20:29:48.858Z",
+      "adminEmail": "americo@3mmodels.com",
+      "activityType": "calendar_event_created",
+      "description": "Created option event: Alessandro Piccolo - Option - Mango",
+      "metadata": {
+        "eventId": "6243d669-9dd0-4685-ae95-3de506986994",
+        "modelId": "d0c6846e-d2c4-4e70-95e3-81bb74cb0d1c",
+        "eventType": "option"
+      }
+    },
+    {
+      "id": "309e2209-2e3d-4b47-92a9-a5b205e5be0e",
+      "timestamp": "2025-12-08T20:33:02.550Z",
+      "adminEmail": "americo@3mmodels.com",
+      "activityType": "calendar_event_created",
+      "description": "Created job event: Alessandro Piccolo - Job - Prada",
+      "metadata": {
+        "eventId": "29a526bd-7178-4564-a162-8fdb70620bdd",
+        "modelId": "d0c6846e-d2c4-4e70-95e3-81bb74cb0d1c",
+        "eventType": "job"
+      }
+    },
+    {
+      "id": "77d7e1fe-5771-4899-b301-f617c80855e5",
+      "timestamp": "2025-12-08T20:55:59.104Z",
+      "adminEmail": "americo@3mmodels.com",
+      "activityType": "calendar_event_created",
+      "description": "Created option event: Americo Cacciapuoti - Option - Mango",
+      "metadata": {
+        "eventId": "73f0e544-2bbf-42c6-ab83-5bdebd470535",
+        "modelId": "be26e05f-21b7-4cec-a0ca-9ccea65ac92a",
+        "eventType": "option"
+      }
+    },
+    {
+      "id": "6b740f16-fcc3-4896-93b2-9180f5e0a452",
+      "timestamp": "2025-12-08T21:05:13.801Z",
+      "adminEmail": "americo@3mmodels.com",
+      "activityType": "calendar_event_updated",
+      "description": "Updated option event: Americo Cacciapuoti - Option - Mango",
+      "metadata": {
+        "eventId": "73f0e544-2bbf-42c6-ab83-5bdebd470535",
+        "modelId": "be26e05f-21b7-4cec-a0ca-9ccea65ac92a",
+        "eventType": "option"
+      }
+    },
+    {
+      "id": "3347f184-56ff-4940-a46d-70eded3d0752",
+      "timestamp": "2025-12-08T21:12:06.669Z",
+      "adminEmail": "americo@3mmodels.com",
+      "activityType": "calendar_event_deleted",
+      "description": "Deleted option event: Alessandro Piccolo - Option - Mango",
+      "metadata": {
+        "eventId": "6243d669-9dd0-4685-ae95-3de506986994",
+        "modelId": "d0c6846e-d2c4-4e70-95e3-81bb74cb0d1c"
+      }
+    },
+    {
+      "id": "aefc2d9c-d3b1-434f-af02-0c6b5cce6746",
+      "timestamp": "2025-12-08T21:49:18.844Z",
+      "adminEmail": "americo@3mmodels.com",
+      "activityType": "calendar_event_created",
+      "description": "Created contract event: Alessandro Piccolo - Contract - Freshlook",
+      "metadata": {
+        "eventId": "2cb6b4a6-4272-43d5-8e48-673565322ba7",
+        "modelId": "d0c6846e-d2c4-4e70-95e3-81bb74cb0d1c",
+        "eventType": "contract"
+      }
+    },
+    {
+      "id": "fe0a9692-19e9-4036-957e-7a67da5a55e8",
+      "timestamp": "2025-12-08T21:52:48.682Z",
+      "adminEmail": "americo@3mmodels.com",
+      "activityType": "calendar_event_created",
+      "description": "Created contract event: Anastasiia Antonova - Contract - Mah",
+      "metadata": {
+        "eventId": "43174ffc-2170-4f7b-8abf-93ce13f8e3b5",
+        "modelId": "3f9ed15c-6dc0-4ca8-9218-bb60244167b2",
+        "eventType": "contract"
+      }
+    },
+    {
+      "id": "df163d4e-1dde-4752-a15b-ad07e557bbd5",
+      "timestamp": "2025-12-09T13:33:00.879Z",
+      "adminEmail": "americo@3mmodels.com",
+      "activityType": "alert_created",
+      "description": "Created alert rule: Upcoming Job Tomorrow",
+      "metadata": {}
+    },
+    {
+      "id": "da14fef2-f85a-4b20-84fc-0f7cd506f3e2",
+      "timestamp": "2025-12-09T13:34:14.374Z",
+      "adminEmail": "americo@3mmodels.com",
+      "activityType": "calendar_event_created",
+      "description": "Created job event: Alessandro Piccolo - Job - Zara",
+      "metadata": {
+        "eventId": "7529863b-6ee1-4a1b-9b27-123787033bf4",
+        "modelId": "d0c6846e-d2c4-4e70-95e3-81bb74cb0d1c",
+        "eventType": "job"
+      }
+    },
+    {
+      "id": "98fe3ef8-bd8b-40f1-947d-63bbf1f5e7f0",
+      "timestamp": "2025-12-09T13:42:11.699Z",
+      "adminEmail": "americo@3mmodels.com",
+      "activityType": "alert_updated",
+      "description": "Updated alert rule: Upcoming Job Tomorrow",
+      "metadata": {
+        "alertRuleId": "668a65a8-1b00-4960-9c89-a506fa164a17"
+      }
+    },
+    {
+      "id": "dacaf9fe-1906-48c1-af60-b5d6e450f56f",
+      "timestamp": "2025-12-09T13:42:52.976Z",
+      "adminEmail": "americo@3mmodels.com",
+      "activityType": "alert_created",
+      "description": "Created alert rule: Option Expiring in 4 days",
+      "metadata": {}
+    }
+  ]
+}

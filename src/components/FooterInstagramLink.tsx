@@ -13,7 +13,11 @@ export function FooterInstagramLink({
 }: FooterInstagramLinkProps) {
   const handleClick = async () => {
     try {
-      await fetch("/api/metrics/instagram", { method: "POST" });
+      await fetch("/api/metrics/instagram", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ source: "footer" }),
+      });
     } catch {
       // ignore failures, don't block navigation
     }

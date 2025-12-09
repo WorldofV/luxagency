@@ -3,17 +3,18 @@ import { NextResponse } from "next/server";
 import { deleteImage } from "@/lib/modelStore";
 
 type RouteContext = {
-  params: {
+  params: Promise<{
     imageId: string;
-  };
+  }>;
 };
 
-export async function DELETE(_: Request, { params }: RouteContext) {
-  const removed = await deleteImage(params.imageId);
-  if (!removed) {
+export async function DELETE(_: Request, context: RouteContext) {
+  const params = await context.params;
+  const result = await deleteImage(params.imageId);
+  if (!result) {
     return NextResponse.json({ error: "Not found" }, { status: 404 });
   }
-  return NextResponse.json({ success: true });
+  return NextResponse.json(result.model);
 }
 
 

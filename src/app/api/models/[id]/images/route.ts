@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 
 import {
   addModelImage,
+  getModelById,
   reorderImages,
 } from "@/lib/modelStore";
 import { saveUploadedFile } from "@/lib/uploads";
@@ -9,12 +10,13 @@ import { saveUploadedFile } from "@/lib/uploads";
 export const runtime = "nodejs";
 
 type RouteContext = {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 };
 
-export async function POST(request: Request, { params }: RouteContext) {
+export async function POST(request: Request, context: RouteContext) {
+  const params = await context.params;
   const formData = await request.formData();
   const file = formData.get("file");
   const caption = formData.get("caption")?.toString();
@@ -29,16 +31,22 @@ export async function POST(request: Request, { params }: RouteContext) {
   }
 
   const saved = await saveUploadedFile(file);
-  const image = await addModelImage(params.id, {
+  await addModelImage(params.id, {
     url: saved.url,
     caption,
     order,
   });
 
-  return NextResponse.json(image, { status: 201 });
+  const model = await getModelById(params.id);
+  if (!model) {
+    return NextResponse.json({ error: "Model not found" }, { status: 404 });
+  }
+
+  return NextResponse.json(model, { status: 201 });
 }
 
-export async function PATCH(request: Request, { params }: RouteContext) {
+export async function PATCH(request: Request, context: RouteContext) {
+  const params = await context.params;
   const payload = await request.json();
   if (!Array.isArray(payload?.images)) {
     return NextResponse.json(

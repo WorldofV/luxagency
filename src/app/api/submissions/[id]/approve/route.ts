@@ -46,8 +46,13 @@ export async function POST(_: Request, context: RouteContext) {
 
   const model = await createModel({
     name: `${submission.firstName} ${submission.lastName}`.trim(),
+    firstName: submission.firstName,
+    lastName: submission.lastName,
     division: divisionFromGender(submission.gender),
     city: submission.currentCity,
+    nationality: submission.nationality,
+    citizenship: submission.citizenship,
+    languages: submission.languages,
     email: submission.email,
     phonePrefix: submission.phonePrefix,
     phone: submission.phone,
@@ -59,8 +64,12 @@ export async function POST(_: Request, context: RouteContext) {
     eyes: submission.eyes,
     hair: submission.hair,
     instagram: submission.instagram,
-    citizenship: submission.citizenship,
+    tiktok: submission.tiktok,
     birthday: submission.birthday,
+    experience: submission.experience,
+    travelAvailability: submission.travelAvailability,
+    source: submission.source,
+    notes: submission.notes,
   });
 
   for (const image of submission.images) {

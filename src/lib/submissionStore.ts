@@ -23,6 +23,7 @@ export type SubmissionRecord = {
   phonePrefix?: string;
   phone?: string;
   instagram?: string;
+  tiktok?: string;
   height?: string;
   chest?: string;
   waist?: string;

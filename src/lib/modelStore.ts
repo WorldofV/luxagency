@@ -10,15 +10,28 @@ export type ModelImage = {
   createdAt: string;
 };
 
+export type AgencyPlacement = {
+  id: string;
+  city: string;
+  agencyName: string;
+  startDate: string; // ISO date string
+  createdAt: string;
+};
+
 export type ModelRecord = {
   id: string;
   slug: string;
   name: string;
+  firstName?: string;
+  lastName?: string;
   division: string;
   city?: string;
+  nationality?: string;
   citizenship?: string;
+  languages?: string;
   instagram?: string;
   modelsComUrl?: string;
+  tiktok?: string;
   email?: string;
   phonePrefix?: string;
   phone?: string;
@@ -31,9 +44,16 @@ export type ModelRecord = {
   shoes?: string;
   eyes?: string;
   hair?: string;
+  experience?: string;
+  travelAvailability?: string;
+  source?: string;
+  notes?: string;
   createdAt: string;
   updatedAt: string;
+  bookUpdatedAt?: string;
+  hidden?: boolean;
   images: ModelImage[];
+  agencyPlacements?: AgencyPlacement[];
 };
 
 type StoreShape = {
@@ -85,23 +105,29 @@ const sanitizeSlug = (value: string) =>
     .replace(/[\s_-]+/g, "-")
     .replace(/^-+|-+$/g, "");
 
-export async function listModels(): Promise<ModelRecord[]> {
+export async function listModels(includeHidden = true): Promise<ModelRecord[]> {
   const store = await readStore();
-  return store.models
+  const models = store.models
     .map(sortModel)
     .sort((a, b) => a.name.localeCompare(b.name));
+  
+  if (includeHidden) {
+    return models;
+  }
+  
+  return models.filter((model) => !model.hidden);
 }
 
-export async function getModelBySlug(slug: string) {
+export async function getModelBySlug(slug: string, includeHidden = false) {
   const normalized = slug.toLowerCase();
   const store = await readStore();
   const match =
     store.models.find(
-      (model) => model.slug.toLowerCase() === normalized
+      (model) => model.slug.toLowerCase() === normalized && (includeHidden || !model.hidden)
     ) ??
     store.models.find((model) => {
       const parts = model.name.split(" ");
-      return parts[parts.length - 1]?.toLowerCase() === normalized;
+      return parts[parts.length - 1]?.toLowerCase() === normalized && (includeHidden || !model.hidden);
     });
   return match ? sortModel(match) : null;
 }
@@ -114,12 +140,17 @@ export async function getModelById(id: string) {
 
 type CreateModelInput = {
   name: string;
+  firstName?: string;
+  lastName?: string;
   division: string;
   slug?: string;
   city?: string;
+  nationality?: string;
   citizenship?: string;
+  languages?: string;
   instagram?: string;
   modelsComUrl?: string;
+  tiktok?: string;
   email?: string;
   phonePrefix?: string;
   phone?: string;
@@ -132,6 +163,10 @@ type CreateModelInput = {
   shoes?: string;
   eyes?: string;
   hair?: string;
+  experience?: string;
+  travelAvailability?: string;
+  source?: string;
+  notes?: string;
 };
 
 export async function createModel(input: CreateModelInput) {
@@ -148,11 +183,16 @@ export async function createModel(input: CreateModelInput) {
     id: randomUUID(),
     slug,
     name: input.name,
+    firstName: input.firstName,
+    lastName: input.lastName,
     division: input.division,
     city: input.city,
+    nationality: input.nationality,
     citizenship: input.citizenship,
+    languages: input.languages,
     instagram: input.instagram,
     modelsComUrl: input.modelsComUrl,
+    tiktok: input.tiktok,
     email: input.email,
     phonePrefix: input.phonePrefix,
     phone: input.phone,
@@ -165,9 +205,15 @@ export async function createModel(input: CreateModelInput) {
     shoes: input.shoes,
     eyes: input.eyes,
     hair: input.hair,
+    experience: input.experience,
+    travelAvailability: input.travelAvailability,
+    source: input.source,
+    notes: input.notes,
     createdAt: now,
     updatedAt: now,
     images: [],
+    agencyPlacements: [],
+    hidden: true, // Automatically hide models without images
   };
 
   store.models.push(model);
@@ -199,11 +245,16 @@ export async function updateModel(id: string, updates: UpdateModelInput) {
 
   Object.assign(target, {
     name: updates.name ?? target.name,
+    firstName: updates.firstName ?? target.firstName,
+    lastName: updates.lastName ?? target.lastName,
     division: updates.division ?? target.division,
     city: updates.city ?? target.city,
+    nationality: updates.nationality ?? target.nationality,
     citizenship: updates.citizenship ?? target.citizenship,
+    languages: updates.languages ?? target.languages,
     instagram: updates.instagram ?? target.instagram,
     modelsComUrl: updates.modelsComUrl ?? target.modelsComUrl,
+    tiktok: updates.tiktok ?? target.tiktok,
     email: updates.email ?? target.email,
     phonePrefix: updates.phonePrefix ?? target.phonePrefix,
     phone: updates.phone ?? target.phone,
@@ -216,6 +267,11 @@ export async function updateModel(id: string, updates: UpdateModelInput) {
     shoes: updates.shoes ?? target.shoes,
     eyes: updates.eyes ?? target.eyes,
     hair: updates.hair ?? target.hair,
+    experience: updates.experience ?? target.experience,
+    travelAvailability: updates.travelAvailability ?? target.travelAvailability,
+    source: updates.source ?? target.source,
+    notes: updates.notes ?? target.notes,
+    hidden: updates.hidden !== undefined ? updates.hidden : target.hidden,
   });
 
   target.updatedAt = new Date().toISOString();
@@ -287,7 +343,9 @@ export async function addModelImage(modelId: string, payload: AddImageInput) {
 
   model.images.push(image);
   model.images = sortImages(model.images);
-  model.updatedAt = new Date().toISOString();
+  const now = new Date().toISOString();
+  model.updatedAt = now;
+  model.bookUpdatedAt = now;
 
   await writeStore(store);
   return image;
@@ -310,7 +368,9 @@ export async function reorderImages(modelId: string, updates: ReorderInput) {
       : image
   );
   model.images = sortImages(model.images);
-  model.updatedAt = new Date().toISOString();
+  const now = new Date().toISOString();
+  model.updatedAt = now;
+  model.bookUpdatedAt = now;
 
   await writeStore(store);
   return sortModel(model);
@@ -322,7 +382,15 @@ export async function deleteImage(imageId: string) {
     const index = model.images.findIndex((image) => image.id === imageId);
     if (index !== -1) {
       const [removed] = model.images.splice(index, 1);
-      model.updatedAt = new Date().toISOString();
+      const now = new Date().toISOString();
+      model.updatedAt = now;
+      model.bookUpdatedAt = now;
+      
+      // Automatically hide model if all images are deleted
+      if (model.images.length === 0) {
+        model.hidden = true;
+      }
+      
       await writeStore(store);
 
       if (isLocalUpload(removed.url)) {
@@ -336,10 +404,76 @@ export async function deleteImage(imageId: string) {
           }
         }
       }
-      return removed;
+      return { removed, model: sortModel(model) };
     }
   }
   return null;
+}
+
+export async function addAgencyPlacement(
+  modelId: string,
+  placement: Omit<AgencyPlacement, "id" | "createdAt">
+) {
+  const store = await readStore();
+  const model = store.models.find((m) => m.id === modelId);
+  if (!model) {
+    throw new Error("Model not found");
+  }
+
+  if (!model.agencyPlacements) {
+    model.agencyPlacements = [];
+  }
+
+  const newPlacement: AgencyPlacement = {
+    id: randomUUID(),
+    ...placement,
+    createdAt: new Date().toISOString(),
+  };
+
+  model.agencyPlacements.push(newPlacement);
+  model.updatedAt = new Date().toISOString();
+  await writeStore(store);
+  return sortModel(model);
+}
+
+export async function updateAgencyPlacement(
+  modelId: string,
+  placementId: string,
+  updates: Partial<Omit<AgencyPlacement, "id" | "createdAt">>
+) {
+  const store = await readStore();
+  const model = store.models.find((m) => m.id === modelId);
+  if (!model || !model.agencyPlacements) {
+    throw new Error("Model or placement not found");
+  }
+
+  const placement = model.agencyPlacements.find((p) => p.id === placementId);
+  if (!placement) {
+    throw new Error("Placement not found");
+  }
+
+  Object.assign(placement, updates);
+  model.updatedAt = new Date().toISOString();
+  await writeStore(store);
+  return sortModel(model);
+}
+
+export async function deleteAgencyPlacement(modelId: string, placementId: string) {
+  const store = await readStore();
+  const model = store.models.find((m) => m.id === modelId);
+  if (!model || !model.agencyPlacements) {
+    throw new Error("Model or placement not found");
+  }
+
+  const index = model.agencyPlacements.findIndex((p) => p.id === placementId);
+  if (index === -1) {
+    throw new Error("Placement not found");
+  }
+
+  model.agencyPlacements.splice(index, 1);
+  model.updatedAt = new Date().toISOString();
+  await writeStore(store);
+  return sortModel(model);
 }
 
 

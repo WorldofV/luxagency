@@ -2,7 +2,8 @@ import { promises as fs } from "fs";
 import path from "path";
 
 type Metrics = {
-  instagramClicks: number;
+  instagramClicksFooter: number;
+  instagramClicksSubmission: number;
 };
 
 const METRICS_PATH = path.join(process.cwd(), "data/metrics.json");
@@ -10,10 +11,21 @@ const METRICS_PATH = path.join(process.cwd(), "data/metrics.json");
 async function readMetrics(): Promise<Metrics> {
   try {
     const raw = await fs.readFile(METRICS_PATH, "utf-8");
-    return JSON.parse(raw) as Metrics;
+    const data = JSON.parse(raw);
+    // Migration: handle old format with single instagramClicks field
+    if ("instagramClicks" in data && !("instagramClicksFooter" in data)) {
+      return {
+        instagramClicksFooter: data.instagramClicks || 0,
+        instagramClicksSubmission: 0,
+      };
+    }
+    return {
+      instagramClicksFooter: data.instagramClicksFooter || 0,
+      instagramClicksSubmission: data.instagramClicksSubmission || 0,
+    };
   } catch (error: any) {
     if (error?.code === "ENOENT") {
-      return { instagramClicks: 0 };
+      return { instagramClicksFooter: 0, instagramClicksSubmission: 0 };
     }
     throw error;
   }
@@ -28,10 +40,14 @@ export async function getMetrics() {
   return readMetrics();
 }
 
-export async function incrementInstagramClicks() {
+export async function incrementInstagramClicks(source: "footer" | "submission") {
   const metrics = await readMetrics();
-  metrics.instagramClicks += 1;
+  if (source === "footer") {
+    metrics.instagramClicksFooter += 1;
+  } else {
+    metrics.instagramClicksSubmission += 1;
+  }
   await writeMetrics(metrics);
-  return metrics.instagramClicks;
+  return metrics;
 }
 

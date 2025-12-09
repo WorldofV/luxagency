@@ -1887,3 +1887,26 @@ Error: ENOENT: no such file or directory, open '/Users/americocacciapuoti/lux-ag
  ✓ Compiled in 134ms
  ✓ Compiled in 35ms
  ✓ Compiled in 26ms
+ GET /admin 200 in 615ms (compile: 400ms, render: 216ms)
+ GET /api/metrics/instagram 200 in 103ms (compile: 93ms, render: 11ms)
+ GET /api/submissions 200 in 110ms (compile: 72ms, render: 38ms)
+ GET /api/models 200 in 116ms (compile: 38ms, render: 77ms)
+ GET /admin 200 in 61ms (compile: 15ms, render: 46ms)
+ GET /api/metrics/instagram 200 in 18ms (compile: 7ms, render: 11ms)
+ GET /api/submissions 200 in 20ms (compile: 4ms, render: 16ms)
+ GET /api/models 200 in 28ms (compile: 11ms, render: 18ms)
+ GET /admin 200 in 62ms (compile: 12ms, render: 50ms)
+ GET /api/metrics/instagram 200 in 16ms (compile: 8ms, render: 8ms)
+ GET /api/submissions 200 in 18ms (compile: 5ms, render: 13ms)
+ GET /api/models 200 in 26ms (compile: 1889µs, render: 24ms)
+ ✓ Compiled in 56ms
+ ✓ Compiled in 45ms
+ ✓ Compiled in 71ms
+ ✓ Compiled in 109ms
+ ✓ Compiled in 69ms
+ ✓ Compiled in 124ms
+ ✓ Compiled in 37ms
+ ✓ Compiled in 47ms
+ ✓ Compiled in 44ms
+ ✓ Compiled in 62ms
+[?25h

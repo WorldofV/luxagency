@@ -38,6 +38,7 @@ export async function POST(request: Request) {
     phonePrefix: formData.get("phonePrefix")?.toString() || undefined,
     phone: formData.get("phone")?.toString() || undefined,
     instagram: formData.get("instagram")?.toString() || undefined,
+    tiktok: formData.get("tiktok")?.toString() || undefined,
     height: formData.get("height")?.toString() || undefined,
     chest: formData.get("chest")?.toString() || undefined,
     waist: formData.get("waist")?.toString() || undefined,

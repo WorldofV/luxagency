@@ -1,0 +1,204 @@
+{
+  "packages": [
+    {
+      "id": "efb734ca-e690-4480-82dc-a383aee97ff0",
+      "slug": "package-1765135927750",
+      "modelIds": [
+        "test"
+      ],
+      "createdAt": "2025-12-07T19:32:07.750Z",
+      "updatedAt": "2025-12-07T19:56:57.528Z",
+      "opened": true,
+      "openedAt": "2025-12-07T19:32:26.371Z",
+      "openedCount": 3,
+      "lastOpenedAt": "2025-12-07T19:32:26.371Z"
+    },
+    {
+      "id": "665715ac-4a17-480e-8ce2-61ee73bffc4e",
+      "slug": "package-1765136292615",
+      "modelIds": [
+        "d0c6846e-d2c4-4e70-95e3-81bb74cb0d1c",
+        "b2a697be-69fe-48a5-83df-c85cc378eb9c",
+        "be26e05f-21b7-4cec-a0ca-9ccea65ac92a",
+        "3f12184c-a975-4035-a8ca-05264caf71c7"
+      ],
+      "createdAt": "2025-12-07T19:38:12.615Z",
+      "updatedAt": "2025-12-07T19:38:23.180Z",
+      "opened": true,
+      "openedAt": "2025-12-07T19:38:23.180Z",
+      "openedCount": 1,
+      "lastOpenedAt": "2025-12-07T19:38:23.180Z"
+    },
+    {
+      "id": "ceef8490-0345-41b4-8372-4e16a0a9c51f",
+      "slug": "package-1765136771660",
+      "modelIds": [
+        "c6465671-6f4a-43df-b9f6-bc9fa3520b66",
+        "3f12184c-a975-4035-a8ca-05264caf71c7",
+        "d0c6846e-d2c4-4e70-95e3-81bb74cb0d1c",
+        "87b46d10-1092-45cf-a0b0-7b3abb5908b9",
+        "6e1bec94-dd1f-4bca-b7b9-639df9135e40"
+      ],
+      "clientName": "Nike",
+      "createdAt": "2025-12-07T19:46:11.660Z",
+      "updatedAt": "2025-12-07T19:57:37.211Z",
+      "opened": true,
+      "openedAt": "2025-12-07T19:46:23.489Z",
+      "openedCount": 1,
+      "lastOpenedAt": "2025-12-07T19:46:23.489Z"
+    },
+    {
+      "id": "0d89dcb1-1308-4600-856c-e1f89ddd3df9",
+      "slug": "package-1765137540844",
+      "modelIds": [
+        "b2a697be-69fe-48a5-83df-c85cc378eb9c",
+        "be26e05f-21b7-4cec-a0ca-9ccea65ac92a",
+        "a9cc9ed7-7386-412b-a2b0-d78154cb64d3"
+      ],
+      "clientName": "Nike",
+      "clientEmail": "nike@gmail.com",
+      "notes": "THis is a new package for ",
+      "createdAt": "2025-12-07T19:59:00.844Z",
+      "updatedAt": "2025-12-07T20:02:11.347Z",
+      "opened": true,
+      "openedCount": 2,
+      "openedAt": "2025-12-07T20:02:06.838Z",
+      "lastOpenedAt": "2025-12-07T20:02:11.347Z"
+    },
+    {
+      "id": "c5e7a4c9-0b94-42a2-a06f-4609ef776302",
+      "slug": "package-1765138878527",
+      "modelIds": [
+        "3f12184c-a975-4035-a8ca-05264caf71c7",
+        "d0c6846e-d2c4-4e70-95e3-81bb74cb0d1c"
+      ],
+      "createdAt": "2025-12-07T20:21:18.527Z",
+      "updatedAt": "2025-12-07T20:21:18.527Z",
+      "opened": false,
+      "openedCount": 0
+    },
+    {
+      "id": "838d4cb0-de07-422c-9c24-646c45f4c317",
+      "slug": "package-1765138883634",
+      "modelIds": [
+        "e2e7d3c6-d530-437e-baeb-e446fd03eeab",
+        "ac080c33-ddfb-4a36-acb7-76353015327b",
+        "998264dc-628f-4de1-92f2-4f6441565e5d"
+      ],
+      "createdAt": "2025-12-07T20:21:23.634Z",
+      "updatedAt": "2025-12-07T20:21:23.634Z",
+      "opened": false,
+      "openedCount": 0
+    },
+    {
+      "id": "ff184349-3eab-4502-9be0-474742bc4a20",
+      "slug": "package-1765138888499",
+      "modelIds": [
+        "6e1bec94-dd1f-4bca-b7b9-639df9135e40",
+        "6d3554fa-d46a-4a92-bb4b-8fbefbaa4678",
+        "ae48c6ea-8bd1-4ce8-8c83-a49c288e4e62",
+        "19edb9e0-d47a-4be0-bb50-9037c9fd8dea"
+      ],
+      "createdAt": "2025-12-07T20:21:28.500Z",
+      "updatedAt": "2025-12-07T20:21:28.500Z",
+      "opened": false,
+      "openedCount": 0
+    },
+    {
+      "id": "7a6932bc-e649-4cd0-bc27-d3a76596b5a4",
+      "slug": "package-1765138893549",
+      "modelIds": [
+        "6e1bec94-dd1f-4bca-b7b9-639df9135e40",
+        "6d3554fa-d46a-4a92-bb4b-8fbefbaa4678",
+        "ac080c33-ddfb-4a36-acb7-76353015327b",
+        "e2e7d3c6-d530-437e-baeb-e446fd03eeab"
+      ],
+      "createdAt": "2025-12-07T20:21:33.549Z",
+      "updatedAt": "2025-12-07T20:21:33.549Z",
+      "opened": false,
+      "openedCount": 0
+    },
+    {
+      "id": "7a5995d3-2b2d-4034-adf5-bcbb5d145bc1",
+      "slug": "package-1765138898083",
+      "modelIds": [
+        "94156c60-39ad-4918-a682-6f46f33cc8ed",
+        "e2e7d3c6-d530-437e-baeb-e446fd03eeab",
+        "ac080c33-ddfb-4a36-acb7-76353015327b"
+      ],
+      "createdAt": "2025-12-07T20:21:38.083Z",
+      "updatedAt": "2025-12-07T20:21:38.083Z",
+      "opened": false,
+      "openedCount": 0
+    },
+    {
+      "id": "bd221b4b-8a8c-4f68-99b9-cfa2f18e20d2",
+      "slug": "package-1765138903066",
+      "modelIds": [
+        "3f9ed15c-6dc0-4ca8-9218-bb60244167b2",
+        "94156c60-39ad-4918-a682-6f46f33cc8ed",
+        "87b46d10-1092-45cf-a0b0-7b3abb5908b9"
+      ],
+      "createdAt": "2025-12-07T20:21:43.066Z",
+      "updatedAt": "2025-12-07T20:21:43.066Z",
+      "opened": false,
+      "openedCount": 0
+    },
+    {
+      "id": "fce62d8d-bce7-4768-b780-960d6f300b1b",
+      "slug": "package-1765138907574",
+      "modelIds": [
+        "e2e7d3c6-d530-437e-baeb-e446fd03eeab",
+        "ac080c33-ddfb-4a36-acb7-76353015327b",
+        "998264dc-628f-4de1-92f2-4f6441565e5d"
+      ],
+      "createdAt": "2025-12-07T20:21:47.574Z",
+      "updatedAt": "2025-12-07T20:21:47.574Z",
+      "opened": false,
+      "openedCount": 0
+    },
+    {
+      "id": "409a3c86-db16-45b5-ba04-2634abdb5c5c",
+      "slug": "package-1765139037334",
+      "modelIds": [
+        "94156c60-39ad-4918-a682-6f46f33cc8ed",
+        "e2e7d3c6-d530-437e-baeb-e446fd03eeab",
+        "ac080c33-ddfb-4a36-acb7-76353015327b"
+      ],
+      "createdAt": "2025-12-07T20:23:57.334Z",
+      "updatedAt": "2025-12-07T20:23:57.334Z",
+      "opened": false,
+      "openedCount": 0
+    },
+    {
+      "id": "5ee37ff0-ba1d-405b-a911-c62854a9ac0e",
+      "slug": "package-1765143040437",
+      "modelIds": [
+        "be26e05f-21b7-4cec-a0ca-9ccea65ac92a",
+        "94156c60-39ad-4918-a682-6f46f33cc8ed",
+        "8751ddc7-0db7-4fd8-97f0-91be29391f07",
+        "d0c6846e-d2c4-4e70-95e3-81bb74cb0d1c"
+      ],
+      "clientName": "Piergiorgio",
+      "createdAt": "2025-12-07T21:30:40.438Z",
+      "updatedAt": "2025-12-07T21:32:21.568Z",
+      "opened": true,
+      "openedCount": 2,
+      "openedAt": "2025-12-07T21:31:16.438Z",
+      "lastOpenedAt": "2025-12-07T21:31:34.337Z"
+    },
+    {
+      "id": "12a5a2f2-c452-4d9d-b266-9fee1d8cf7b8",
+      "slug": "package-1765221243007",
+      "modelIds": [
+        "3f12184c-a975-4035-a8ca-05264caf71c7",
+        "d0c6846e-d2c4-4e70-95e3-81bb74cb0d1c",
+        "b2a697be-69fe-48a5-83df-c85cc378eb9c"
+      ],
+      "createdAt": "2025-12-08T19:14:03.007Z",
+      "updatedAt": "2025-12-08T19:14:03.007Z",
+      "opened": false,
+      "openedCount": 0
+    }
+  ]
+}

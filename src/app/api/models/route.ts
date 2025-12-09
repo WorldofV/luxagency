@@ -24,12 +24,17 @@ export async function POST(request: Request) {
   try {
     const model = await createModel({
       name: payload.name,
+      firstName: payload.firstName,
+      lastName: payload.lastName,
       division: payload.division,
       slug: payload.slug,
       city: payload.city,
+      nationality: payload.nationality,
       citizenship: payload.citizenship,
+      languages: payload.languages,
       instagram: payload.instagram,
       modelsComUrl: payload.modelsComUrl,
+      tiktok: payload.tiktok,
       email: payload.email,
       phonePrefix: payload.phonePrefix,
       phone: payload.phone,
@@ -42,6 +47,10 @@ export async function POST(request: Request) {
       shoes: payload.shoes,
       eyes: payload.eyes,
       hair: payload.hair,
+      experience: payload.experience,
+      travelAvailability: payload.travelAvailability,
+      source: payload.source,
+      notes: payload.notes,
     });
 
     return NextResponse.json(model, { status: 201 });
