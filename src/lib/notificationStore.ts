@@ -129,3 +129,4 @@ export async function deleteAllNotifications(): Promise<number> {
   await writeStore(store);
   return count;
 }
+

@@ -8952,3 +8952,6 @@ function SubmissionCard({ submission, onApprove, onDelete, onPreview }: Submissi
         </button>
       </div>
     </article>
+
+  );
+}
