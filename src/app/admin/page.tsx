@@ -1650,16 +1650,6 @@ export default function AdminPage() {
           </button>
           <button
             className={`pb-1 ${
-              activeTab === "alerts"
-                ? "border-b border-black text-black"
-                : "hover:text-black"
-            }`}
-            onClick={() => handleTabChange("alerts")}
-          >
-            Alerts
-          </button>
-          <button
-            className={`pb-1 ${
               activeTab === "submissions"
                 ? "border-b border-black text-black"
                 : "hover:text-black"
@@ -1688,6 +1678,18 @@ export default function AdminPage() {
           >
             Stats
           </button>
+          {isSuperAdmin && (
+            <button
+              className={`pb-1 ${
+                activeTab === "alerts"
+                  ? "border-b border-black text-black"
+                  : "hover:text-black"
+              }`}
+              onClick={() => handleTabChange("alerts")}
+            >
+              Alerts
+            </button>
+          )}
           {isSuperAdmin && (
             <>
               <button
@@ -8950,7 +8952,3 @@ function SubmissionCard({ submission, onApprove, onDelete, onPreview }: Submissi
         </button>
       </div>
     </article>
-  );
-}
-
-
