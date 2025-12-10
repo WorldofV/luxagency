@@ -106,11 +106,11 @@ export default async function ModelDetailPage({ params, searchParams }: ModelsDe
         </div>
       </header>
 
-      <div className="grid gap-10 lg:grid-cols-2">
+      <div className="grid gap-10 lg:grid-cols-2 items-start">
         <ModelGallery images={model.images} name={model.name} />
 
         {/* Stats / measurements */}
-        <aside className="space-y-6 text-xs uppercase tracking-[0.4em] text-[var(--muted)]">
+        <aside className="space-y-6 text-xs uppercase tracking-[0.4em] text-[var(--muted)] w-full">
           {measurementItems.length ? (
             <div className="space-y-3 border-t border-[var(--border-color)] pt-4">
               <p className="text-[10px] uppercase tracking-[0.5em] text-[var(--muted)]">Measurements</p>
