@@ -87,7 +87,7 @@ export function ModelGallery({ images, name }: ModelGalleryProps) {
         </button>
 
         {images.length > 1 ? (
-          <div className="space-y-3">
+          <div className="space-y-3 w-full">
             <p className="text-xs uppercase tracking-[0.24em] text-[var(--muted)]">
               Book
             </p>
