@@ -104,10 +104,18 @@ export default async function ModelDetailPage({ params, searchParams }: ModelsDe
         >
           {model.division}
         </Link>
-        <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
-          <h1 className="text-4xl font-light tracking-[0.1em] text-[var(--foreground)] sm:text-5xl">
-            {model.name}
-          </h1>
+        <div className="flex flex-col justify-between gap-3 sm:gap-2 sm:flex-row sm:items-end sm:justify-between">
+          <div className="space-y-2">
+            <h1 className="text-4xl font-light tracking-[0.1em] text-[var(--foreground)] sm:text-5xl">
+              {model.name}
+            </h1>
+            <Link
+              href="/models"
+              className="inline-flex items-center text-[11px] text-[var(--foreground)] underline-offset-4 hover:underline uppercase tracking-[0.4em]"
+            >
+              ← Back to board
+            </Link>
+          </div>
         </div>
       </header>
 
@@ -175,26 +183,9 @@ export default async function ModelDetailPage({ params, searchParams }: ModelsDe
                 </dl>
               </div>
             ) : null}
+          <div className="border-t border-[var(--border-color)]"></div>
 
-            <div className="space-y-2 border-t border-[var(--border-color)] pt-4">
-              <p className="text-[10px] uppercase tracking-[0.5em] text-[var(--muted)]">Navigation</p>
-              {packageSlug ? (
-                <Link
-                  href={`/packages/view/${packageSlug}`}
-                  className="inline-flex items-center text-[11px] text-[var(--foreground)] underline-offset-4 hover:underline"
-                >
-                  ← Back to package
-                </Link>
-              ) : (
-                <Link
-                  href="/models"
-                  className="inline-flex items-center text-[11px] text-[var(--foreground)] underline-offset-4 hover:underline"
-                >
-                  ← Back to board
-                </Link>
-              )}
-            </div>
-          </aside>
+            </aside>
         </div>
 
         {/* Full-width thumbnails below */}

@@ -55,23 +55,20 @@ export default async function ModelsPage({ searchParams }: ModelsPageProps) {
 
   return (
     <section className="space-y-10">
-      <div className="flex flex-col gap-2 border-t border-[var(--border-color)] pt-6 text-[11px] uppercase tracking-[0.4em] text-[var(--muted)] sm:flex-row sm:items-center sm:justify-between">
-        <span>
-          {total} {total === 1 ? "model" : "models"} on {activeLabel.toLowerCase()}
-        </span>
-        <div className="flex flex-wrap gap-3 text-[10px] uppercase tracking-[0.5em] text-[var(--muted)]">
-          {["Women", "Men", "Girls", "Boys", "Non Binary"].map((division) => (
-            <Link
-              key={division}
-              href={`/models?division=${encodeURIComponent(division.toLowerCase())}`}
-              className={`transition-colors hover:text-black ${
-                normalizedDivision === division.toLowerCase() ? "text-black" : ""
-              }`}
-            >
-              {division}
-            </Link>
-          ))}
-        </div>
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 text-[12px] uppercase tracking-[0.6em] text-[var(--muted)] border-t border-[var(--border-color)] pt-6 w-full">
+        {["Women", "Men", "Girls", "Boys", "Non Binary"].map((division) => (
+          <Link
+            key={division}
+            href={`/models?division=${encodeURIComponent(division.toLowerCase())}`}
+            className={`block text-center rounded-full border px-4 py-2 transition-colors hover:text-black hover:border-black ${
+              normalizedDivision === division.toLowerCase()
+                ? "text-black border-black bg-white"
+                : "border-[var(--border-color)] bg-white/70"
+            }`}
+          >
+            {division}
+          </Link>
+        ))}
       </div>
 
       {total === 0 ? (
