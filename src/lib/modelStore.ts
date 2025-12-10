@@ -271,8 +271,7 @@ export async function updateModel(id: string, updates: UpdateModelInput) {
     travelAvailability: updates.travelAvailability ?? target.travelAvailability,
     source: updates.source ?? target.source,
     notes: updates.notes ?? target.notes,
-    hidden: updates.hidden !== undefined ? updates.hidden : target.hidden,
-  });
+    });
 
   target.updatedAt = new Date().toISOString();
 
