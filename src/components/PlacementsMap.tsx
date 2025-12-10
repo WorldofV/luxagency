@@ -178,7 +178,7 @@ function PlacementsMapComponent({ cities }: PlacementsMapProps) {
 
       const marker = L.marker([coords.lat, coords.lng], { icon: greenIcon })
         .addTo(mapRef.current!)
-        .bindPopup(popupContent, { autoOpen: false });
+        .bindPopup(popupContent);
 
       markersRef.current.push(marker);
     });
