@@ -98,9 +98,12 @@ export default async function ModelDetailPage({ params, searchParams }: ModelsDe
   return (
     <section className="space-y-12">
       <header className="space-y-3">
-        <p className="section-title">
+        <Link
+          href={`/models?division=${encodeURIComponent(model.division)}`}
+          className="section-title hover:underline underline-offset-4"
+        >
           {model.division}
-        </p>
+        </Link>
         <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
           <h1 className="text-4xl font-light tracking-[0.1em] text-[var(--foreground)] sm:text-5xl">
             {model.name}
