@@ -12,7 +12,7 @@ export default function AboutPage() {
           <div className="space-y-4">
             <h2 className="text-base font-medium text-[var(--foreground)]">MANAGEMENT</h2>
             <p>
-              3Mmodels was founded in 2010 from former model himself, Americo Cacciapuoti with the passion for creating a mother agency that discovers and manages top notch models. Having the big desire to bring to the table models that make a difference in the fashion business, 3mmodels has quickly made a name for themselves discovering various top models such as Alessio Pozzi, Jing Wen, Jia Li, Janaye Furman.
+              3mmodels was founded in 2010 from former model himself, Americo Cacciapuoti with the passion for creating a mother agency that discovers and manages top notch models. Having the big desire to bring to the table models that make a difference in the fashion business, 3mmodels has quickly made a name for themselves discovering various top models such as Alessio Pozzi, Jing Wen, Jia Li, Janaye Furman.
             </p>
             <p>
               What makes us unique is that we work on a worldwide basis even though we have a legal office in London. We discover and manage models from all over the world and with first-hand experience and knowledge of many fashion markets the 3M team is able to advise it&apos;s talent of what to expect in the fashion industry and lead them towards the right direction of their careers as models.
@@ -29,7 +29,7 @@ export default function AboutPage() {
                 className="underline-offset-4 hover:underline"
               >
                 models.com
-              </a>{" "}
+              </a> 
               profile or{" "}
               <a
                 href="https://www.instagram.com/3mmodels_official/"
@@ -51,15 +51,28 @@ export default function AboutPage() {
           </div>
 
           <div className="space-y-4 border-t border-[var(--border-color)] pt-6">
+            <h2 className="text-base font-medium text-[var(--foreground)]">SCOUTS / SCOUTING</h2>
+            <p>
+              At 3mmodels we are always looking for new scouts who share our passion for discovering future talent. Whether you already have experience or are simply well-connected in your community, you can become part of our scouting network.
+            </p>
+            <p>
+              We offer compensation for every model successfully referred to us and signed to the agency. If you know someone who has the potential to become a model, we’d be happy to review their profile and guide them through the next steps.
+            </p>
+            <p>
+              For more information or to become a scout, please contact Americo directly.
+            </p>
+          </div>
+
+          <div className="space-y-4 border-t border-[var(--border-color)] pt-6">
             <h2 className="text-base font-medium text-[var(--foreground)]">OPEN CALLS</h2>
             <p>
-              We do not do open calls, the legal office is only used for legal purposes. If you want to be part of 3mmodels{" "}
+              We do not do open calls, the legal office is only used for legal purposes. If you want to be part of 3mmodels 
               <a
                 href="/become-a-model"
                 className="underline-offset-4 hover:underline"
               >
                 go here
-              </a>{" "}
+              </a> 
               or contact the Scout.
             </p>
           </div>
@@ -88,7 +101,8 @@ export default function AboutPage() {
             <p className="text-[10px] text-[var(--muted)]">Bookers</p>
             <p className="text-[var(--foreground)] normal-case">
               Americo Cacciapuoti - <a href="mailto:americo@3mmodels.com" className="underline-offset-4 hover:underline">americo@3mmodels.com</a><br />
-              Irsida Aliu - <a href="mailto:irsida@3mmodels.com" className="underline-offset-4 hover:underline">irsida@3mmodels.com</a>
+              Irsida Aliu - <a href="mailto:irsida@3mmodels.com" className="underline-offset-4 hover:underline">irsida@3mmodels.com</a><br />
+              Kateryna Miasoid - <a href="mailto:kateryna@3mmodels.com" className="underline-offset-4 hover:underline">kateryna@3mmodels.com</a>
             </p>
           </div>
 
