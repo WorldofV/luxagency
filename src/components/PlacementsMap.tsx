@@ -80,7 +80,6 @@ const cityCoordinates: Record<string, { lat: number; lng: number }> = {
   "Taipei": { lat: 25.033, lng: 121.5654 },
   "Shanghai": { lat: 31.2304, lng: 121.4737 },
   "Beijing": { lat: 39.9042, lng: 116.4074 },
-  "Mumbai": { lat: 19.076, lng: 72.8777 },
   "Delhi": { lat: 28.6139, lng: 77.209 },
   "Bangalore": { lat: 12.9716, lng: 77.5946 },
   "Auckland": { lat: -36.8485, lng: 174.7633 },
