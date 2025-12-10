@@ -64,8 +64,7 @@ export function ModelGallery({ images, name }: ModelGalleryProps) {
       return Math.min(images.length - 1, prev + 1);
     });
 
-  const currentImage =
-    lightboxIndex !== null ? images[lightboxIndex] : null;
+  const currentImage = lightboxIndex !== null ? images[lightboxIndex] : null;
 
   return (
     <>
@@ -91,20 +90,20 @@ export function ModelGallery({ images, name }: ModelGalleryProps) {
             <p className="text-xs uppercase tracking-[0.24em] text-[var(--muted)]">
               Book
             </p>
-            <div className="grid gap-3 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
+            <div className="space-y-3">
               {images.slice(1).map((image, index) => (
                 <button
                   type="button"
                   key={image.id}
                   onClick={() => openLightbox(index + 1)}
-                  className="aspect-[3/4] overflow-hidden rounded-2xl border border-[var(--border-color)] bg-white"
+                  className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl border border-[var(--border-color)] bg-white"
                 >
                   <Image
                     src={image.url}
                     alt={`${name} look ${index + 2}`}
-                    width={600}
-                    height={800}
-                    className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                    fill
+                    sizes="100vw"
+                    className="object-cover transition-transform duration-500 hover:scale-[1.02]"
                     unoptimized
                   />
                 </button>
@@ -162,4 +161,3 @@ export function ModelGallery({ images, name }: ModelGalleryProps) {
     </>
   );
 }
-
