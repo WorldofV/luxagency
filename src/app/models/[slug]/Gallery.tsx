@@ -91,7 +91,7 @@ export function ModelGallery({ images, name }: ModelGalleryProps) {
             <p className="text-xs uppercase tracking-[0.24em] text-[var(--muted)]">
               Book
             </p>
-            <div className="grid gap-3 sm:grid-cols-3">
+            <div className="grid gap-3 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
               {images.slice(1).map((image, index) => (
                 <button
                   type="button"
