@@ -93,6 +93,8 @@ export default async function ModelDetailPage({ params, searchParams }: ModelsDe
     { label: "Age", value: modelAge ? `${modelAge} yrs` : null },
   ].filter((item) => Boolean(item.value));
 
+  const hasGalleryImages = model.images && model.images.length > 0;
+
   return (
     <section className="space-y-12">
       <header className="space-y-3">
@@ -106,92 +108,98 @@ export default async function ModelDetailPage({ params, searchParams }: ModelsDe
         </div>
       </header>
 
-      <div className="grid gap-10">
-        <ModelGallery images={model.images} name={model.name} />
+      <div className="space-y-12">
+        {/* Main image + info side-by-side */}
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_320px]">
+          <ModelGallery images={model.images} name={model.name} showThumbnails={false} />
 
-        {/* Stats / measurements */}
-        <aside className="space-y-6 text-xs uppercase tracking-[0.4em] text-[var(--muted)] w-full">
-          {measurementItems.length ? (
-            <div className="space-y-3 border-t border-[var(--border-color)] pt-4">
-              <p className="text-[10px] uppercase tracking-[0.5em] text-[var(--muted)]">Measurements</p>
-              <dl className="grid grid-cols-2 gap-x-6 gap-y-2 text-[var(--foreground)]">
-                {measurementItems.map((item) => (
-                  <div key={item.label} className="contents">
-                    <dt className="text-[var(--muted)]">{item.label}</dt>
-                    <dd>{item.value}</dd>
-                  </div>
-                ))}
-              </dl>
+          {/* Stats / measurements */}
+          <aside className="space-y-6 text-xs uppercase tracking-[0.4em] text-[var(--muted)] w-full">
+            {measurementItems.length ? (
+              <div className="space-y-3 border-t border-[var(--border-color)] pt-4">
+                <p className="text-[10px] uppercase tracking-[0.5em] text-[var(--muted)]">Measurements</p>
+                <dl className="grid grid-cols-2 gap-x-6 gap-y-2 text-[var(--foreground)]">
+                  {measurementItems.map((item) => (
+                    <div key={item.label} className="contents">
+                      <dt className="text-[var(--muted)]">{item.label}</dt>
+                      <dd>{item.value}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+            ) : null}
+
+            {profileItems.length ? (
+              <div className="space-y-3 border-t border-[var(--border-color)] pt-4">
+                <p className="text-[10px] uppercase tracking-[0.5em] text-[var(--muted)]">Profile</p>
+                <dl className="space-y-2 text-[var(--foreground)]">
+                  {profileItems.map((item) => (
+                    <div key={item.label} className="flex items-baseline justify-between gap-4">
+                      <dt className="text-[var(--muted)]">{item.label}</dt>
+                      <dd className="text-right">
+                        {item.isLink ? (
+                          <Link
+                            href=
+                              {(item.value as string).startsWith("http")
+                                ? (item.value as string)
+                                : `${item.linkPrefix ?? ""}${(item as any).getLinkValue ? (item as any).getLinkValue(item.value) : item.value}`}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="underline-offset-4 hover:underline"
+                          >
+                            {item.value}
+                          </Link>
+                        ) : (
+                          item.value
+                        )}
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+            ) : null}
+
+            {model.agencyPlacements && model.agencyPlacements.length > 0 ? (
+              <div className="space-y-3 border-t border-[var(--border-color)] pt-4">
+                <p className="text-[10px] uppercase tracking-[0.5em] text-[var(--muted)]">Placements</p>
+                <dl className="space-y-2 text-[var(--foreground)]">
+                  {model.agencyPlacements.map((placement) => (
+                    <div key={placement.id} className="flex items-baseline justify-between gap-4">
+                      <dt className="text-[var(--muted)]">{placement.agencyName}</dt>
+                      <dd className="text-right text-[11px]">{placement.city}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+            ) : null}
+
+            <div className="space-y-2 border-t border-[var(--border-color)] pt-4">
+              <p className="text-[10px] uppercase tracking-[0.5em] text-[var(--muted)]">Navigation</p>
+              {packageSlug ? (
+                <Link
+                  href={`/packages/view/${packageSlug}`}
+                  className="inline-flex items-center text-[11px] text-[var(--foreground)] underline-offset-4 hover:underline"
+                >
+                  ← Back to package
+                </Link>
+              ) : (
+                <Link
+                  href="/models"
+                  className="inline-flex items-center text-[11px] text-[var(--foreground)] underline-offset-4 hover:underline"
+                >
+                  ← Back to board
+                </Link>
+              )}
             </div>
-          ) : null}
+          </aside>
+        </div>
 
-          {profileItems.length ? (
-            <div className="space-y-3 border-t border-[var(--border-color)] pt-4">
-              <p className="text-[10px] uppercase tracking-[0.5em] text-[var(--muted)]">Profile</p>
-              <dl className="space-y-2 text-[var(--foreground)]">
-                {profileItems.map((item) => (
-                  <div key={item.label} className="flex items-baseline justify-between gap-4">
-                    <dt className="text-[var(--muted)]">{item.label}</dt>
-                    <dd className="text-right">
-                      {item.isLink ? (
-                        <Link
-                          href={
-                            (item.value as string).startsWith("http")
-                              ? (item.value as string)
-                              : `${item.linkPrefix ?? ""}${(item as any).getLinkValue ? (item as any).getLinkValue(item.value) : item.value}`
-                          }
-                          target="_blank"
-                          rel="noreferrer"
-                          className="underline-offset-4 hover:underline"
-                        >
-                          {item.value}
-                        </Link>
-                      ) : (
-                        item.value
-                      )}
-                    </dd>
-                  </div>
-                ))}
-              </dl>
-            </div>
-          ) : null}
-
-          {model.agencyPlacements && model.agencyPlacements.length > 0 ? (
-            <div className="space-y-3 border-t border-[var(--border-color)] pt-4">
-              <p className="text-[10px] uppercase tracking-[0.5em] text-[var(--muted)]">Placements</p>
-              <dl className="space-y-2 text-[var(--foreground)]">
-                {model.agencyPlacements.map((placement) => (
-                  <div key={placement.id} className="flex items-baseline justify-between gap-4">
-                    <dt className="text-[var(--muted)]">{placement.agencyName}</dt>
-                    <dd className="text-right text-[11px]">{placement.city}</dd>
-                  </div>
-                ))}
-              </dl>
-            </div>
-          ) : null}
-
-          <div className="space-y-2 border-t border-[var(--border-color)] pt-4">
-            <p className="text-[10px] uppercase tracking-[0.5em] text-[var(--muted)]">Navigation</p>
-            {packageSlug ? (
-              <Link
-                href={`/packages/view/${packageSlug}`}
-                className="inline-flex items-center text-[11px] text-[var(--foreground)] underline-offset-4 hover:underline"
-              >
-                ← Back to package
-              </Link>
-            ) : (
-            <Link
-              href="/models"
-              className="inline-flex items-center text-[11px] text-[var(--foreground)] underline-offset-4 hover:underline"
-            >
-              ← Back to board
-            </Link>
-            )}
-          </div>
-        </aside>
+        {/* Full-width thumbnails below */}
+        {hasGalleryImages ? (
+          <ModelGallery images={model.images.slice(1)} name={model.name} showMain={false} showThumbnails />
+        ) : null}
       </div>
     </section>
   );
 }
-
 

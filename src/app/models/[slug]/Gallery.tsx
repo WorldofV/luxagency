@@ -11,17 +11,24 @@ type GalleryImage = {
 type ModelGalleryProps = {
   images: GalleryImage[];
   name: string;
+  /** Whether to render the main (first) image. Defaults to true. */
+  showMain?: boolean;
+  /** Whether to render the thumbnails grid. Defaults to true. */
+  showThumbnails?: boolean;
 };
 
-export function ModelGallery({ images, name }: ModelGalleryProps) {
+export function ModelGallery({
+  images,
+  name,
+  showMain = true,
+  showThumbnails = true,
+}: ModelGalleryProps) {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   useEffect(() => {
     if (lightboxIndex === null) return;
     const handleKey = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        setLightboxIndex(null);
-      }
+      if (event.key === "Escape") setLightboxIndex(null);
       if (event.key === "ArrowRight") {
         setLightboxIndex((prev) => {
           if (prev === null) return prev;
@@ -51,56 +58,63 @@ export function ModelGallery({ images, name }: ModelGalleryProps) {
 
   const openLightbox = (index: number) => setLightboxIndex(index);
   const closeLightbox = () => setLightboxIndex(null);
-
   const showPrev = () =>
-    setLightboxIndex((prev) => {
-      if (prev === null) return prev;
-      return Math.max(0, prev - 1);
-    });
-
+    setLightboxIndex((prev) => (prev === null ? prev : Math.max(0, prev - 1)));
   const showNext = () =>
-    setLightboxIndex((prev) => {
-      if (prev === null) return prev;
-      return Math.min(images.length - 1, prev + 1);
-    });
+    setLightboxIndex((prev) =>
+      prev === null ? prev : Math.min(images.length - 1, prev + 1)
+    );
 
   const currentImage = lightboxIndex !== null ? images[lightboxIndex] : null;
+
+  const thumbImages = showThumbnails
+    ? showMain
+      ? images.slice(1)
+      : images
+    : [];
+  const baseIndex = showMain ? 1 : 0;
+
+  const thumbLayoutClass = showMain
+    ? "space-y-3"
+    : "grid gap-3 grid-cols-2 sm:grid-cols-3";
 
   return (
     <>
       <div className="space-y-6">
-        <button
-          type="button"
-          onClick={() => openLightbox(0)}
-          className="aspect-[3/4] w-full overflow-hidden rounded-[36px] border border-[var(--border-color)] bg-white"
-        >
-          <Image
-            src={images[0].url}
-            alt={name}
-            width={900}
-            height={1200}
-            className="h-full w-full object-cover transition-transform duration-500 hover:scale-[1.02]"
-            priority
-            unoptimized
-          />
-        </button>
+        {showMain && images[0] ? (
+          <button
+            type="button"
+            onClick={() => openLightbox(0)}
+            className="aspect-[3/4] w-full overflow-hidden rounded-[36px] border border-[var(--border-color)] bg-white"
+          >
+            <Image
+              src={images[0].url}
+              alt={name}
+              width={900}
+              height={1200}
+              className="h-full w-full object-cover transition-transform duration-500 hover:scale-[1.02]"
+              priority
+              unoptimized
+            />
+          </button>
+        ) : null}
 
-        {images.length > 1 ? (
+        {thumbImages.length > 0 ? (
           <div className="space-y-3 w-full">
             <p className="text-xs uppercase tracking-[0.24em] text-[var(--muted)]">
               Book
             </p>
-            <div className="space-y-3">
-              {images.slice(1).map((image, index) => (
+            <div className={thumbLayoutClass}>
+              {thumbImages.map((image, index) => (
                 <button
                   type="button"
                   key={image.id}
-                  onClick={() => openLightbox(index + 1)}
+                  onClick={() => openLightbox(baseIndex + index)}
                   className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl border border-[var(--border-color)] bg-white"
                 >
                   <Image
                     src={image.url}
-                    alt={`${name} look ${index + 2}`}
+                    alt={`${name} look ${showMain ? index + 2 : index + 1}`}
                     fill
                     sizes="100vw"
                     className="object-cover transition-transform duration-500 hover:scale-[1.02]"
