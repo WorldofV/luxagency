@@ -106,7 +106,7 @@ export default async function ModelDetailPage({ params, searchParams }: ModelsDe
         </div>
       </header>
 
-      <div className="grid gap-10 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)]">
+      <div className="grid gap-10 lg:grid-cols-2">
         <ModelGallery images={model.images} name={model.name} />
 
         {/* Stats / measurements */}
