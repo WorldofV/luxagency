@@ -66,13 +66,13 @@ export default function AboutPage() {
           <div className="space-y-4 border-t border-[var(--border-color)] pt-6">
             <h2 className="text-base font-medium text-[var(--foreground)]">OPEN CALLS</h2>
             <p>
-              We do not do open calls, the legal office is only used for legal purposes. If you want to be part of 3mmodels{}
+              We do not do open calls, the legal office is only used for legal purposes. If you want to be part of 3mmodels{" "}
               <a
                 href="/become-a-model"
                 className="underline-offset-4 hover:underline"
               >
                 go here
-              </a>{}or contact the Scout.
+              </a>{" "}or contact the Scout.
             </p>
           </div>
         </div>
