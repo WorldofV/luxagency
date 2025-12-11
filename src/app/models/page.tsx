@@ -56,19 +56,22 @@ export default async function ModelsPage({ searchParams }: ModelsPageProps) {
   return (
     <section className="space-y-10">
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 text-[12px] uppercase tracking-[0.6em] text-[var(--muted)] border-t border-[var(--border-color)] pt-6 w-full">
-        {["Women", "Men", "Girls", "Boys", "Non Binary"].map((division) => (
-          <Link
-            key={division}
-            href={`/models?division=${encodeURIComponent(division.toLowerCase())}`}
-            className={`block text-center rounded-full border px-4 py-2 transition-colors hover:text-black hover:border-black ${
-              normalizedDivision === division.toLowerCase()
-                ? "text-black border-black bg-white"
-                : "border-[var(--border-color)] bg-white/70"
-            }`}
-          >
-            {division}
-          </Link>
-        ))}
+        {["All", "Women", "Men", "Girls", "Boys", "Non Binary"].map((division) => {
+          const value = division.toLowerCase();
+          const href = division === "All" ? "/models" : `/models?division=${encodeURIComponent(value)}`;
+          const isActive = division === "All" ? !normalizedDivision : normalizedDivision === value;
+          return (
+            <Link
+              key={division}
+              href={href}
+              className={`block text-center rounded-full border px-4 py-2 transition-colors hover:text-black hover:border-black ${
+                isActive ? "text-black border-black bg-white" : "border-[var(--border-color)] bg-white/70"
+              }`}
+            >
+              {division}
+            </Link>
+          );
+        })}
       </div>
 
       {total === 0 ? (
